@@ -26,7 +26,8 @@ public abstract class Paquete implements Serializable{
 		Comando com = null;
 		try {
 			com = (Comando) Class.forName(
-					Comando.NOMBRE_PAQUETE + "." + Comando.NOMBRE_CLASES[comando]).newInstance();
+					Comando.NOMBRE_PAQUETE + "." + 
+			Comando.NOMBRE_CLASES[comando]).newInstance();
 		} catch (IllegalAccessException | ClassNotFoundException | InstantiationException e) {
 			e.printStackTrace();
 		} 
