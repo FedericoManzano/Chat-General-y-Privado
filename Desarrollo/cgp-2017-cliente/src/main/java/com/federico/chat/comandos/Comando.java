@@ -28,6 +28,4 @@ public abstract class Comando {
 	public void guardaCadenaLeida(final String cadenaLeida) {
 		this.cadenaLeida = cadenaLeida;
 	}
-	
-	
 }
