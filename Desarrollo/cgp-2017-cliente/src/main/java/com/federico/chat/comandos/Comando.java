@@ -5,12 +5,16 @@ public abstract class Comando {
 	
 	public static final String NOMBRE_PAQUETE = "com.federico.chat.comandos";
 	public static final String [] NOMBRE_CLASES = {
-			"Conexion"
+			"Conexion",
+			"MensajePrivado"
 	};
 	
 	public abstract void ejecutar();
 	
 	public static final int CONEXION = 0;
+	public static final int MENSAJE_PRIVADO = 1;
+	
+	
 	private String cadenaLeida;
 	
 	public Comando() {
