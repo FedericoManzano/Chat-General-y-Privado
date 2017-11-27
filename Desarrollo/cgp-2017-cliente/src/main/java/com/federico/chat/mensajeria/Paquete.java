@@ -10,6 +10,10 @@ public abstract class Paquete implements Serializable{
 	
 	private int operacion;
 
+	public Paquete(final int op) {
+		this.operacion = op;
+	}
+	
 	public int dameOperacion() {
 		return operacion;
 	}
