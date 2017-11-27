@@ -73,7 +73,7 @@ public class MenuConexion extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblImagen = new JLabel("Imagen 128 * 128");
-		lblImagen.setIcon(new ImageIcon(MenuConexion.class.getResource("/com/federico/chat/recursos/Desconectado.png")));
+		lblImagen.setIcon(new ImageIcon(MenuConexion.class.getResource(RutaRecursos.RUTA + "Desconectado.png")));
 		lblImagen.setBounds(234, 15, 128, 127);
 		contentPane.add(lblImagen);
 		
