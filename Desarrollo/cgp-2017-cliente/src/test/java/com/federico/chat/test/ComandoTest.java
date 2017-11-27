@@ -12,7 +12,7 @@ public class ComandoTest {
 
 	@Test
 	public void probarComandosConectar() {
-		Paquete pa = new PaqueteConexion(Comando.CONEXION);
+		Paquete pa = new PaqueteConexion();
 		Comando com = pa.devolverComando(Comando.CONEXION);
 		com.ejecutar();
 		
@@ -20,7 +20,7 @@ public class ComandoTest {
 	
 	@Test
 	public void probarComandosMensajePrivado() {
-		Paquete pa = new PaqueteConexion(Comando.MENSAJE_PRIVADO);
+		Paquete pa = new PaqueteConexion();
 		Comando com = pa.devolverComando(Comando.MENSAJE_PRIVADO);
 		com.ejecutar();
 	}
