@@ -1,6 +1,6 @@
 package com.federico.chat.comandos;
 
-public class Conexion extends Comando {
+public class Conexion extends ComandoEscucha {
 	
 	@Override
 	public void ejecutar() {

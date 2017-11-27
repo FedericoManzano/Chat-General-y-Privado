@@ -1,6 +1,6 @@
 package com.federico.chat.comandos;
 
-public class MensajePrivado extends Comando{
+public class MensajePrivado extends ComandoEscucha {
 	
 	@Override
 	public void ejecutar() {
