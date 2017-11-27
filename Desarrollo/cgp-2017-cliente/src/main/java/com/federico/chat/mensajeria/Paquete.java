@@ -18,14 +18,14 @@ public abstract class Paquete implements Serializable{
 		this.operacion = operacion;
 	}
 	
-	public Paquete devolverPaquete(final int comando) {
-		Paquete paq = null;
+	public Comando devolverComando(final int comando) {
+		Comando com = null;
 		try {
-			paq = (Paquete) Class.forName(
+			com = (Comando) Class.forName(
 					Comando.NOMBRE_PAQUETE + "." + Comando.NOMBRE_CLASES[comando]).newInstance();
 		} catch (IllegalAccessException | ClassNotFoundException | InstantiationException e) {
 			e.printStackTrace();
 		} 
-		return paq;
+		return com;
 	}
 }
