@@ -1,10 +1,13 @@
 package com.federico.chat.comandos;
 
+import com.federico.chat.mensajeria.PaqueteConexion;
+
 public class Conexion extends ComandoEscucha {
 	
 	@Override
 	public void ejecutar() {
-		System.out.println("Comando Ejecutar");
+		PaqueteConexion paq = Comando.gson.fromJson(dameCadenaLeida(), PaqueteConexion.class);
+		System.out.println(paq.getIp());
 	}
 	
 }

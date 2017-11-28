@@ -8,16 +8,12 @@ public class ComandoTest {
 
 	@Test
 	public void probarComandosConectar() {
-		Paquete pa = new PaqueteConexion();
-		Comando com = pa.devolverComando(Comando.CONEXION);
-		com.ejecutar();
+		
 	}
 	
 	@Test
 	public void probarComandosMensajePrivado() {
-		Paquete pa = new PaqueteConexion();
-		Comando com = pa.devolverComando(Comando.MENSAJE_PRIVADO);
-		com.ejecutar();
+		
 	}
 
 }

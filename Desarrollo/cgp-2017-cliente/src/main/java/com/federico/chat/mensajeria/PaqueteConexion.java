@@ -8,9 +8,6 @@ public class PaqueteConexion extends Paquete implements Serializable{
 	private String ip;
 	
 	
-	public PaqueteConexion() {
-		super(0);
-	}
 	public PaqueteConexion(String nombreUsuario, String ip, final int operacion) {
 		super(operacion);
 		this.nombreUsuario = nombreUsuario;

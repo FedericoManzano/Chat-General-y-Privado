@@ -1,5 +1,7 @@
 package com.federico.chat.comandos;
 
+import com.google.gson.Gson;
+
 public abstract class Comando {
 	
 	
@@ -13,7 +15,7 @@ public abstract class Comando {
 	public static final int MENSAJE_PRIVADO = 1;
 	
 	private String cadenaLeida;
-	
+	public static Gson gson = new Gson();
 	
 	public abstract void ejecutar();
 	public Comando() {

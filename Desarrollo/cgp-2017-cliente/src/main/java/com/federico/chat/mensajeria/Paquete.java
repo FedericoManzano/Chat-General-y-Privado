@@ -4,12 +4,15 @@ import java.io.Serializable;
 
 import com.federico.chat.comandos.Comando;
 
-public abstract class Paquete implements Serializable{
+public class Paquete implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
 	private int operacion;
 
+	
+	public  Paquete() {
+	}
 	public Paquete(final int op) {
 		this.operacion = op;
 	}
