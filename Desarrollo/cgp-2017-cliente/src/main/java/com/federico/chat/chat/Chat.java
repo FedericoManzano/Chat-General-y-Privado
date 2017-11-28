@@ -4,12 +4,17 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.util.LinkedList;
+
+import com.federico.chat.modelos.Conectado;
 
 public class Chat {
 	private ObjectInputStream entrada;
 	private ObjectOutputStream salida;
 	private Socket socket;
 	private EscuchaMensajes escuchaMensajes;
+	public static LinkedList<Conectado> listadoConectados = new LinkedList<>();
+	
 	
 	public Chat() {
 		
