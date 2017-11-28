@@ -9,14 +9,13 @@ public abstract class Comando {
 			"MensajePrivado"
 	};
 	
-	public abstract void ejecutar();
-	
 	public static final int CONEXION = 0;
 	public static final int MENSAJE_PRIVADO = 1;
 	
-	
 	private String cadenaLeida;
 	
+	
+	public abstract void ejecutar();
 	public Comando() {
 		this.guardaCadenaLeida("");
 	}
