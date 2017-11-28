@@ -26,5 +26,5 @@ public class Conectado implements Obserbador, Serializable{
 	public void update() {
 		
 	}
-
+ 
 }

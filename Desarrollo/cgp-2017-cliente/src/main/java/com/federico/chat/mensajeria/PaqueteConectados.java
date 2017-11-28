@@ -17,7 +17,7 @@ public class PaqueteConectados extends Paquete implements Serializable{
 	public LinkedList<Conectado> getListadoConectados() {
 		return new LinkedList<>(listadoConectados);
 	}
-
+ 
 	public void setListadoConectados(LinkedList<Conectado> listadoConectados) {
 		this.listadoConectados = new LinkedList<>(listadoConectados);
 	}

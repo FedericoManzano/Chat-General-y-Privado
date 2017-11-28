@@ -3,7 +3,7 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="com.federico.chat.chat.Chat" project="cgp-2017-cliente" 
     file="/cgp-2017-cliente/src/main/java/com/federico/chat/chat/Chat.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="297" width="208" x="134" y="531"/>    
+    <position height="549" width="248" x="385" y="531"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="com.federico.chat.comandos.Comando" project="cgp-2017-cliente" 
     file="/cgp-2017-cliente/src/main/java/com/federico/chat/comandos/Comando.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="243" width="182" x="382" y="37"/>    
+    <position height="243" width="182" x="213" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -22,7 +22,7 @@
   <class id="3" language="java" name="com.federico.chat.comandos.ComandoEscucha" project="cgp-2017-cliente" 
     file="/cgp-2017-cliente/src/main/java/com/federico/chat/comandos/ComandoEscucha.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="117" width="132" x="382" y="320"/>    
+    <position height="117" width="132" x="213" y="320"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -31,7 +31,7 @@
   </class>  
   <class id="4" language="java" name="com.federico.chat.modelos.Conectado" project="cgp-2017-cliente" 
     file="/cgp-2017-cliente/src/main/java/com/federico/chat/modelos/Conectado.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="153" width="146" x="775" y="37"/>    
+    <position height="171" width="146" x="800" y="531"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -41,7 +41,7 @@
   <class id="5" language="java" name="com.federico.chat.comandos.MensajePrivado" project="cgp-2017-cliente" 
     file="/cgp-2017-cliente/src/main/java/com/federico/chat/comandos/MensajePrivado.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="99" width="132" x="554" y="531"/>    
+    <position height="99" width="132" x="213" y="531"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -50,7 +50,7 @@
   </class>  
   <class id="6" language="java" name="com.federico.chat.comandos.Conexion" project="cgp-2017-cliente" 
     file="/cgp-2017-cliente/src/main/java/com/federico/chat/comandos/Conexion.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="132" x="382" y="531"/>    
+    <position height="99" width="132" x="41" y="531"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -60,7 +60,7 @@
   <class id="7" language="java" name="com.federico.chat.mensajeria.Paquete" project="cgp-2017-cliente" 
     file="/cgp-2017-cliente/src/main/java/com/federico/chat/mensajeria/Paquete.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="189" width="180" x="961" y="37"/>    
+    <position height="189" width="180" x="684" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -70,17 +70,17 @@
   <class id="8" language="java" name="com.federico.chat.mensajeria.PaqueteConexion" project="cgp-2017-cliente" 
     file="/cgp-2017-cliente/src/main/java/com/federico/chat/mensajeria/PaqueteConexion.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="171" width="191" x="950" y="320"/>    
+    <position height="171" width="191" x="569" y="320"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="com.federico.chat.menus.RutaRecursos" project="cgp-2017-cliente" 
-    file="/cgp-2017-cliente/src/main/java/com/federico/chat/menus/RutaRecursos.java" binary="false" 
+  <class id="9" language="java" name="com.federico.chat.chat.EscuchaMensajes" project="cgp-2017-cliente" 
+    file="/cgp-2017-cliente/src/main/java/com/federico/chat/chat/EscuchaMensajes.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="99" width="117" x="225" y="37"/>    
+    <position height="135" width="144" x="385" y="320"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -90,17 +90,17 @@
   <class id="10" language="java" name="com.federico.chat.menus.MenuConexion" project="cgp-2017-cliente" 
     file="/cgp-2017-cliente/src/main/java/com/federico/chat/menus/MenuConexion.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="171" width="131" x="604" y="37"/>    
+    <position height="333" width="160" x="385" y="1120"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="com.federico.chat.chat.EscuchaMensajes" project="cgp-2017-cliente" 
-    file="/cgp-2017-cliente/src/main/java/com/federico/chat/chat/EscuchaMensajes.java" binary="false" 
+  <class id="11" language="java" name="com.federico.chat.mensajeria.PaqueteConectados" project="cgp-2017-cliente" 
+    file="/cgp-2017-cliente/src/main/java/com/federico/chat/mensajeria/PaqueteConectados.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="108" y="159"/>    
+    <position height="135" width="277" x="800" y="320"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -108,7 +108,7 @@
     </display>  
   </class>  
   <association id="12">    
-    <end type="SOURCE" refId="11" navigable="false">      
+    <end type="SOURCE" refId="9" navigable="false">      
       <attribute id="13" name="chat"/>      
       <multiplicity id="14" minimum="0" maximum="1"/>    
     </end>    
@@ -124,26 +124,46 @@
       <attribute id="17" name="escuchaMensajes"/>      
       <multiplicity id="18" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
+    <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="false" multiplicity="false"/>  
   </association>  
   <generalization id="19">    
     <end type="SOURCE" refId="6"/>    
     <end type="TARGET" refId="3"/>  
   </generalization>  
-  <association id="20">    
+  <generalization id="20">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <association id="21">    
     <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="21" name="chat"/>      
-      <multiplicity id="22" minimum="0" maximum="1"/>    
+      <attribute id="22" name="chat"/>      
+      <multiplicity id="23" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="false" multiplicity="false"/>  
+  </association>  
+  <association id="24">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="25" name="listadoConectados"/>      
+      <multiplicity id="26" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="23">    
+  <association id="27">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="28" name="menuConexion"/>      
+      <multiplicity id="29" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="30">    
     <end type="SOURCE" refId="5"/>    
     <end type="TARGET" refId="3"/>  
   </generalization>  
-  <generalization id="24">    
+  <generalization id="31">    
     <end type="SOURCE" refId="3"/>    
     <end type="TARGET" refId="2"/>  
   </generalization>  

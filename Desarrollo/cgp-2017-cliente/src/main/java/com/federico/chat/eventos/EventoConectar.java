@@ -9,6 +9,8 @@ import java.net.Socket;
 
 import com.federico.chat.chat.Chat;
 import com.federico.chat.chat.EscuchaMensajes;
+import com.federico.chat.comandos.Comando;
+import com.federico.chat.mensajeria.PaqueteConexion;
 import com.federico.chat.modelos.Usuario;
 
 public class EventoConectar implements ActionListener{
@@ -38,10 +40,15 @@ public class EventoConectar implements ActionListener{
 			chat.setUsuario(new Usuario(nombreUsuario, chat.getSocket().getInetAddress().getHostAddress()));
 			chat.setSalida(new ObjectOutputStream(chat.getSocket().getOutputStream()));
 			chat.setEntrada(new ObjectInputStream(chat.getSocket().getInputStream()));
+			PaqueteConexion paqueteEnvio = 
+					new PaqueteConexion(nombreUsuario, 
+							chat.getSocket().getInetAddress().getHostAddress(), Comando.CONEXION);
+			String cadenaObjeto = chat.getGson().toJson(paqueteEnvio);
+			chat.getSalida().writeObject(cadenaObjeto);
 			chat.setEscuchaMensajes(new EscuchaMensajes(chat));
 			chat.iniciar();
 		} catch (IOException ex) {
-			ex.printStackTrace();
+			ex.printStackTrace(); 
 		}
 	}
 

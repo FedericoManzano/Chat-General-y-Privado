@@ -9,6 +9,7 @@ import com.federico.chat.eventos.EventoConectar;
 import com.federico.chat.menus.MenuConexion;
 import com.federico.chat.modelos.Conectado;
 import com.federico.chat.modelos.Usuario;
+import com.google.gson.Gson;
 
 public class Chat {
 	private ObjectInputStream entrada;
@@ -20,7 +21,7 @@ public class Chat {
 	private String servidor;
 	private MenuConexion menuConexion;
 	private Usuario usuario;
-	
+	private Gson gson = new Gson();
 	
 	public Chat() {
 		menuConexion = new MenuConexion();
@@ -117,5 +118,14 @@ public class Chat {
 	public static void main(String [] args) {
 		Chat chat = new Chat();
 	}
-	
+
+
+	public Gson getGson() {
+		return gson;
+	}
+
+
+	public void setGson(Gson gson) {
+		this.gson = gson;
+	}
 }
