@@ -2,7 +2,6 @@ package com.federico.chat.comandos;
 
 import com.federico.chat.chat.Chat;
 import com.federico.chat.mensajeria.PaqueteConectados;
-import com.federico.chat.mensajeria.PaqueteConexion;
 import com.federico.chat.modelos.Conectado;
 
 public class Conexion extends ComandoEscucha {
