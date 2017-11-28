@@ -6,7 +6,10 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.LinkedList;
 
+import com.federico.chat.eventos.EventoConectar;
+import com.federico.chat.menus.MenuConexion;
 import com.federico.chat.modelos.Conectado;
+import com.federico.chat.modelos.Usuario;
 
 public class Chat {
 	private ObjectInputStream entrada;
@@ -14,23 +17,22 @@ public class Chat {
 	private Socket socket;
 	private EscuchaMensajes escuchaMensajes;
 	public static LinkedList<Conectado> listadoConectados = new LinkedList<>();
+	private int puerto;
+	private String servidor;
+	private MenuConexion menuConexion;
+	private Usuario usuario;
 	
 	
 	public Chat() {
-		
+		menuConexion = new MenuConexion();
+		menuConexion.setVisible(true);
+		menuConexion.getBtnConectarse().addActionListener(new EventoConectar(this));
 	}
 	
 	
 	public void iniciar() {
-		try {
-			socket = new Socket("192.168.1.34", 2000);
-			entrada = new ObjectInputStream(socket.getInputStream());
-			salida = new ObjectOutputStream(socket.getOutputStream());
-			escuchaMensajes = new EscuchaMensajes(this);
-			escuchaMensajes.start();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		escuchaMensajes.start();
+		menuConexion.conectado();
 	}
 	
 	
@@ -63,11 +65,61 @@ public class Chat {
 	public void setSocket(Socket socket) {
 		this.socket = socket;
 	}
+	
+	
+
+
+	public EscuchaMensajes getEscuchaMensajes() {
+		return escuchaMensajes;
+	}
+
+
+	public void setEscuchaMensajes(EscuchaMensajes escuchaMensajes) {
+		this.escuchaMensajes = escuchaMensajes;
+	}
+
+
+	public int getPuerto() {
+		return puerto;
+	}
+
+
+	public void setPuerto(int puerto) {
+		this.puerto = puerto;
+	}
+
+
+	public String getServidor() {
+		return servidor;
+	}
+
+
+	public void setServidor(String servidor) {
+		this.servidor = servidor;
+	}
+
+
+	public MenuConexion getMenuConexion() {
+		return menuConexion;
+	}
+
+
+	public void setMenuConexion(MenuConexion menuConexion) {
+		this.menuConexion = menuConexion;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 
 
 	public static void main(String [] args) {
 		Chat chat = new Chat();
-		chat.iniciar();
 	}
 	
 }
