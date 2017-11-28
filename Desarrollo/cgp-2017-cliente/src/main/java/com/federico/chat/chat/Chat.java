@@ -1,6 +1,5 @@
 package com.federico.chat.chat;
 
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
@@ -66,9 +65,6 @@ public class Chat {
 		this.socket = socket;
 	}
 	
-	
-
-
 	public EscuchaMensajes getEscuchaMensajes() {
 		return escuchaMensajes;
 	}

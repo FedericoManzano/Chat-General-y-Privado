@@ -18,6 +18,8 @@ public abstract class Comando {
 	public static Gson gson = new Gson();
 	
 	public abstract void ejecutar();
+	
+	
 	public Comando() {
 		this.guardaCadenaLeida("");
 	}

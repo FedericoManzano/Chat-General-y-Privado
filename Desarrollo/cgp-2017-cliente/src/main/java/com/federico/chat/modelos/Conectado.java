@@ -1,8 +1,10 @@
 package com.federico.chat.modelos;
 
-public class Conectado implements Obserbador{
+import java.io.Serializable;
 
-	
+public class Conectado implements Obserbador, Serializable{
+
+	private static final long serialVersionUID = 1L;
 	private Usuario usuario;
 	
 	
