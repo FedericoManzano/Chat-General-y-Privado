@@ -14,6 +14,11 @@ public class PaqueteConectados extends Paquete implements Serializable, Cloneabl
 		listadoConectados = new LinkedList<>();
 	}
 
+	public PaqueteConectados(int operacion) {
+		super(operacion);
+		listadoConectados = new LinkedList<>();
+	}
+	
 	public LinkedList<Conectado> getListadoConectados() {
 		return new LinkedList<>(listadoConectados);
 	}

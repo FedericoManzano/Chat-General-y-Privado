@@ -9,6 +9,7 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 import com.federico.chat.eventos.EventoConectar;
+import com.federico.chat.eventos.EventoDesconexion;
 import com.federico.chat.eventos.EventoMensajePublico;
 import com.federico.chat.menus.MenuConexion;
 import com.federico.chat.menus.MenuGeneral;
@@ -36,6 +37,7 @@ public class Chat {
 		menuConexion.getBtnConectarse().addActionListener(new EventoConectar(this));
 		menuGeneral = new MenuGeneral();
 		menuGeneral.getBtnEnviar().addActionListener(new EventoMensajePublico(this));
+		menuGeneral.addWindowListener(new EventoDesconexion(this));
 	}
 
 	public void iniciar() {

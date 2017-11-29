@@ -4,11 +4,15 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.util.LinkedList;
 
 import com.federico.chat.comandos.Comando;
 import com.federico.chat.comandos.ComandosServidor;
 import com.federico.chat.mensajeria.Paquete;
+import com.federico.chat.mensajeria.PaqueteConectados;
 import com.federico.chat.mensajeria.PaqueteConexion;
+import com.federico.chat.modelos.Conectado;
+import com.federico.chat.modelos.Usuario;
 import com.google.gson.Gson;
 
 public class EscuchaCliente extends Thread{
@@ -31,10 +35,10 @@ public class EscuchaCliente extends Thread{
 	public void run() {
 		ComandosServidor comando;
 		Paquete paquete;
-		
+		String cadenaLeida = null;
 		try {
-			String cadenaLeida = (String) entrada.readObject();
-			while(!((paquete = Comando.gson.fromJson(cadenaLeida, Paquete.class)).dameOperacion() == 4)) {
+			cadenaLeida = (String) entrada.readObject();
+			while(!((paquete = Comando.gson.fromJson(cadenaLeida, Paquete.class)).dameOperacion() == Comando.DESCONEXION)) {
 				paquete = Comando.gson.fromJson(cadenaLeida, Paquete.class);
 				comando = (ComandosServidor)paquete.devolverComando(paquete.dameOperacion());
 				comando.guardaCadenaLeida(cadenaLeida);
@@ -47,8 +51,42 @@ public class EscuchaCliente extends Thread{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		try {
+			salida.close();
+			entrada.close();
+			socket.close();
+			PaqueteConexion pa = Comando.gson.fromJson(cadenaLeida, PaqueteConexion.class);
+			for(EscuchaCliente es : Servidor.listadoConectados) {
+				if(es.getNombreUsuario().equals(pa.getNombreUsuario())) {
+					Servidor.listadoConectados.remove(es);
+				}
+			}
+			
+			PaqueteConectados paq = new PaqueteConectados(Comando.DESCONEXION);
+			paq.setListadoConectados(generarListadoConectado());
+			String objeto = Comando.gson.toJson(paq);
+			
+			for(EscuchaCliente es : Servidor.listadoConectados) {
+				es.salida.writeObject(objeto);
+			}
+			
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+		
+		
 	}
 
+	private LinkedList<Conectado> generarListadoConectado(){
+		LinkedList<Conectado> listadoAEnviar = new LinkedList<Conectado>();
+		for(EscuchaCliente cliente : Servidor.listadoConectados) {
+			listadoAEnviar.add(new Conectado(new Usuario(cliente.getNombreUsuario(), cliente.getIp())));
+		}
+		return listadoAEnviar;
+	}
+	
 	public Socket getSocket() {
 		return socket;
 	}

@@ -15,7 +15,6 @@ public class Conexion extends ComandoEscucha {
 		getChat().getMenuConexion().dispose();
 		getChat().getMenuGeneral().setVisible(true);
 		getChat().getMenuGeneral().vaciarListado();
-		System.out.println(Chat.listadoConectados.size());
 		for(Conectado con : Chat.listadoConectados) {
 			getChat().getMenuGeneral().actualizarListaConectados(con.getUsuario().getNombreUsuario());
 		}
