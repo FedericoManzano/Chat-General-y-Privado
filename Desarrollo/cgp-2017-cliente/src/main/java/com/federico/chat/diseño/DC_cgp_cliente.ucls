@@ -90,7 +90,7 @@
   <class id="10" language="java" name="com.federico.chat.menus.MenuConexion" project="cgp-2017-cliente" 
     file="/cgp-2017-cliente/src/main/java/com/federico/chat/menus/MenuConexion.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="333" width="160" x="385" y="1210"/>    
+    <position height="-1" width="-1" x="514" y="1435"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -138,10 +138,10 @@
   <association id="19">    
     <end type="SOURCE" refId="1" navigable="false">      
       <attribute id="20" name="menuConexion">        
-        <position height="0" width="0" x="0" y="0"/>      
+        <position height="0" width="0" x="49" y="59"/>      
       </attribute>      
       <multiplicity id="21" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+        <position height="0" width="0" x="49" y="59"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="10" navigable="true"/>    

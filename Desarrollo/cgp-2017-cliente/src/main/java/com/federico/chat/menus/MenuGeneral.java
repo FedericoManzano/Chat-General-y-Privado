@@ -7,6 +7,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
+
+import org.jvnet.substance.SubstanceLookAndFeel;
+
 import java.awt.Color;
 import javax.swing.BoxLayout;
 import java.awt.SystemColor;
@@ -30,7 +33,10 @@ public class MenuGeneral extends JFrame {
 	 */
 	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
 		UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
-
+		MenuGeneral.setDefaultLookAndFeelDecorated(true);
+		SubstanceLookAndFeel.setCurrentTheme("org.jvnet.substance.theme.SubstanceAquaTheme");
+		SubstanceLookAndFeel.setCurrentWatermark("org.jvnet.substance.watermark.SubstanceBinaryWatermark");
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
