@@ -70,7 +70,8 @@ public class MenuConexion extends JFrame {
 		desconectado();
 		
 		btnConectarse = new JButton("Conectar");
-		btnConectarse.setBounds(259, 152, 102, 34);
+		btnConectarse.setIcon(new ImageIcon(MenuConexion.class.getResource("/com/federico/chat/recursos/btnConectar.png")));
+		btnConectarse.setBounds(244, 145, 117, 41);
 		contentPane.add(btnConectarse);
 	}
 	
