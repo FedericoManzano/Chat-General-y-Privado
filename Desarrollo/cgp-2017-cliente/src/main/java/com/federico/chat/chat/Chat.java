@@ -5,6 +5,9 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.LinkedList;
 
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
 import com.federico.chat.eventos.EventoConectar;
 import com.federico.chat.eventos.EventoMensajePublico;
 import com.federico.chat.menus.MenuConexion;
@@ -119,6 +122,13 @@ public class Chat {
 
 
 	public static void main(String [] args) {
+		try {
+			UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
+		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException
+				| UnsupportedLookAndFeelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		Chat chat = new Chat();
 	}
 

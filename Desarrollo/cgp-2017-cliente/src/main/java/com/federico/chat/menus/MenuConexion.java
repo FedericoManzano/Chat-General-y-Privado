@@ -8,9 +8,11 @@ import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 
+import java.awt.Color;
 import java.util.Arrays;
 
 import javax.swing.ImageIcon;
+import java.awt.SystemColor;
 
 public class MenuConexion extends JFrame {
 
@@ -25,46 +27,50 @@ public class MenuConexion extends JFrame {
 	
 	public MenuConexion() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 400, 235);
+		setBounds(100, 100, 407, 250);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+		contentPane.setBackground(SystemColor.inactiveCaptionText);
+		setTitle("Conexion");
 		usuarioText = new JTextField();
-		usuarioText .setBounds(26, 40, 198, 20);
+		usuarioText .setBounds(26, 40, 198, 30);
 		contentPane.add(usuarioText );
 		usuarioText .setColumns(10);
 		
 		JLabel lblUsuario = new JLabel("Usuario");
-		lblUsuario.setBounds(26, 15, 46, 14);
+		lblUsuario.setForeground(SystemColor.controlLtHighlight);
+		lblUsuario.setBounds(26, 26, 46, 14);
 		contentPane.add(lblUsuario);
 		
 		servidorText = new JTextField();
-		servidorText.setBounds(26, 95, 198, 20);
+		servidorText.setBounds(26, 97, 198, 30);
 		contentPane.add(servidorText);
 		servidorText.setColumns(10);
 		
 		JLabel lblServidor = new JLabel("Servidor");
-		lblServidor.setBounds(26, 71, 102, 14);
+		lblServidor.setForeground(SystemColor.controlLtHighlight);
+		lblServidor.setBounds(26, 81, 102, 14);
 		contentPane.add(lblServidor);
 		
 		puertoText = new JTextField();
-		puertoText.setBounds(26, 153, 198, 20);
+		puertoText.setBounds(26, 154, 198, 30);
 		contentPane.add(puertoText);
 		puertoText.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("Puerto");
-		lblNewLabel.setBounds(26, 128, 46, 14);
+		lblNewLabel.setForeground(SystemColor.controlLtHighlight);
+		lblNewLabel.setBounds(26, 138, 46, 14);
 		contentPane.add(lblNewLabel);
 		
 		estado = new JLabel("Imagen 128 * 128");
-		estado.setBounds(234, 15, 128, 127);
+		estado.setBounds(234, 15, 127, 124);
 		contentPane.add(estado);
 		desconectado();
 		
-		btnConectarse = new JButton("Conectarse");
-		btnConectarse.setBounds(256, 152, 106, 23);
+		btnConectarse = new JButton("Conectar");
+		btnConectarse.setBounds(259, 152, 102, 34);
 		contentPane.add(btnConectarse);
 	}
 	

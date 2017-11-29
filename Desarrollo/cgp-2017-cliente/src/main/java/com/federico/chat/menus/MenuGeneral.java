@@ -71,16 +71,16 @@ public class MenuGeneral extends JFrame {
 		setLocationRelativeTo(null);
 		setResizable(false);
 		contentPane.setLayout(null);
-		contentPane.setBackground(new Color(240,240,240));
+		contentPane.setBackground(SystemColor.inactiveCaptionText);
 		JPanel panel = new JPanel();
-		panel.setBackground(SystemColor.inactiveCaptionBorder);
+		panel.setBackground(SystemColor.window);
 		panel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel.setBounds(10, 11, 248, 346);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		setTitle("Chat General - Privado");
 		JPanel panel_1 = new JPanel();
-		panel_1.setBorder(new LineBorder(new Color(153, 180, 209), 2));
+		panel_1.setBorder(new LineBorder(new Color(153, 180, 209)));
 		panel_1.setBounds(10, 36, 228, 237);
 		panel.add(panel_1);
 		panel_1.setLayout(new BoxLayout(panel_1, BoxLayout.X_AXIS));
@@ -93,7 +93,7 @@ public class MenuGeneral extends JFrame {
 		
 		btnPrivado = new JButton("Privado");
 		btnPrivado.setIcon(new ImageIcon(MenuGeneral.class.getResource("/com/federico/chat/recursos/privado.png")));
-		btnPrivado.setBounds(10, 289, 111, 47);
+		btnPrivado.setBounds(10, 289, 228, 47);
 		panel.add(btnPrivado);
 		
 		JLabel lblConectados = new JLabel("Conectados");
@@ -102,14 +102,14 @@ public class MenuGeneral extends JFrame {
 		panel.add(lblConectados);
 		
 		JPanel panel_2 = new JPanel();
-		panel_2.setBackground(SystemColor.inactiveCaptionBorder);
+		panel_2.setBackground(SystemColor.window);
 		panel_2.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel_2.setBounds(268, 11, 353, 346);
 		contentPane.add(panel_2);
 		panel_2.setLayout(null);
 		
 		JPanel panel_3 = new JPanel();
-		panel_3.setBorder(new LineBorder(new Color(153, 180, 209), 2));
+		panel_3.setBorder(new LineBorder(new Color(153, 180, 209)));
 		panel_3.setBounds(10, 35, 333, 183);
 		panel_2.add(panel_3);
 		panel_3.setLayout(new BoxLayout(panel_3, BoxLayout.X_AXIS));
@@ -121,7 +121,7 @@ public class MenuGeneral extends JFrame {
 		scrollPane_1.setViewportView(areaConversacion);
 		
 		JPanel panel_4 = new JPanel();
-		panel_4.setBorder(new LineBorder(new Color(153, 180, 209), 2));
+		panel_4.setBorder(new LineBorder(new Color(153, 180, 209)));
 		panel_4.setBounds(10, 271, 231, 64);
 		panel_2.add(panel_4);
 		panel_4.setLayout(new BoxLayout(panel_4, BoxLayout.X_AXIS));
