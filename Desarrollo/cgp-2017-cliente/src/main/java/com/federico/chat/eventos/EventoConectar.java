@@ -7,6 +7,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
+import javax.swing.JOptionPane;
+
 import com.federico.chat.chat.Chat;
 import com.federico.chat.chat.EscuchaMensajes;
 import com.federico.chat.comandos.Comando;
@@ -23,13 +25,13 @@ public class EventoConectar implements ActionListener{
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		String nombreUsuario = chat.getMenuConexion().getUsuarioText().getText();
-		String servidor = chat.getMenuConexion().getServidorText().getText();
-		int puerto = 0;
-		try {
-			puerto = Integer.parseInt(chat.getMenuConexion().getPuertoText().getText());
-		}catch(NumberFormatException ex) {
-			ex.printStackTrace();
+		String nombreUsuario = chat.getMenuConexion().dameusuario();
+		String servidor = chat.getMenuConexion().dameIp();
+		int puerto = chat.getMenuConexion().damePuerto();
+		
+		if(nombreUsuario.equals("") || servidor.equals("") || puerto == 0) {
+			JOptionPane.showMessageDialog(
+					chat.getMenuConexion(), "Revise los datod ingresados");
 			return;
 		}
 		

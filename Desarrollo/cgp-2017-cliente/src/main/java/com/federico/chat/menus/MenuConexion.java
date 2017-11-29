@@ -93,4 +93,32 @@ public class MenuConexion extends JFrame {
 		return btnConectarse;
 	}
 	
+	public String dameusuario() {
+		return usuarioText.getText().equals("") ? "" : usuarioText.getText();
+	}
+	
+	public String dameIp() {
+		String [] numeros = servidorText.getText().split(".");
+		for(String num : numeros) {
+			try {
+				System.out.println(num);
+				Integer.parseInt(num);
+			}catch(NumberFormatException ex) {
+				System.out.println("Errr");
+				return "";
+			}
+		}
+		return numeros.length == 4 ? servidorText.getText() : "";
+	}
+	
+	public int damePuerto() {
+		int puerto = 0;
+		try {
+			puerto = Integer.parseInt(puertoText.getText());
+		}catch(NumberFormatException ex) {
+			return 0;
+		}
+		return puerto > 0 ? puerto : 0;
+	}
+	
 }
