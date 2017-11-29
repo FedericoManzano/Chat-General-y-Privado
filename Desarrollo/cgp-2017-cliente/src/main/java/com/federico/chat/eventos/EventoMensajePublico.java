@@ -23,7 +23,9 @@ public class EventoMensajePublico implements ActionListener{
 		String mensaje = chat.getMenuGeneral().getAreaMensaje().getText();
 		PaqueteMensaje paqueteMensaje = new PaqueteMensaje(usuarioEmisor, usuarioReceptor, mensaje, Comando.MENSAJE_PUBLICO);
 		chat.getMenuGeneral().getAreaConversacion().append(usuarioEmisor + ": " + mensaje + "\n");
+		chat.getMenuGeneral().getAreaMensaje().setText("");
 		String objeto = chat.getGson().toJson(paqueteMensaje);
+		
 		try {
 			chat.getSalida().writeObject(objeto);
 		} catch (IOException e1) {

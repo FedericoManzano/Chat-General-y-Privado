@@ -6,6 +6,7 @@ import java.net.Socket;
 import java.util.LinkedList;
 
 import com.federico.chat.eventos.EventoConectar;
+import com.federico.chat.eventos.EventoMensajePublico;
 import com.federico.chat.menus.MenuConexion;
 import com.federico.chat.menus.MenuGeneral;
 import com.federico.chat.modelos.Conectado;
@@ -31,15 +32,13 @@ public class Chat {
 		menuConexion.setVisible(true);
 		menuConexion.getBtnConectarse().addActionListener(new EventoConectar(this));
 		menuGeneral = new MenuGeneral();
+		menuGeneral.getBtnEnviar().addActionListener(new EventoMensajePublico(this));
 	}
-	
-	
+
 	public void iniciar() {
 		escuchaMensajes.start();
 		menuConexion.conectado();
 	}
-	
-	
 	
 	public ObjectInputStream getEntrada() {
 		return entrada;

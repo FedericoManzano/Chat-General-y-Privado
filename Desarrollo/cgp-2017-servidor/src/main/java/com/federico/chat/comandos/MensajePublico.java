@@ -12,7 +12,6 @@ public class MensajePublico extends ComandosServidor{
 	public void ejecutar() {
 		PaqueteMensaje paqueteMensaje = Comando.gson.fromJson(dameCadenaLeida(), PaqueteMensaje.class);
 		String usuario = paqueteMensaje.getUsuarioEmisor();
-		
 		for(EscuchaCliente es : Servidor.listadoConectados) {
 			if(!es.getNombreUsuario().equals(usuario)) {
 				try 

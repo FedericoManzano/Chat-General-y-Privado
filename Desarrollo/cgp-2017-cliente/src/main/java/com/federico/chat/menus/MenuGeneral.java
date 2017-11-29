@@ -173,5 +173,10 @@ public class MenuGeneral extends JFrame {
 	public JTextArea getAreaConversacion() {
 		return areaConversacion;
 	}
-
+	
+	public void vaciarListado() {
+		modelo = new DefaultListModel<>();
+		listadoConectados.removeAll();
+	}
+	
 }
