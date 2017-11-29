@@ -102,13 +102,10 @@ public class MenuConexion extends JFrame {
 	
 	public String dameIp() {
 		String [] numeros = servidorText.getText().split("\\.");
-		System.out.println(Arrays.toString(numeros));
 		for(String num : numeros) {
 			try {
-				System.out.println(num);
 				Integer.parseInt(num);
 			}catch(NumberFormatException ex) {
-				System.out.println("Errr");
 				return "";
 			}
 		}
