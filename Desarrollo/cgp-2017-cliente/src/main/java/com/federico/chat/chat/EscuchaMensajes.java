@@ -26,6 +26,7 @@ public class EscuchaMensajes extends Thread{
 			String cadenaLeida;
 			try {
 				cadenaLeida = (String) chat.getEntrada().readObject();
+				System.out.println(cadenaLeida);
 				paquete = gson.fromJson(cadenaLeida, Paquete.class);
 				comando = (ComandoEscucha) paquete.devolverComando(paquete.dameOperacion());
 				comando.guardaCadenaLeida(cadenaLeida);
@@ -34,7 +35,7 @@ public class EscuchaMensajes extends Thread{
 			} catch (ClassNotFoundException | IOException e) {
 				e.printStackTrace();
 			}
-			
+			 
 		}
 		
 	}

@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import com.federico.chat.comandos.Comando;
 
-public class Paquete implements Serializable{
+public class Paquete implements Serializable, Cloneable{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -35,5 +35,16 @@ public class Paquete implements Serializable{
 			e.printStackTrace();
 		} 
 		return com;
+	}
+	
+	@Override
+	public Object clone() {
+		Object obj = null;
+		try {
+			obj = super.clone();
+		} catch (CloneNotSupportedException ex) {
+			ex.printStackTrace();
+		}
+		return obj;
 	}
 }

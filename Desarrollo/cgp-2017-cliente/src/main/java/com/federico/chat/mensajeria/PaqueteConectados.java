@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 import com.federico.chat.modelos.Conectado;
 
-public class PaqueteConectados extends Paquete implements Serializable{
+public class PaqueteConectados extends Paquete implements Serializable, Cloneable{
 
 	private static final long serialVersionUID = 1L;
 	private LinkedList<Conectado> listadoConectados;

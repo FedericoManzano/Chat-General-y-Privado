@@ -18,8 +18,9 @@ import com.google.gson.Gson;
 public class Servidor extends Thread{
 	private ServerSocket servidor;
 	private Gson gson = new Gson();
-	public static LinkedList<ClientesConectados> listadoConectados = 
-			new LinkedList<ClientesConectados>();
+	public static LinkedList<EscuchaCliente> listadoConectados = 
+			new LinkedList<EscuchaCliente>();
+	
 	public void run() {
 		try {
 			servidor = new ServerSocket(2000);
@@ -31,33 +32,14 @@ public class Servidor extends Thread{
 				Socket soc = servidor.accept();
 				ObjectOutputStream salida = new ObjectOutputStream(soc.getOutputStream());
 				ObjectInputStream entrada = new ObjectInputStream(soc.getInputStream());
-				String cadenaLeida = (String) entrada.readObject();
-				PaqueteConexion paquete = gson.fromJson(cadenaLeida, PaqueteConexion.class);
-				String ip = paquete.getIp();
-				String usuario = paquete.getNombreUsuario();
-				ClientesConectados clienteConectados = 
-						new ClientesConectados(soc, salida, entrada, ip, usuario);
+				EscuchaCliente clienteConectados = new EscuchaCliente(soc, salida, entrada, "", "");
 				listadoConectados.add(clienteConectados);
-				PaqueteConectados paqueteConectados = new PaqueteConectados();
-				paqueteConectados.setListadoConectados(generarListadoConectado());
-				String cadenaEnviar = gson.toJson(paqueteConectados);
-				salida.writeObject(cadenaEnviar);
+				clienteConectados.start();
 			} catch (IOException e) {
 				e.printStackTrace();
-			} catch (ClassNotFoundException e) {
-				e.printStackTrace();
-			}
+			} 
 		}
 		
-	}
-	
-	private LinkedList<Conectado> generarListadoConectado(){
-		LinkedList<Conectado> listadoAEnviar = new LinkedList<Conectado>();
-		for(ClientesConectados cliente:listadoConectados) {
-			listadoAEnviar.add(new Conectado(new Usuario(cliente.getNombreUsuario(), cliente.getIp())));
-		}
-		
-		return listadoAEnviar;
 	}
 	
 	public static void main(String [] args) {

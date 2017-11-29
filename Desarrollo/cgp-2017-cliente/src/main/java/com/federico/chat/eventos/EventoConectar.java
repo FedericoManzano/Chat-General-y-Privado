@@ -40,11 +40,12 @@ public class EventoConectar implements ActionListener{
 			chat.setUsuario(new Usuario(nombreUsuario, chat.getSocket().getInetAddress().getHostAddress()));
 			chat.setSalida(new ObjectOutputStream(chat.getSocket().getOutputStream()));
 			chat.setEntrada(new ObjectInputStream(chat.getSocket().getInputStream()));
+			String ip = chat.getSocket().getInetAddress().getHostAddress();
 			PaqueteConexion paqueteEnvio = 
-					new PaqueteConexion(nombreUsuario, 
-							chat.getSocket().getInetAddress().getHostAddress(), Comando.CONEXION);
+					new PaqueteConexion(nombreUsuario, ip, Comando.CONEXION);
 			String cadenaObjeto = chat.getGson().toJson(paqueteEnvio);
-			chat.getSalida().writeObject(cadenaObjeto);
+			System.out.println(cadenaObjeto);
+			chat.getSalida().writeUnshared(cadenaObjeto);
 			chat.setEscuchaMensajes(new EscuchaMensajes(chat));
 			chat.iniciar();
 		} catch (IOException ex) {
