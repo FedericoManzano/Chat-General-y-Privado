@@ -10431,3 +10431,6 @@ Stack Trace
 	at java.lang.Thread.sleep(Native Method)
 	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader$CancelHandler.run(FileReader.java:151)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.ui.monitoring 4 0 2017-11-29 05:33:37.937
+!MESSAGE UI freeze of 1,1s at 05:33:36.826
