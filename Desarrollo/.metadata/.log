@@ -10568,3 +10568,6 @@ Stack Trace
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
+
+!ENTRY org.eclipse.ui.monitoring 4 0 2017-11-29 07:15:51.607
+!MESSAGE UI freeze of 1,2s at 07:15:50.367
