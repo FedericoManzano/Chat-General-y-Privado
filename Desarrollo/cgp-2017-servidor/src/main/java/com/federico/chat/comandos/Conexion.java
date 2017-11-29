@@ -23,7 +23,10 @@ public class Conexion extends ComandosServidor{
 		String cadenaEnviar = gson.toJson(paqueteConectados);
 		try 
 		{
-			getEscuchaCliente().getSalida().writeObject(cadenaEnviar);
+			for(EscuchaCliente es : Servidor.listadoConectados) {
+				es.getSalida().writeObject(cadenaEnviar);
+			}
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
