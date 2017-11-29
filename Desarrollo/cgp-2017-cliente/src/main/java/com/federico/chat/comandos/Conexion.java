@@ -10,9 +10,12 @@ public class Conexion extends ComandoEscucha {
 	public void ejecutar() {
 		PaqueteConectados paq = Comando.gson.fromJson(dameCadenaLeida(), PaqueteConectados.class);
 		Chat.listadoConectados = paq.getListadoConectados();
+		getChat().getMenuConexion().dispose();
+		getChat().getMenuGeneral().setVisible(true);
 		for(Conectado con : Chat.listadoConectados) {
-			System.out.println(con.getUsuario().getNombreUsuario() + " " + con.getUsuario().getIp());
+			getChat().getMenuGeneral().actualizarListaConectados(con.getUsuario().getNombreUsuario());
 		}
+		
 	}
 	
 }

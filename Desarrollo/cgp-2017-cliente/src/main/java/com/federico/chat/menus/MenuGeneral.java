@@ -12,6 +12,8 @@ import org.jvnet.substance.SubstanceLookAndFeel;
 
 import java.awt.Color;
 import javax.swing.BoxLayout;
+import javax.swing.DefaultListModel;
+
 import java.awt.SystemColor;
 import javax.swing.JScrollPane;
 import javax.swing.JList;
@@ -25,7 +27,14 @@ import javax.swing.ImageIcon;
 public class MenuGeneral extends JFrame {
 
 	private JPanel contentPane;
-
+	private JButton btnEnviar;
+	private JButton btnPrivado;
+	private JList<String> listadoConectados;
+	private JTextArea areaMensaje;
+	private JTextArea areaConversacion;
+	private DefaultListModel<String> modelo = new DefaultListModel<>();
+	
+	
 	/**
 	 * Launch the application.
 	 * @throws UnsupportedLookAndFeelException 
@@ -79,10 +88,10 @@ public class MenuGeneral extends JFrame {
 		JScrollPane scrollPane = new JScrollPane();
 		panel_1.add(scrollPane);
 		
-		JList list = new JList();
-		scrollPane.setViewportView(list);
+		listadoConectados = new JList<String>();
+		scrollPane.setViewportView(listadoConectados);
 		
-		JButton btnPrivado = new JButton("Privado");
+		btnPrivado = new JButton("Privado");
 		btnPrivado.setIcon(new ImageIcon(MenuGeneral.class.getResource("/com/federico/chat/recursos/privado.png")));
 		btnPrivado.setBounds(10, 289, 111, 47);
 		panel.add(btnPrivado);
@@ -108,8 +117,8 @@ public class MenuGeneral extends JFrame {
 		JScrollPane scrollPane_1 = new JScrollPane();
 		panel_3.add(scrollPane_1);
 		
-		JTextArea textArea = new JTextArea();
-		scrollPane_1.setViewportView(textArea);
+		areaConversacion = new JTextArea();
+		scrollPane_1.setViewportView(areaConversacion);
 		
 		JPanel panel_4 = new JPanel();
 		panel_4.setBorder(new LineBorder(new Color(153, 180, 209), 2));
@@ -120,8 +129,8 @@ public class MenuGeneral extends JFrame {
 		JScrollPane scrollPane_2 = new JScrollPane();
 		panel_4.add(scrollPane_2);
 		
-		JTextArea textArea_1 = new JTextArea();
-		scrollPane_2.setViewportView(textArea_1);
+		areaMensaje = new JTextArea();
+		scrollPane_2.setViewportView(areaMensaje);
 		
 		JLabel lblConversacion = new JLabel("Conversacion");
 		lblConversacion.setIcon(new ImageIcon(MenuGeneral.class.getResource("/com/federico/chat/recursos/conversacion.png")));
@@ -133,9 +142,36 @@ public class MenuGeneral extends JFrame {
 		lblNewLabel.setBounds(10, 234, 107, 26);
 		panel_2.add(lblNewLabel);
 		
-		JButton btnNewButton = new JButton("");
-		btnNewButton.setIcon(new ImageIcon(MenuGeneral.class.getResource("/com/federico/chat/recursos/enviar.png")));
-		btnNewButton.setBounds(254, 271, 89, 64);
-		panel_2.add(btnNewButton);
+		btnEnviar = new JButton("");
+		btnEnviar.setIcon(new ImageIcon(MenuGeneral.class.getResource("/com/federico/chat/recursos/enviar.png")));
+		btnEnviar.setBounds(254, 271, 89, 64);
+		panel_2.add(btnEnviar);
 	}
+	
+	
+	public void actualizarListaConectados(String elemento) {
+		modelo.addElement(elemento);
+		listadoConectados.setModel(modelo);
+	}
+
+	public JButton getBtnEnviar() {
+		return btnEnviar;
+	}
+
+	public JButton getBtnPrivado() {
+		return btnPrivado;
+	}
+
+	public JList<String> getListadoConectados() {
+		return listadoConectados;
+	}
+
+	public JTextArea getAreaMensaje() {
+		return areaMensaje;
+	}
+
+	public JTextArea getAreaConversacion() {
+		return areaConversacion;
+	}
+
 }

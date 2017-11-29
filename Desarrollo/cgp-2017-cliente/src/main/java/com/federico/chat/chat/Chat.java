@@ -7,6 +7,7 @@ import java.util.LinkedList;
 
 import com.federico.chat.eventos.EventoConectar;
 import com.federico.chat.menus.MenuConexion;
+import com.federico.chat.menus.MenuGeneral;
 import com.federico.chat.modelos.Conectado;
 import com.federico.chat.modelos.Usuario;
 import com.google.gson.Gson;
@@ -22,11 +23,14 @@ public class Chat {
 	private MenuConexion menuConexion;
 	private Usuario usuario;
 	private Gson gson = new Gson();
+	private MenuGeneral menuGeneral;
+	
 	
 	public Chat() {
 		menuConexion = new MenuConexion();
 		menuConexion.setVisible(true);
 		menuConexion.getBtnConectarse().addActionListener(new EventoConectar(this));
+		menuGeneral = new MenuGeneral();
 	}
 	
 	
@@ -127,5 +131,10 @@ public class Chat {
 
 	public void setGson(Gson gson) {
 		this.gson = gson;
+	}
+
+
+	public MenuGeneral getMenuGeneral() {
+		return menuGeneral;
 	}
 }

@@ -7,6 +7,9 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+
+import java.util.Arrays;
+
 import javax.swing.ImageIcon;
 
 public class MenuConexion extends JFrame {
@@ -98,7 +101,8 @@ public class MenuConexion extends JFrame {
 	}
 	
 	public String dameIp() {
-		String [] numeros = servidorText.getText().split(".");
+		String [] numeros = servidorText.getText().split("\\.");
+		System.out.println(Arrays.toString(numeros));
 		for(String num : numeros) {
 			try {
 				System.out.println(num);
