@@ -18,13 +18,21 @@ public class Conexion extends ComandosServidor{
 		PaqueteConexion pa = Comando.gson.fromJson(dameCadenaLeida(), PaqueteConexion.class);
 		getEscuchaCliente().setNombreUsuario(pa.getNombreUsuario());
 		getEscuchaCliente().setIp(pa.getIp());
+		pa.guardaOperacion(Comando.AGREGAR_USUARIO);
+		String paqueteEnviar = Comando.gson.toJson(pa);
+		
 		PaqueteConectados paqueteConectados = new PaqueteConectados();
 		paqueteConectados.setListadoConectados(generarListadoConectado());
+		paqueteConectados.guardaOperacion(Comando.CONEXION);
 		String cadenaEnviar = gson.toJson(paqueteConectados);
+		
 		try 
 		{
 			for(EscuchaCliente es : Servidor.listadoConectados) {
-				es.getSalida().writeObject(cadenaEnviar);
+				if(!es.getNombreUsuario().equals(pa.getNombreUsuario()))
+					es.getSalida().writeObject(paqueteEnviar);
+				else
+					es.getSalida().writeObject(cadenaEnviar);
 			}
 			
 		} catch (IOException e) {

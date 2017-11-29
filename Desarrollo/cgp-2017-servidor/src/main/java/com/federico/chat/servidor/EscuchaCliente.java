@@ -63,12 +63,11 @@ public class EscuchaCliente extends Thread{
 				}
 			}
 			
-			PaqueteConectados paq = new PaqueteConectados(Comando.DESCONEXION);
-			paq.setListadoConectados(generarListadoConectado());
-			String objeto = Comando.gson.toJson(paq);
+			pa.guardaOperacion(Comando.BORRAR_USUARIO);
+			String eliminado = Comando.gson.toJson(pa);
 			
 			for(EscuchaCliente es : Servidor.listadoConectados) {
-				es.salida.writeObject(objeto);
+				es.salida.writeObject(eliminado);
 			}
 			
 		} catch (IOException e) {
