@@ -9,14 +9,16 @@ public abstract class Comando {
 	public static final String [] NOMBRE_CLASES = {
 			"Conexion",
 			"MensajePublico",
-			"",
-			"Conexion"
+			"ActualizarConectados",
+			"Conexion",
+			"ActualizarConectados"
 	};
 	
 	public static final int CONEXION = 0;
 	public static final int MENSAJE_PUBLICO = 1;
+	public static final int AGREGAR_USUARIO= 2;
 	public static final int DESCONEXION = 3;
-	
+	public static final int BORRAR_USUARIO = 4;
 	
 	private String cadenaLeida;
 	public static Gson gson = new Gson();
