@@ -31,7 +31,7 @@ public class EventoConectar implements ActionListener{
 		
 		if(nombreUsuario.equals("") || servidor.equals("") || puerto == 0) {
 			JOptionPane.showMessageDialog(
-					chat.getMenuConexion(), "Revise los datod ingresados");
+					chat.getMenuConexion(), "Revise los datos ingresados");
 			return;
 		}
 		
@@ -46,7 +46,6 @@ public class EventoConectar implements ActionListener{
 			PaqueteConexion paqueteEnvio = 
 					new PaqueteConexion(nombreUsuario, ip, Comando.CONEXION);
 			String cadenaObjeto = chat.getGson().toJson(paqueteEnvio);
-			System.out.println(cadenaObjeto);
 			chat.getSalida().writeUnshared(cadenaObjeto);
 			chat.setEscuchaMensajes(new EscuchaMensajes(chat));
 			chat.iniciar();
