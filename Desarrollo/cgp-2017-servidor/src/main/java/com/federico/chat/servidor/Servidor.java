@@ -27,6 +27,8 @@ public class Servidor extends Thread implements ActionListener{
 			new LinkedList<EscuchaCliente>();
 	public static MenuServidor menuServidor = new MenuServidor();
 	private int puerto;
+	public static int cantidadRepetidos = 1; 
+	
 	public Servidor() {
 		menuServidor.getBtnConectar().addActionListener(this);
 	}
