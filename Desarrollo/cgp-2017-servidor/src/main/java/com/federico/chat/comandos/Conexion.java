@@ -16,6 +16,7 @@ public class Conexion extends ComandosServidor{
 	public synchronized void ejecutar() {
 
 		PaqueteConexion pa = Comando.gson.fromJson(dameCadenaLeida(), PaqueteConexion.class);
+		estaRepetido(pa);
 		getEscuchaCliente().setNombreUsuario(pa.getNombreUsuario());
 		getEscuchaCliente().setIp(pa.getIp());
 		
@@ -33,8 +34,13 @@ public class Conexion extends ComandosServidor{
 			for(EscuchaCliente es : Servidor.listadoConectados) {
 				if(!es.getNombreUsuario().equals(pa.getNombreUsuario()))
 					es.getSalida().writeObject(paqueteEnviar);
-				else
+				else {
+					pa.guardaOperacion(Comando.ACTUALIZAR_USUARIO);
+					String objetoUsuario = Comando.gson.toJson(pa);
+					es.getSalida().writeObject(objetoUsuario);
 					es.getSalida().writeObject(cadenaEnviar);
+				}
+					
 			}
 			
 		} catch (IOException e) {
@@ -49,4 +55,14 @@ public class Conexion extends ComandosServidor{
 		}
 		return listadoAEnviar;
 	}
+	
+	private void estaRepetido(PaqueteConexion paqueteConexion) {
+		for(EscuchaCliente es : Servidor.listadoConectados) {
+			if(paqueteConexion.getNombreUsuario().equals(es.getNombreUsuario())) {
+				paqueteConexion.setNombreUsuario(paqueteConexion.getNombreUsuario() + " - Bis");
+			}
+		}
+	}
+	
+	
 }

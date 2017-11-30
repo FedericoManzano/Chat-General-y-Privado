@@ -13,6 +13,7 @@ public class Conexion extends ComandoEscucha {
 	@Override
 	public void ejecutar() {
 		PaqueteConectados paq = Comando.gson.fromJson(dameCadenaLeida(), PaqueteConectados.class);
+	
 		cargarListaConectados(paq.getListadoConectados());
 		getChat().getMenuConexion().dispose();
 		getChat().getMenuGeneral().setVisible(true);

@@ -12,7 +12,8 @@ public abstract class Comando {
 			"ActualizarConectados",
 			"Conexion",
 			"ActualizarConectados",
-			"MensajePrivado"
+			"MensajePrivado",
+			"ActualizarUsuario"
 	};
 	
 	public static final int CONEXION = 0;
@@ -21,6 +22,8 @@ public abstract class Comando {
 	public static final int DESCONEXION = 3;
 	public static final int BORRAR_USUARIO = 4;
 	public static final int MENSAJE_PRIVADO = 5;
+	public static final int ACTUALIZAR_USUARIO= 6;
+	
 	
 	private String cadenaLeida;
 	public static Gson gson = new Gson();

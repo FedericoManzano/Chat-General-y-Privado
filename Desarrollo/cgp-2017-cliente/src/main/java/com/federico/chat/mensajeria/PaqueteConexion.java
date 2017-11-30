@@ -25,6 +25,11 @@ public class PaqueteConexion extends Paquete implements Serializable, Cloneable{
 		return ip;
 	}
 	
+	
+	public void setNombreUsuario(String nombreUsuario) {
+		this.nombreUsuario = nombreUsuario;
+	}
+
 	@Override
 	public Object clone() {
 		Object obj = null;

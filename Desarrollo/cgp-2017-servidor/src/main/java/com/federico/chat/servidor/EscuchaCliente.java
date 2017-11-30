@@ -56,6 +56,8 @@ public class EscuchaCliente extends Thread{
 			salida.close();
 			entrada.close();
 			socket.close();
+			
+			
 			PaqueteConexion pa = Comando.gson.fromJson(cadenaLeida, PaqueteConexion.class);
 			for(EscuchaCliente es : Servidor.listadoConectados) {
 				if(es.getNombreUsuario().equals(pa.getNombreUsuario())) {
@@ -72,7 +74,6 @@ public class EscuchaCliente extends Thread{
 			}
 			
 		} catch (IOException e) {
-
 			e.printStackTrace();
 		}
 		
