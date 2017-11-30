@@ -2,6 +2,8 @@ package com.federico.chat.eventos;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -15,16 +17,26 @@ import com.federico.chat.comandos.Comando;
 import com.federico.chat.mensajeria.PaqueteConexion;
 import com.federico.chat.modelos.Usuario;
 
-public class EventoConectar implements ActionListener{
+public class EventoConectar extends KeyAdapter implements ActionListener{
 
 	private Chat chat;
 	public EventoConectar(Chat chat) {
 		this.chat = chat;
 	}
-	
-	
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		conectar();
+	}
+	
+	@Override
+	public void keyPressed(KeyEvent e) {
+		if(e.getKeyChar() == KeyEvent.VK_ENTER) {
+			conectar();
+		}
+	}
+
+	private void conectar() {
 		String nombreUsuario = chat.getMenuConexion().dameusuario();
 		String servidor = chat.getMenuConexion().dameIp();
 		int puerto = chat.getMenuConexion().damePuerto();

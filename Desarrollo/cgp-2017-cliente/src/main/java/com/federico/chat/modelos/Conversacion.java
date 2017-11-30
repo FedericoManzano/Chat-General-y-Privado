@@ -5,7 +5,7 @@ import com.federico.chat.eventos.EventoMensajePrivado;
 import com.federico.chat.mensajeria.PaqueteMensaje;
 import com.federico.chat.menus.MenuPrivado;
 
-public class Conversacion implements Observador<MenuPrivado, PaqueteMensaje>{
+public class Conversacion implements Observador<PaqueteMensaje>{
 	
 	private Conectado conectado;
 	private MenuPrivado menuPrivado;

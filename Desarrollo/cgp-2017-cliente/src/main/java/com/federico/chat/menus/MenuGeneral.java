@@ -44,8 +44,8 @@ public class MenuGeneral extends JFrame {
 	 */
 	public static void main(String[] args) throws ClassNotFoundException,
 			InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
-	UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
-		MenuGeneral.setDefaultLookAndFeelDecorated(true);
+		UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
+		
 		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -70,9 +70,11 @@ public class MenuGeneral extends JFrame {
 		setContentPane(contentPane);
 		setLocationRelativeTo(null);
 		setResizable(false);
+	
 		contentPane.setLayout(null);
 		contentPane.setBackground(SystemColor.inactiveCaptionText);
 		JPanel panel = new JPanel();
+		
 		panel.setBackground(SystemColor.window);
 		panel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel.setBounds(10, 11, 248, 346);

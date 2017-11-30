@@ -42,10 +42,18 @@ public class Chat implements Observable<Conversacion ,PaqueteMensaje>{
 		menuConexion.getBtnConectarse().addActionListener(new EventoConectar(this));
 		menuGeneral = new MenuGeneral();
 		menuGeneral.getBtnEnviar().addActionListener(new EventoMensajePublico(this));
+		menuConexion.getPuertoText().addKeyListener(new EventoConectar(this));
+		menuConexion.getUsuarioText().addKeyListener(new EventoConectar(this));
 		menuGeneral.addWindowListener(new EventoDesconexion(this));
 		menuGeneral.getBtnPrivado().addActionListener(new EventoAbrirVentana(this));
+		cargarValoresDefecto();
 	}
 
+	private void cargarValoresDefecto() {
+		menuConexion.getServidorText().setText("localhost");
+		menuConexion.getPuertoText().setText("2000");
+	}
+	
 	public void iniciar() {
 		escuchaMensajes.start();
 		menuConexion.conectado();

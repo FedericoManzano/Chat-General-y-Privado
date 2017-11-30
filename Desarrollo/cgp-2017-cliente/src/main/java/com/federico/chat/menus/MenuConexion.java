@@ -109,6 +109,8 @@ public class MenuConexion extends JFrame {
 	
 	public String dameIp() {
 		String [] numeros = servidorText.getText().split("\\.");
+		if(servidorText.getText().equals("localhost"))
+			return "localhost";
 		for(String num : numeros) {
 			try {
 				Integer.parseInt(num);
