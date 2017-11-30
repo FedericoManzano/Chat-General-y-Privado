@@ -5,6 +5,7 @@ import com.federico.chat.mensajeria.PaqueteConexion;
 import com.federico.chat.menus.MenuPrivado;
 import com.federico.chat.modelos.Conectado;
 import com.federico.chat.modelos.Conversacion;
+import com.federico.chat.modelos.Observador;
 import com.federico.chat.modelos.Usuario;
 
 public class ActualizarConectados extends ComandoEscucha {
@@ -13,7 +14,7 @@ public class ActualizarConectados extends ComandoEscucha {
 	public void ejecutar() {
 		PaqueteConexion paqueteConexion = Comando.gson.fromJson(dameCadenaLeida(), PaqueteConexion.class);
 		Conectado con = new Conectado(new Usuario(paqueteConexion.getNombreUsuario(), paqueteConexion.getIp()));
-		Conversacion conve = new Conversacion(con, new MenuPrivado(), getChat().getUsuario().getNombreUsuario());
+		Conversacion conve = new Conversacion(con, new MenuPrivado(), getChat().getUsuario().getNombreUsuario(), getChat());
 		if(paqueteConexion.dameOperacion() == Comando.AGREGAR_USUARIO) {
 			Chat.listadoConectados.add(conve);
 		}else {

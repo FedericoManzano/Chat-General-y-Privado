@@ -1,20 +1,24 @@
 package com.federico.chat.modelos;
 
+import com.federico.chat.chat.Chat;
+import com.federico.chat.eventos.EventoMensajePrivado;
 import com.federico.chat.menus.MenuPrivado;
 
-public class Conversacion implements Obserbador{
+public class Conversacion implements Observador{
 	
 	private Conectado conectado;
 	private MenuPrivado menuPrivado;
 	private String usuarioExterno;
 	private String usuarioInterno;
-	
-	public Conversacion(Conectado conectado, MenuPrivado menuPrivado, String usuarioInterno) {
+	private Chat chat;
+	public Conversacion(Conectado conectado, MenuPrivado menuPrivado, String usuarioInterno, Chat chat) {
 		this.conectado = conectado;
 		this.menuPrivado = menuPrivado;
 		this.usuarioExterno = conectado.getUsuario().getNombreUsuario();
 		this.usuarioInterno = usuarioInterno;
+		this.chat = chat;
 		menuPrivado.setUsuario(this.usuarioExterno);
+		menuPrivado.getBtnEnviar().addActionListener(new EventoMensajePrivado(chat, this));
 	}
 	
 	

@@ -12,14 +12,17 @@ import com.federico.chat.eventos.EventoAbrirVentana;
 import com.federico.chat.eventos.EventoConectar;
 import com.federico.chat.eventos.EventoDesconexion;
 import com.federico.chat.eventos.EventoMensajePublico;
+import com.federico.chat.mensajeria.PaqueteMensaje;
 import com.federico.chat.menus.MenuConexion;
 import com.federico.chat.menus.MenuGeneral;
 import com.federico.chat.modelos.Conectado;
 import com.federico.chat.modelos.Conversacion;
+import com.federico.chat.modelos.Observable;
+import com.federico.chat.modelos.Observador;
 import com.federico.chat.modelos.Usuario;
 import com.google.gson.Gson;
 
-public class Chat {
+public class Chat implements Observable<PaqueteMensaje>{
 	private ObjectInputStream entrada;
 	private ObjectOutputStream salida;
 	private Socket socket;
@@ -131,7 +134,6 @@ public class Chat {
 			UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException
 				| UnsupportedLookAndFeelException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		Chat chat = new Chat();
@@ -150,5 +152,10 @@ public class Chat {
 
 	public MenuGeneral getMenuGeneral() {
 		return menuGeneral;
+	}
+
+	@Override
+	public void notificar(Observador obs, PaqueteMensaje obj) {
+		
 	}
 }

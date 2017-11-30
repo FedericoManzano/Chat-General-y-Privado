@@ -25,7 +25,7 @@ public class Conexion extends ComandoEscucha {
 	private void cargarListaConectados(LinkedList<Conectado> listado) {
 		for(Conectado con : listado) {
 			Chat.listadoConectados.add(
-					new Conversacion(con, new MenuPrivado(), getChat().getUsuario().getNombreUsuario()));
+					new Conversacion(con, new MenuPrivado(), getChat().getUsuario().getNombreUsuario(), getChat()));
 		}
 	}
 	
