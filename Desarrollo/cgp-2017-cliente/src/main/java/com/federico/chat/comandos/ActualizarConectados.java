@@ -17,6 +17,10 @@ public class ActualizarConectados extends ComandoEscucha {
 		if(paqueteConexion.dameOperacion() == Comando.AGREGAR_USUARIO) {
 			Chat.listadoConectados.add(conve);
 		}else {
+			int indice = Chat.listadoConectados.indexOf(conve);
+			if(indice != -1) {
+				Chat.listadoConectados.get(indice).getMenuPrivado().cambiarEstadoConexion();
+			}
 			Chat.listadoConectados.remove(conve);
 		}
 		

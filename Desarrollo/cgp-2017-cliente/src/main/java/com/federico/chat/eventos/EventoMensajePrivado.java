@@ -29,6 +29,10 @@ public class EventoMensajePrivado implements ActionListener{
 			JOptionPane.showMessageDialog(conversacion.getMenuPrivado(), "Campo del mensaje esta vacio");
 			return;
 		}
+		if(conversacion.getMenuPrivado().dameEstado().equals("Offline")) {
+			JOptionPane.showMessageDialog(conversacion.getMenuPrivado(), "Usuario Desconectado");
+			return;
+		}
 		conversacion.getMenuPrivado().getAreaMensaje().setText("");
 		conversacion.getMenuPrivado().getAreaConversacion().append(emisor + ": " + mensaje + "\n");
 		PaqueteMensaje paq = new PaqueteMensaje(emisor, receptor, mensaje, Comando.MENSAJE_PRIVADO);

@@ -18,6 +18,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
+import java.awt.Font;
 
 public class MenuPrivado extends JFrame implements Serializable{
 
@@ -28,7 +29,8 @@ public class MenuPrivado extends JFrame implements Serializable{
 	private JTextArea areaMensaje;
 	private JTextArea areaConversacion;
 	private JLabel lblUsuario;
-
+	private JLabel lblConexion;
+	
 	public MenuPrivado() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 464, 402);
@@ -72,6 +74,13 @@ public class MenuPrivado extends JFrame implements Serializable{
 		areaConversacion.setEditable(false);
 		scrollPane.setViewportView(areaConversacion );
 		
+		lblConexion = new JLabel("Online");
+		lblConexion.setFont(new Font("Traditional Arabic", Font.BOLD, 22));
+		lblConexion.setForeground(new Color(32, 178, 170));
+		lblConexion.setIcon(new ImageIcon(MenuPrivado.class.getResource("/com/federico/chat/recursos/usuarioConectado.png")));
+		lblConexion.setBounds(288, 14, 110, 23);
+		panel_1.add(lblConexion);
+		
 		JPanel panel_3 = new JPanel();
 		panel_3.setBackground(SystemColor.inactiveCaptionBorder);
 		panel_3.setBounds(10, 258, 411, 83);
@@ -96,10 +105,21 @@ public class MenuPrivado extends JFrame implements Serializable{
 		panel_3.add(btnEnviar);
 	}
 
+	
+	public void cambiarEstadoConexion() {
+		lblConexion.setForeground(new Color(187, 33, 0));
+		lblConexion.setText("Offline");
+		lblConexion.setIcon(new ImageIcon(MenuPrivado.class.getResource("/com/federico/chat/recursos/usuarioDesconectado.png")));
+	}
+	
 	public JButton getBtnEnviar() {
 		return btnEnviar;
 	}
 
+	public String dameEstado() {
+		return lblConexion.getText();
+	}
+	
 	public JTextArea getAreaMensaje() {
 		return areaMensaje;
 	}
@@ -115,6 +135,4 @@ public class MenuPrivado extends JFrame implements Serializable{
 	public void setUsuario(String usuario) {
 		lblUsuario.setText(usuario);
 	}
-	
-	
 }

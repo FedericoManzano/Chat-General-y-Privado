@@ -20,21 +20,7 @@ public class MenuServidor extends JFrame {
 	private JTextArea areaEstado;
 	private JButton btnConectar;
 	
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MenuServidor frame = new MenuServidor();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	
 
 	/**
 	 * Create the frame.

@@ -60,7 +60,7 @@ public class Servidor extends Thread implements ActionListener{
 	}
 	
 	public static void main(String [] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
-		UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
+		javax.swing.UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
 		Servidor se = new Servidor();
 		se.iniciar();
 	}
