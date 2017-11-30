@@ -19,6 +19,7 @@ public class Conexion extends ComandosServidor{
 		getEscuchaCliente().setNombreUsuario(pa.getNombreUsuario());
 		getEscuchaCliente().setIp(pa.getIp());
 		pa.guardaOperacion(Comando.AGREGAR_USUARIO);
+		Servidor.menuServidor.mensaje(pa.getNombreUsuario() + " Conectado al servidor ...");
 		String paqueteEnviar = Comando.gson.toJson(pa);
 		
 		PaqueteConectados paqueteConectados = new PaqueteConectados();

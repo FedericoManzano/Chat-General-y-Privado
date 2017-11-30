@@ -33,13 +33,13 @@ public class Servidor extends Thread implements ActionListener{
 	
 	public void run() {
 		try {
-			servidor = new ServerSocket(2000);
+			servidor = new ServerSocket(puerto);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		menuServidor.mensaje("Esperando conexiones ...");
 		while(true) {
 			try {
-				menuServidor.mensaje("Esperando conexiones ...");
 				Socket soc = servidor.accept();
 				ObjectOutputStream salida = new ObjectOutputStream(soc.getOutputStream());
 				ObjectInputStream entrada = new ObjectInputStream(soc.getInputStream());
