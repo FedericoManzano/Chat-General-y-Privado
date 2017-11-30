@@ -1,6 +1,7 @@
 package com.federico.chat.modelos;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 import com.federico.chat.chat.Chat;
 import com.federico.chat.eventos.EventoMensajePrivado;
@@ -90,8 +91,10 @@ public class Conversacion implements Observador<PaqueteMensaje>{
 
 	@Override
 	public void update(PaqueteMensaje p) {
-		menuPrivado.setExtendedState(JFrame.ICONIFIED);
-		menuPrivado.setVisible(true);
+		if(!menuPrivado.isVisible()) {
+			menuPrivado.setExtendedState(JFrame.ICONIFIED);
+			menuPrivado.setVisible(true);
+		}
 		menuPrivado.getAreaConversacion().append(p.getUsuarioEmisor() + ": " + p.getMensaje() + "\n");
 	}
 

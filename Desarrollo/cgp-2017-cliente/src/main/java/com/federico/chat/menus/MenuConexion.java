@@ -8,8 +8,6 @@ import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 
-import java.awt.Color;
-import java.util.Arrays;
 
 import javax.swing.ImageIcon;
 import java.awt.SystemColor;

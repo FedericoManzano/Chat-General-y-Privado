@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
+import javax.swing.JOptionPane;
+
 import com.federico.chat.chat.Chat;
 import com.federico.chat.comandos.Comando;
 import com.federico.chat.mensajeria.PaqueteMensaje;
@@ -23,6 +25,10 @@ public class EventoMensajePrivado implements ActionListener{
 		String emisor = chat.getUsuario().getNombreUsuario();
 		String receptor = conversacion.getUsuarioExterno();
 		String mensaje = conversacion.getMenuPrivado().getAreaMensaje().getText();
+		if(mensaje.equals("")) {
+			JOptionPane.showMessageDialog(conversacion.getMenuPrivado(), "Campo del mensaje esta vacio");
+			return;
+		}
 		conversacion.getMenuPrivado().getAreaMensaje().setText("");
 		conversacion.getMenuPrivado().getAreaConversacion().append(emisor + ": " + mensaje + "\n");
 		PaqueteMensaje paq = new PaqueteMensaje(emisor, receptor, mensaje, Comando.MENSAJE_PRIVADO);

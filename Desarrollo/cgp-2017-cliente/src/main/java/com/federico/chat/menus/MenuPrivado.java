@@ -31,9 +31,9 @@ public class MenuPrivado extends JFrame implements Serializable{
 
 	public MenuPrivado() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 560, 412);
+		setBounds(100, 100, 464, 402);
 		contentPane = new JPanel();
-		contentPane.setBackground(SystemColor.inactiveCaptionText);
+		contentPane.setBackground(SystemColor.activeCaption);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -43,13 +43,13 @@ public class MenuPrivado extends JFrame implements Serializable{
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel.setBackground(SystemColor.inactiveCaptionBorder);
-		panel.setBounds(10, 11, 524, 352);
+		panel.setBounds(10, 11, 438, 352);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(SystemColor.inactiveCaptionBorder);
-		panel_1.setBounds(10, 11, 504, 236);
+		panel_1.setBounds(10, 11, 411, 236);
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 		
@@ -61,7 +61,7 @@ public class MenuPrivado extends JFrame implements Serializable{
 		JPanel panel_2 = new JPanel();
 		panel_2.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel_2.setBackground(SystemColor.inactiveCaptionBorder);
-		panel_2.setBounds(10, 46, 484, 179);
+		panel_2.setBounds(10, 46, 388, 179);
 		panel_1.add(panel_2);
 		panel_2.setLayout(new BoxLayout(panel_2, BoxLayout.X_AXIS));
 		
@@ -69,18 +69,18 @@ public class MenuPrivado extends JFrame implements Serializable{
 		panel_2.add(scrollPane);
 		
 		areaConversacion = new JTextArea();
-		areaConversacion .setEditable(false);
+		areaConversacion.setEditable(false);
 		scrollPane.setViewportView(areaConversacion );
 		
 		JPanel panel_3 = new JPanel();
 		panel_3.setBackground(SystemColor.inactiveCaptionBorder);
-		panel_3.setBounds(10, 258, 504, 83);
+		panel_3.setBounds(10, 258, 411, 83);
 		panel.add(panel_3);
 		panel_3.setLayout(null);
 		
 		JPanel panel_4 = new JPanel();
 		panel_4.setBorder(new LineBorder(new Color(0, 0, 0)));
-		panel_4.setBounds(10, 11, 385, 61);
+		panel_4.setBounds(10, 11, 280, 61);
 		panel_3.add(panel_4);
 		panel_4.setLayout(new BoxLayout(panel_4, BoxLayout.X_AXIS));
 		
@@ -92,7 +92,7 @@ public class MenuPrivado extends JFrame implements Serializable{
 		
 		btnEnviar = new JButton("");
 		btnEnviar.setIcon(new ImageIcon(MenuPrivado.class.getResource("/com/federico/chat/recursos/enviar.png")));
-		btnEnviar.setBounds(405, 11, 89, 61);
+		btnEnviar.setBounds(307, 11, 89, 61);
 		panel_3.add(btnEnviar);
 	}
 

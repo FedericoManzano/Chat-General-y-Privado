@@ -1,14 +1,10 @@
 package com.federico.chat.menus;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
-import org.jvnet.substance.SubstanceLookAndFeel;
 
 import java.awt.Color;
 import javax.swing.BoxLayout;
@@ -19,13 +15,12 @@ import javax.swing.JScrollPane;
 import javax.swing.JList;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 
 public class MenuGeneral extends JFrame {
 
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JButton btnEnviar;
 	private JButton btnPrivado;
@@ -34,30 +29,6 @@ public class MenuGeneral extends JFrame {
 	private JTextArea areaConversacion;
 	private DefaultListModel<String> modelo = new DefaultListModel<>();
 	
-	
-	/**
-	 * Launch the application.
-	 * @throws UnsupportedLookAndFeelException 
-	 * @throws IllegalAccessException 
-	 * @throws InstantiationException 
-	 * @throws ClassNotFoundException 
-	 */
-	public static void main(String[] args) throws ClassNotFoundException,
-			InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
-		UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
-		
-		
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MenuGeneral frame = new MenuGeneral();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
@@ -72,7 +43,7 @@ public class MenuGeneral extends JFrame {
 		setResizable(false);
 	
 		contentPane.setLayout(null);
-		contentPane.setBackground(SystemColor.inactiveCaptionText);
+		contentPane.setBackground(SystemColor.activeCaption);
 		JPanel panel = new JPanel();
 		
 		panel.setBackground(SystemColor.window);
@@ -120,6 +91,7 @@ public class MenuGeneral extends JFrame {
 		panel_3.add(scrollPane_1);
 		
 		areaConversacion = new JTextArea();
+		areaConversacion.setEditable(false);
 		scrollPane_1.setViewportView(areaConversacion);
 		
 		JPanel panel_4 = new JPanel();

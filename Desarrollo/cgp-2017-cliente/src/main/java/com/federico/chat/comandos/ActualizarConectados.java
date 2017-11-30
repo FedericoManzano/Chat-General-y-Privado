@@ -5,7 +5,6 @@ import com.federico.chat.mensajeria.PaqueteConexion;
 import com.federico.chat.menus.MenuPrivado;
 import com.federico.chat.modelos.Conectado;
 import com.federico.chat.modelos.Conversacion;
-import com.federico.chat.modelos.Observador;
 import com.federico.chat.modelos.Usuario;
 
 public class ActualizarConectados extends ComandoEscucha {
