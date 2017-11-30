@@ -17,7 +17,6 @@ import com.google.gson.Gson;
 
 public class Servidor extends Thread{
 	private ServerSocket servidor;
-	private Gson gson = new Gson();
 	public static LinkedList<EscuchaCliente> listadoConectados = 
 			new LinkedList<EscuchaCliente>();
 	

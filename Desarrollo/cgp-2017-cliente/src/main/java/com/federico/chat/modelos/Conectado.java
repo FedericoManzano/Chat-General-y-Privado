@@ -2,7 +2,7 @@ package com.federico.chat.modelos;
 
 import java.io.Serializable;
 
-public class Conectado implements Obserbador, Serializable{
+public class Conectado implements  Serializable{
 
 	private static final long serialVersionUID = 1L;
 	private Usuario usuario;
@@ -21,12 +21,6 @@ public class Conectado implements Obserbador, Serializable{
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-
-
-	public void update() {
-		
-	}
-
 
 	@Override
 	public int hashCode() {
@@ -53,7 +47,4 @@ public class Conectado implements Obserbador, Serializable{
 			return false;
 		return true;
 	}
- 
-	
-	
 }

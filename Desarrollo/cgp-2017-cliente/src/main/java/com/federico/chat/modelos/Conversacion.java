@@ -1,0 +1,105 @@
+package com.federico.chat.modelos;
+
+import com.federico.chat.menus.MenuPrivado;
+
+public class Conversacion implements Obserbador{
+	
+	private Conectado conectado;
+	private MenuPrivado menuPrivado;
+	private String usuarioExterno;
+	private String usuarioInterno;
+	
+	public Conversacion(Conectado conectado, MenuPrivado menuPrivado, String usuarioInterno) {
+		this.conectado = conectado;
+		this.menuPrivado = menuPrivado;
+		this.usuarioExterno = conectado.getUsuario().getNombreUsuario();
+		this.usuarioInterno = usuarioInterno;
+		menuPrivado.setUsuario(this.usuarioExterno);
+	}
+	
+	
+	
+	public Conectado getConectado() {
+		return conectado;
+	}
+
+
+
+	public void setConectado(Conectado conectado) {
+		this.conectado = conectado;
+	}
+
+
+
+	public MenuPrivado getMenuPrivado() {
+		return menuPrivado;
+	}
+
+
+
+	public void setMenuPrivado(MenuPrivado menuPrivado) {
+		this.menuPrivado = menuPrivado;
+	}
+
+
+
+	public String getUsuarioExterno() {
+		return usuarioExterno;
+	}
+
+
+
+	public void setUsuarioExterno(String usuarioExterno) {
+		this.usuarioExterno = usuarioExterno;
+	}
+
+
+
+	public String getUsuarioInterno() {
+		return usuarioInterno;
+	}
+
+
+
+	public void setUsuarioInterno(String usuarioInterno) {
+		this.usuarioInterno = usuarioInterno;
+	}
+
+	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((conectado == null) ? 0 : conectado.hashCode());
+		return result;
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Conversacion other = (Conversacion) obj;
+		if (conectado == null) {
+			if (other.conectado != null)
+				return false;
+		} else if (!conectado.equals(other.conectado))
+			return false;
+		return true;
+	}
+
+
+
+	@Override
+	public void update() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

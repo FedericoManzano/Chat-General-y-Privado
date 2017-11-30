@@ -8,12 +8,14 @@ import java.util.LinkedList;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
+import com.federico.chat.eventos.EventoAbrirVentana;
 import com.federico.chat.eventos.EventoConectar;
 import com.federico.chat.eventos.EventoDesconexion;
 import com.federico.chat.eventos.EventoMensajePublico;
 import com.federico.chat.menus.MenuConexion;
 import com.federico.chat.menus.MenuGeneral;
 import com.federico.chat.modelos.Conectado;
+import com.federico.chat.modelos.Conversacion;
 import com.federico.chat.modelos.Usuario;
 import com.google.gson.Gson;
 
@@ -22,7 +24,7 @@ public class Chat {
 	private ObjectOutputStream salida;
 	private Socket socket;
 	private EscuchaMensajes escuchaMensajes;
-	public static LinkedList<Conectado> listadoConectados = new LinkedList<>();
+	public static LinkedList<Conversacion> listadoConectados = new LinkedList<>();
 	private int puerto;
 	private String servidor;
 	private MenuConexion menuConexion;
@@ -38,6 +40,7 @@ public class Chat {
 		menuGeneral = new MenuGeneral();
 		menuGeneral.getBtnEnviar().addActionListener(new EventoMensajePublico(this));
 		menuGeneral.addWindowListener(new EventoDesconexion(this));
+		menuGeneral.getBtnPrivado().addActionListener(new EventoAbrirVentana(this));
 	}
 
 	public void iniciar() {

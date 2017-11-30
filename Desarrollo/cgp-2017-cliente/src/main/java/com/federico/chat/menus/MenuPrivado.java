@@ -1,12 +1,13 @@
 package com.federico.chat.menus;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.SystemColor;
+import java.io.Serializable;
+
 import javax.swing.border.LineBorder;
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -18,8 +19,10 @@ import javax.swing.JScrollPane;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 
-public class MenuPrivado extends JFrame {
+public class MenuPrivado extends JFrame implements Serializable{
 
+
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JButton btnEnviar;
 	private JTextArea areaMensaje;
@@ -47,7 +50,7 @@ public class MenuPrivado extends JFrame {
 	 * Create the frame.
 	 */
 	public MenuPrivado() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 560, 412);
 		contentPane = new JPanel();
 		contentPane.setBackground(SystemColor.inactiveCaptionText);
@@ -127,6 +130,10 @@ public class MenuPrivado extends JFrame {
 
 	public JLabel getLblUsuario() {
 		return lblUsuario;
+	}
+	
+	public void setUsuario(String usuario) {
+		lblUsuario.setText(usuario);
 	}
 	
 	

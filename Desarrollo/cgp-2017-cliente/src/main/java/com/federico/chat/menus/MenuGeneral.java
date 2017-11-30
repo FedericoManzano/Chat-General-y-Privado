@@ -179,4 +179,8 @@ public class MenuGeneral extends JFrame {
 		listadoConectados.removeAll();
 	}
 	
+	public String dameSeleccionado() {
+		return listadoConectados.getSelectedValue();
+	}
+	
 }
