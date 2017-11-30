@@ -33,6 +33,8 @@ public class MenuConexion extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		contentPane.setBackground(SystemColor.inactiveCaptionText);
+		setLocationRelativeTo(null);
+		setResizable(false);
 		setTitle("Conexion");
 		usuarioText = new JTextField();
 		usuarioText .setBounds(26, 40, 198, 30);

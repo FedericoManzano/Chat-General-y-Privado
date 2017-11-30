@@ -9,7 +9,7 @@ import com.federico.chat.servidor.Servidor;
 public class MensajePrivado extends ComandosServidor{
 
 	@Override
-	public void ejecutar() {
+	public synchronized void ejecutar() {
 		PaqueteMensaje paqueteMensaje = Comando.gson.fromJson(dameCadenaLeida(), PaqueteMensaje.class);
 		for(EscuchaCliente es : Servidor.listadoConectados) {
 			if(es.getNombreUsuario().equals(paqueteMensaje.getUsuarioReceptor())) {

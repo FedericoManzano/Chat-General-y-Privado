@@ -13,11 +13,12 @@ import com.federico.chat.servidor.Servidor;
 public class Conexion extends ComandosServidor{
 
 	@Override
-	public void ejecutar() {
+	public synchronized void ejecutar() {
 
 		PaqueteConexion pa = Comando.gson.fromJson(dameCadenaLeida(), PaqueteConexion.class);
 		getEscuchaCliente().setNombreUsuario(pa.getNombreUsuario());
 		getEscuchaCliente().setIp(pa.getIp());
+		
 		pa.guardaOperacion(Comando.AGREGAR_USUARIO);
 		Servidor.menuServidor.mensaje(pa.getNombreUsuario() + " Conectado al servidor ...");
 		String paqueteEnviar = Comando.gson.toJson(pa);
@@ -48,5 +49,4 @@ public class Conexion extends ComandosServidor{
 		}
 		return listadoAEnviar;
 	}
-
 }

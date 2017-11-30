@@ -9,7 +9,7 @@ import com.federico.chat.servidor.Servidor;
 public class MensajePublico extends ComandosServidor{
 
 	@Override
-	public void ejecutar() {
+	public synchronized void ejecutar() {
 		PaqueteMensaje paqueteMensaje = Comando.gson.fromJson(dameCadenaLeida(), PaqueteMensaje.class);
 		String usuario = paqueteMensaje.getUsuarioEmisor();
 		for(EscuchaCliente es : Servidor.listadoConectados) {
@@ -17,7 +17,7 @@ public class MensajePublico extends ComandosServidor{
 				try 
 				{
 					es.getSalida().writeObject(dameCadenaLeida());
-					Servidor.menuServidor.mensaje(es.getNombreUsuario() + " Envio un mensaje publico ...");
+					Servidor.menuServidor.mensaje(usuario + " Envio un mensaje publico ...");
 				} catch (IOException e) {
 					e.printStackTrace();
 				}

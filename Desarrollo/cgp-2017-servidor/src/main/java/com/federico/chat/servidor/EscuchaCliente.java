@@ -32,7 +32,7 @@ public class EscuchaCliente extends Thread{
 		this.nombreUsuario = nombreUsuario;
 	}
 
-	public void run() {
+	public synchronized void run() {
 		ComandosServidor comando;
 		Paquete paquete;
 		String cadenaLeida = null;

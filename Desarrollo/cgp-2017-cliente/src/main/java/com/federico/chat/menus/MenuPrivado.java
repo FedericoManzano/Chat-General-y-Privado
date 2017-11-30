@@ -28,27 +28,7 @@ public class MenuPrivado extends JFrame implements Serializable{
 	private JTextArea areaMensaje;
 	private JTextArea areaConversacion;
 	private JLabel lblUsuario;
-	
-	
-	
-	
-	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
-		UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MenuPrivado frame = new MenuPrivado();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
-	/**
-	 * Create the frame.
-	 */
 	public MenuPrivado() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 560, 412);
@@ -58,6 +38,8 @@ public class MenuPrivado extends JFrame implements Serializable{
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		setTitle("Mensajes Privados");
+		setResizable(false);
+		setLocationRelativeTo(null);
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel.setBackground(SystemColor.inactiveCaptionBorder);
