@@ -2,9 +2,10 @@ package com.federico.chat.modelos;
 
 import com.federico.chat.chat.Chat;
 import com.federico.chat.eventos.EventoMensajePrivado;
+import com.federico.chat.mensajeria.PaqueteMensaje;
 import com.federico.chat.menus.MenuPrivado;
 
-public class Conversacion implements Observador{
+public class Conversacion implements Observador<MenuPrivado, PaqueteMensaje>{
 	
 	private Conectado conectado;
 	private MenuPrivado menuPrivado;
@@ -98,12 +99,10 @@ public class Conversacion implements Observador{
 		return true;
 	}
 
-
-
 	@Override
-	public void update() {
-		// TODO Auto-generated method stub
-		
+	public void update(PaqueteMensaje p) {
+		menuPrivado.setVisible(true);
+		menuPrivado.getAreaConversacion().append(p.getUsuarioEmisor() + ": " + p.getMensaje() + "\n");
 	}
 
 }

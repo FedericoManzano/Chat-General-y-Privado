@@ -23,7 +23,8 @@ public class EventoMensajePrivado implements ActionListener{
 		String emisor = chat.getUsuario().getNombreUsuario();
 		String receptor = conversacion.getUsuarioExterno();
 		String mensaje = conversacion.getMenuPrivado().getAreaMensaje().getText();
-		
+		conversacion.getMenuPrivado().getAreaMensaje().setText("");
+		conversacion.getMenuPrivado().getAreaConversacion().append(emisor + ": " + mensaje + "\n");
 		PaqueteMensaje paq = new PaqueteMensaje(emisor, receptor, mensaje, Comando.MENSAJE_PRIVADO);
 		String objetoEnviar = Comando.gson.toJson(paq);
 		try {

@@ -57,7 +57,7 @@ public class MenuPrivado extends JFrame implements Serializable{
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+		setTitle("Mensajes Privados");
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel.setBackground(SystemColor.inactiveCaptionBorder);

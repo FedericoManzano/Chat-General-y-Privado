@@ -22,7 +22,7 @@ import com.federico.chat.modelos.Observador;
 import com.federico.chat.modelos.Usuario;
 import com.google.gson.Gson;
 
-public class Chat implements Observable<PaqueteMensaje>{
+public class Chat implements Observable<Conversacion ,PaqueteMensaje>{
 	private ObjectInputStream entrada;
 	private ObjectOutputStream salida;
 	private Socket socket;
@@ -155,7 +155,7 @@ public class Chat implements Observable<PaqueteMensaje>{
 	}
 
 	@Override
-	public void notificar(Observador obs, PaqueteMensaje obj) {
-		
+	public void notificar(PaqueteMensaje p, Conversacion o) {
+		o.update(p);
 	}
 }
