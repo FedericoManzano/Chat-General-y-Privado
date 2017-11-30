@@ -66,7 +66,6 @@ public class MenuPrivado extends JFrame implements Serializable{
 		panel.setLayout(null);
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel_1.setBackground(SystemColor.inactiveCaptionBorder);
 		panel_1.setBounds(10, 11, 504, 236);
 		panel.add(panel_1);
@@ -92,7 +91,6 @@ public class MenuPrivado extends JFrame implements Serializable{
 		scrollPane.setViewportView(areaConversacion );
 		
 		JPanel panel_3 = new JPanel();
-		panel_3.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel_3.setBackground(SystemColor.inactiveCaptionBorder);
 		panel_3.setBounds(10, 258, 504, 83);
 		panel.add(panel_3);
