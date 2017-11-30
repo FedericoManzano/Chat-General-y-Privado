@@ -1,325 +1,435 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.1" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="com.federico.chat.chat.Chat" project="cgp-2017-cliente" 
+  <class id="1" language="java" name="com.federico.chat.modelos.Conectado" project="cgp-2017-cliente" 
+    file="/cgp-2017-cliente/src/main/java/com/federico/chat/modelos/Conectado.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1632" y="1107"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.federico.chat.modelos.Conversacion" project="cgp-2017-cliente" 
+    file="/cgp-2017-cliente/src/main/java/com/federico/chat/modelos/Conversacion.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="351" width="274" x="2131" y="392"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="3" language="java" name="com.federico.chat.modelos.Observador" project="cgp-2017-cliente" 
+    file="/cgp-2017-cliente/src/main/java/com/federico/chat/modelos/Observador.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="124" x="2185" y="783"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="4" language="java" name="com.federico.chat.modelos.Observable" project="cgp-2017-cliente" 
+    file="/cgp-2017-cliente/src/main/java/com/federico/chat/modelos/Observable.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="81" width="124" x="1897" y="1480"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="5" language="java" name="com.federico.chat.chat.Chat" project="cgp-2017-cliente" 
     file="/cgp-2017-cliente/src/main/java/com/federico/chat/chat/Chat.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="639" width="248" x="1258" y="639"/>    
+    <position height="657" width="248" x="1897" y="783"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="com.federico.chat.comandos.Comando" project="cgp-2017-cliente" 
-    file="/cgp-2017-cliente/src/main/java/com/federico/chat/comandos/Comando.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="315" width="182" x="43" y="37"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="3" language="java" name="com.federico.chat.comandos.ComandoEscucha" project="cgp-2017-cliente" 
-    file="/cgp-2017-cliente/src/main/java/com/federico/chat/comandos/ComandoEscucha.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="135" width="132" x="43" y="392"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="4" language="java" name="com.federico.chat.comandos.MensajePrivado" project="cgp-2017-cliente" 
-    file="/cgp-2017-cliente/src/main/java/com/federico/chat/comandos/MensajePrivado.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="99" width="132" x="43" y="639"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="5" language="java" name="com.federico.chat.comandos.Conexion" project="cgp-2017-cliente" 
-    file="/cgp-2017-cliente/src/main/java/com/federico/chat/comandos/Conexion.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="117" width="282" x="215" y="639"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="6" language="java" name="com.federico.chat.mensajeria.Paquete" project="cgp-2017-cliente" 
-    file="/cgp-2017-cliente/src/main/java/com/federico/chat/mensajeria/Paquete.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="207" width="180" x="532" y="37"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="7" language="java" name="com.federico.chat.mensajeria.PaqueteConexion" project="cgp-2017-cliente" 
-    file="/cgp-2017-cliente/src/main/java/com/federico/chat/mensajeria/PaqueteConexion.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="207" width="191" x="789" y="392"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="8" language="java" name="com.federico.chat.chat.EscuchaMensajes" project="cgp-2017-cliente" 
+  <class id="6" language="java" name="com.federico.chat.chat.EscuchaMensajes" project="cgp-2017-cliente" 
     file="/cgp-2017-cliente/src/main/java/com/federico/chat/chat/EscuchaMensajes.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="135" width="144" x="1103" y="1318"/>    
+    <position height="-1" width="-1" x="2542" y="738"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="com.federico.chat.menus.MenuConexion" project="cgp-2017-cliente" 
-    file="/cgp-2017-cliente/src/main/java/com/federico/chat/menus/MenuConexion.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="387" width="160" x="1540" y="1318"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="10" language="java" name="com.federico.chat.mensajeria.PaqueteConectados" project="cgp-2017-cliente" 
-    file="/cgp-2017-cliente/src/main/java/com/federico/chat/mensajeria/PaqueteConectados.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="153" width="277" x="215" y="392"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="11" language="java" name="com.federico.chat.mensajeria.PaqueteMensaje" project="cgp-2017-cliente" 
-    file="/cgp-2017-cliente/src/main/java/com/federico/chat/mensajeria/PaqueteMensaje.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="207" width="217" x="532" y="392"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="12" language="java" name="com.federico.chat.menus.MenuGeneral" project="cgp-2017-cliente" 
-    file="/cgp-2017-cliente/src/main/java/com/federico/chat/menus/MenuGeneral.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="369" width="213" x="1287" y="1318"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="13" language="java" name="com.federico.chat.eventos.EventoMensajePublico" project="cgp-2017-cliente" 
-    file="/cgp-2017-cliente/src/main/java/com/federico/chat/eventos/EventoMensajePublico.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="99" width="194" x="1493" y="392"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="14" language="java" name="com.federico.chat.eventos.EventoConectar" project="cgp-2017-cliente" 
-    file="/cgp-2017-cliente/src/main/java/com/federico/chat/eventos/EventoConectar.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="99" width="194" x="2002" y="392"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="15" language="java" name="com.federico.chat.modelos.Conectado" project="cgp-2017-cliente" 
-    file="/cgp-2017-cliente/src/main/java/com/federico/chat/modelos/Conectado.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="189" width="146" x="537" y="639"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="16" language="java" name="com.federico.chat.eventos.EventoMensajePrivado" project="cgp-2017-cliente" 
-    file="/cgp-2017-cliente/src/main/java/com/federico/chat/eventos/EventoMensajePrivado.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="117" width="235" x="1727" y="392"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="17" language="java" name="com.federico.chat.eventos.EventoDesconexion" project="cgp-2017-cliente" 
-    file="/cgp-2017-cliente/src/main/java/com/federico/chat/eventos/EventoDesconexion.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="99" width="199" x="1254" y="392"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="18" language="java" name="com.federico.chat.eventos.EventoAbrirVentana" project="cgp-2017-cliente" 
+  <class id="7" language="java" name="com.federico.chat.eventos.EventoAbrirVentana" project="cgp-2017-cliente" 
     file="/cgp-2017-cliente/src/main/java/com/federico/chat/eventos/EventoAbrirVentana.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="99" width="194" x="1020" y="392"/>    
+    <position height="99" width="194" x="1424" y="392"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="19">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="20" name="escuchaMensajes">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="21" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <class id="8" language="java" name="com.federico.chat.eventos.EventoConectar" project="cgp-2017-cliente" 
+    file="/cgp-2017-cliente/src/main/java/com/federico/chat/eventos/EventoConectar.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="194" x="1897" y="392"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="com.federico.chat.eventos.EventoDesconexion" project="cgp-2017-cliente" 
+    file="/cgp-2017-cliente/src/main/java/com/federico/chat/eventos/EventoDesconexion.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="199" x="1658" y="392"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="com.federico.chat.modelos.Usuario" project="cgp-2017-cliente" 
+    file="/cgp-2017-cliente/src/main/java/com/federico/chat/modelos/Usuario.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="174" x="1683" y="1480"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="com.federico.chat.eventos.EventoMensajePrivado" project="cgp-2017-cliente" 
+    file="/cgp-2017-cliente/src/main/java/com/federico/chat/eventos/EventoMensajePrivado.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2503" y="1054"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="com.federico.chat.eventos.EventoMensajePublico" project="cgp-2017-cliente" 
+    file="/cgp-2017-cliente/src/main/java/com/federico/chat/eventos/EventoMensajePublico.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="194" x="1190" y="392"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="com.federico.chat.comandos.Comando" project="cgp-2017-cliente" 
+    file="/cgp-2017-cliente/src/main/java/com/federico/chat/comandos/Comando.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="182" x="213" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="com.federico.chat.comandos.ComandoEscucha" project="cgp-2017-cliente" 
+    file="/cgp-2017-cliente/src/main/java/com/federico/chat/comandos/ComandoEscucha.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="129" y="510"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="com.federico.chat.comandos.MensajePrivado" project="cgp-2017-cliente" 
+    file="/cgp-2017-cliente/src/main/java/com/federico/chat/comandos/MensajePrivado.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="132" x="535" y="783"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="com.federico.chat.comandos.MensajePublico" project="cgp-2017-cliente" 
+    file="/cgp-2017-cliente/src/main/java/com/federico/chat/comandos/MensajePublico.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="132" x="41" y="783"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="com.federico.chat.comandos.ActualizarConectados" project="cgp-2017-cliente" 
+    file="/cgp-2017-cliente/src/main/java/com/federico/chat/comandos/ActualizarConectados.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="149" x="707" y="783"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="com.federico.chat.comandos.Conexion" project="cgp-2017-cliente" 
+    file="/cgp-2017-cliente/src/main/java/com/federico/chat/comandos/Conexion.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="282" x="213" y="783"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="com.federico.chat.mensajeria.Paquete" project="cgp-2017-cliente" 
+    file="/cgp-2017-cliente/src/main/java/com/federico/chat/mensajeria/Paquete.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="207" width="180" x="642" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="com.federico.chat.mensajeria.PaqueteConexion" project="cgp-2017-cliente" 
+    file="/cgp-2017-cliente/src/main/java/com/federico/chat/mensajeria/PaqueteConexion.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="207" width="191" x="642" y="392"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="com.federico.chat.mensajeria.PaqueteMensaje" project="cgp-2017-cliente" 
+    file="/cgp-2017-cliente/src/main/java/com/federico/chat/mensajeria/PaqueteMensaje.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="207" width="217" x="385" y="392"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="com.federico.chat.mensajeria.PaqueteConectados" project="cgp-2017-cliente" 
+    file="/cgp-2017-cliente/src/main/java/com/federico/chat/mensajeria/PaqueteConectados.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="277" x="873" y="392"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="com.federico.chat.menus.MenuConexion" project="cgp-2017-cliente" 
+    file="/cgp-2017-cliente/src/main/java/com/federico/chat/menus/MenuConexion.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2328" y="1738"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="com.federico.chat.menus.MenuGeneral" project="cgp-2017-cliente" 
+    file="/cgp-2017-cliente/src/main/java/com/federico/chat/menus/MenuGeneral.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2114" y="1792"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="com.federico.chat.menus.MenuPrivado" project="cgp-2017-cliente" 
+    file="/cgp-2017-cliente/src/main/java/com/federico/chat/menus/MenuPrivado.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2539" y="433"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="26">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="27" name="chat"/>      
+      <multiplicity id="28" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
+    <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="false" multiplicity="false"/>  
   </association>  
-  <generalization id="22">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="6"/>  
+  <generalization id="29">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="14"/>  
   </generalization>  
-  <generalization id="23">    
+  <generalization id="30">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <association id="31">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="32" name="usuario"/>      
+      <multiplicity id="33" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="34">    
     <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="3"/>  
-  </generalization>  
-  <association id="24">    
-    <end type="SOURCE" refId="13" navigable="false">      
-      <attribute id="25" name="chat">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="26" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+    <end type="TARGET" refId="4"/>  
+  </realization>  
+  <association id="35">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="36" name="chat"/>      
+      <multiplicity id="37" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
+    <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="27">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="28" name="menuConexion">        
-        <position height="0" width="0" x="49" y="59"/>      
-      </attribute>      
-      <multiplicity id="29" minimum="0" maximum="1">        
-        <position height="0" width="0" x="49" y="59"/>      
-      </multiplicity>    
+  <association id="38">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="39" name="chat"/>      
+      <multiplicity id="40" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
+    <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="30">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="31" name="chat">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="32" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <association id="41">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="42" name="menuConexion"/>      
+      <multiplicity id="43" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
-    <display labels="false" multiplicity="false"/>  
-  </association>  
-  <association id="33">    
-    <end type="SOURCE" refId="18" navigable="false">      
-      <attribute id="34" name="chat"/>      
-      <multiplicity id="35" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
+    <end type="TARGET" refId="23" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="36">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="37" name="listadoConectados">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="38" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="15" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="39">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="3"/>  
-  </generalization>  
-  <association id="40">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="41" name="chat">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="42" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
-    <display labels="false" multiplicity="false"/>  
-  </association>  
-  <generalization id="43">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="6"/>  
-  </generalization>  
   <association id="44">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="45" name="chat"/>      
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="45" name="menuGeneral"/>      
       <multiplicity id="46" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
+    <end type="TARGET" refId="24" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <generalization id="47">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="6"/>  
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="14"/>  
   </generalization>  
-  <generalization id="48">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="2"/>  
-  </generalization>  
-  <association id="49">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="50" name="menuGeneral">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="51" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <association id="48">    
+    <bendpoint x="1030" y="839"/>    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="49" name="chat"/>      
+      <multiplicity id="50" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
+    <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <realization id="51">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="3"/>  
+  </realization>  
   <association id="52">    
-    <end type="SOURCE" refId="16" navigable="false">      
-      <attribute id="53" name="chat"/>      
+    <bendpoint x="1766" y="722"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="53" name="conectado"/>      
       <multiplicity id="54" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="55">    
-    <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="56" name="chat">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="57" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="56" name="listadoConectados"/>      
+      <multiplicity id="57" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <association id="58">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="59" name="chat"/>      
+      <multiplicity id="60" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="61">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="14"/>  
+  </generalization>  
+  <association id="62">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="63" name="escuchaMensajes"/>      
+      <multiplicity id="64" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="false" multiplicity="false"/>  
+  </association>  
+  <association id="65">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="66" name="chat"/>      
+      <multiplicity id="67" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="68">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="69" name="menuPrivado"/>      
+      <multiplicity id="70" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="71">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="72" name="listadoConectados"/>      
+      <multiplicity id="73" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="false" multiplicity="false"/>  
+  </association>  
+  <association id="74">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="75" name="usuario"/>      
+      <multiplicity id="76" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="77">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <association id="78">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="79" name="conversacion"/>      
+      <multiplicity id="80" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="false" multiplicity="false"/>  
+  </association>  
+  <association id="81">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="82" name="chat"/>      
+      <multiplicity id="83" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="84">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="85" name="chat"/>      
+      <multiplicity id="86" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="false" multiplicity="false"/>  
+  </association>  
+  <generalization id="87">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <generalization id="88">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="14"/>  
+  </generalization>  
+  <generalization id="89">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="13"/>  
+  </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
