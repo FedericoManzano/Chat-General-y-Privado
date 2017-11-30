@@ -17,6 +17,7 @@ public class MensajePublico extends ComandosServidor{
 				try 
 				{
 					es.getSalida().writeObject(dameCadenaLeida());
+					Servidor.menuServidor.mensaje(es.getNombreUsuario() + " Envio un mensaje publico ...");
 				} catch (IOException e) {
 					e.printStackTrace();
 				}

@@ -60,6 +60,7 @@ public class EscuchaCliente extends Thread{
 			for(EscuchaCliente es : Servidor.listadoConectados) {
 				if(es.getNombreUsuario().equals(pa.getNombreUsuario())) {
 					Servidor.listadoConectados.remove(es);
+					Servidor.menuServidor.mensaje(pa.getNombreUsuario() + " Desconectado del servidor ...");
 				}
 			}
 			
@@ -76,14 +77,6 @@ public class EscuchaCliente extends Thread{
 		}
 		
 		
-	}
-
-	private LinkedList<Conectado> generarListadoConectado(){
-		LinkedList<Conectado> listadoAEnviar = new LinkedList<Conectado>();
-		for(EscuchaCliente cliente : Servidor.listadoConectados) {
-			listadoAEnviar.add(new Conectado(new Usuario(cliente.getNombreUsuario(), cliente.getIp())));
-		}
-		return listadoAEnviar;
 	}
 	
 	public Socket getSocket() {
