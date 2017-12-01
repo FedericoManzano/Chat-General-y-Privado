@@ -95,6 +95,7 @@ public class MenuAtributos extends JFrame {
 		cargarListadoFuentes();
 		cargarListadoTam();
 		cargarTipoLetra();
+		colorChooser.setColor(new Color(0, 0, 0));
 		btnColor.addActionListener(new ActionListener() {
 			
 			@Override
