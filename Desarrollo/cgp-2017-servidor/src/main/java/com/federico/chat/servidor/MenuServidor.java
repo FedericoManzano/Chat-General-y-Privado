@@ -1,7 +1,5 @@
 package com.federico.chat.servidor;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -15,16 +13,13 @@ import javax.swing.JButton;
 
 public class MenuServidor extends JFrame {
 
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField puertoText;
 	private JTextArea areaEstado;
 	private JButton btnConectar;
 	
-	
 
-	/**
-	 * Create the frame.
-	 */
 	public MenuServidor() {
 		setTitle("Servidor");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

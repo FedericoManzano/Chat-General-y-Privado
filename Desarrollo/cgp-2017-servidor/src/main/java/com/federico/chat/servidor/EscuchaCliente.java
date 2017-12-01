@@ -9,11 +9,8 @@ import java.util.LinkedList;
 import com.federico.chat.comandos.Comando;
 import com.federico.chat.comandos.ComandosServidor;
 import com.federico.chat.mensajeria.Paquete;
-import com.federico.chat.mensajeria.PaqueteConectados;
 import com.federico.chat.mensajeria.PaqueteConexion;
-import com.federico.chat.modelos.Conectado;
-import com.federico.chat.modelos.Usuario;
-import com.google.gson.Gson;
+
 
 public class EscuchaCliente extends Thread{
 

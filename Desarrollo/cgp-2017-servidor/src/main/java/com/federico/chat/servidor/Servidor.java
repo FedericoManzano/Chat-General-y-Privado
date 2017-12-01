@@ -10,16 +10,7 @@ import java.net.Socket;
 import java.util.LinkedList;
 
 import javax.swing.JOptionPane;
-import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-
-import com.federico.chat.comandos.Comando;
-import com.federico.chat.mensajeria.Paquete;
-import com.federico.chat.mensajeria.PaqueteConectados;
-import com.federico.chat.mensajeria.PaqueteConexion;
-import com.federico.chat.modelos.Conectado;
-import com.federico.chat.modelos.Usuario;
-import com.google.gson.Gson;
 
 public class Servidor extends Thread implements ActionListener{
 	private ServerSocket servidor;

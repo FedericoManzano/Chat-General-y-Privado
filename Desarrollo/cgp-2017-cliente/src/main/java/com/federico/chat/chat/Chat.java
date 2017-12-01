@@ -23,7 +23,7 @@ import com.federico.chat.modelos.Observable;
 import com.federico.chat.modelos.Usuario;
 import com.google.gson.Gson;
 
-public class Chat implements Observable<Conversacion ,PaqueteMensaje>{
+public class Chat extends Thread implements Observable<Conversacion ,PaqueteMensaje>{
 	
 	
 	private ObjectInputStream entrada;
@@ -56,6 +56,17 @@ public class Chat implements Observable<Conversacion ,PaqueteMensaje>{
 		cargarValoresDefecto();
 	}
 
+	public void run() {
+		while(true) {
+			escuchaMensajes.actualizarListado();
+			try {
+				Thread.sleep(10000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
 	private void cargarValoresDefecto() {
 		menuConexion.getServidorText().setText("localhost");
 		menuConexion.getPuertoText().setText("2000");
@@ -64,6 +75,7 @@ public class Chat implements Observable<Conversacion ,PaqueteMensaje>{
 	public void iniciar() {
 		escuchaMensajes.start();
 		menuConexion.conectado();
+		this.start();
 	}
 	
 	public ObjectInputStream getEntrada() {
