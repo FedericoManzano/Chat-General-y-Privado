@@ -28,6 +28,7 @@ public class MenuGeneral extends JFrame {
 	private JList<String> listadoConectados;
 	private JTextArea areaMensaje;
 	private JTextArea areaConversacion;
+	private JButton btnRefrescar;
 	private DefaultListModel<String> modelo = new DefaultListModel<>();
 	
 
@@ -66,7 +67,7 @@ public class MenuGeneral extends JFrame {
 		
 		btnPrivado = new JButton("Privado");
 		btnPrivado.setIcon(new ImageIcon(MenuGeneral.class.getResource("/com/federico/chat/recursos/privado.png")));
-		btnPrivado.setBounds(20, 277, 206, 47);
+		btnPrivado.setBounds(20, 277, 137, 47);
 		panel.add(btnPrivado);
 		
 		JLabel lblConectados = new JLabel("Conectados");
@@ -74,6 +75,11 @@ public class MenuGeneral extends JFrame {
 		lblConectados.setIcon(new ImageIcon(MenuGeneral.class.getResource("/com/federico/chat/recursos/usuarios.png")));
 		lblConectados.setBounds(20, 21, 111, 23);
 		panel.add(lblConectados);
+		
+		btnRefrescar = new JButton("");
+		btnRefrescar.setIcon(new ImageIcon(MenuGeneral.class.getResource("/com/federico/chat/recursos/refresh.png")));
+		btnRefrescar.setBounds(167, 277, 59, 47);
+		panel.add(btnRefrescar);
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -161,5 +167,11 @@ public class MenuGeneral extends JFrame {
 	public int dameCantidadElementos() {
 		return listadoConectados.getModel().getSize();
 	}
+
+
+	public JButton getBtnRefrescar() {
+		return btnRefrescar;
+	}
+	
 	
 }

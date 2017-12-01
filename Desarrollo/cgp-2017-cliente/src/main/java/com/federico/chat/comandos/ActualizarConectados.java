@@ -17,7 +17,7 @@ public class ActualizarConectados extends ComandoEscucha {
 		Conectado con = new Conectado(new Usuario(paqueteConexion.getNombreUsuario(), paqueteConexion.getIp()));
 		Conversacion conve = new Conversacion(con, new MenuPrivado(), getChat().getUsuario().getNombreUsuario(), getChat());
 		LinkedList<Conversacion> listadoCopia = getChat().dameListadoDeConversaciones();
-		boolean estado = false;
+
 		if(paqueteConexion.dameOperacion() == Comando.AGREGAR_USUARIO) {
 			Chat.listadoConectados.add(conve);
 		}else {
@@ -27,8 +27,6 @@ public class ActualizarConectados extends ComandoEscucha {
 			}
 			Chat.listadoConectados.remove(conve);
 		}
-		while(!estado) {
-			estado = getChat().getEscuchaMensajes().actualizarListado() > 0;
-		}
+		getChat().getEscuchaMensajes().actualizarListado();
 	}
 }

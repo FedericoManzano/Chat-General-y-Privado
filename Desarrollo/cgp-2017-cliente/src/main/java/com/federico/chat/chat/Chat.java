@@ -12,6 +12,7 @@ import com.federico.chat.eventos.EventoAbrirVentana;
 import com.federico.chat.eventos.EventoConectar;
 import com.federico.chat.eventos.EventoDesconexion;
 import com.federico.chat.eventos.EventoMensajePublico;
+import com.federico.chat.eventos.EventoRefrescarLista;
 import com.federico.chat.mensajeria.PaqueteMensaje;
 import com.federico.chat.menus.MenuConexion;
 import com.federico.chat.menus.MenuGeneral;
@@ -46,6 +47,7 @@ public class Chat implements Observable<Conversacion ,PaqueteMensaje>{
 		menuConexion.getUsuarioText().addKeyListener(new EventoConectar(this));
 		menuGeneral.addWindowListener(new EventoDesconexion(this));
 		menuGeneral.getBtnPrivado().addActionListener(new EventoAbrirVentana(this));
+		menuGeneral.getBtnRefrescar().addActionListener(new EventoRefrescarLista(this));
 		cargarValoresDefecto();
 	}
 

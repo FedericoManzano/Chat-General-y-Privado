@@ -13,21 +13,12 @@ public class Conexion extends ComandoEscucha {
 	
 	@Override
 	public void ejecutar() {
-
 		PaqueteConectados paq = Comando.gson.fromJson(dameCadenaLeida(), PaqueteConectados.class);
-		if(paq.getListadoConectados().size() == 0) {
-			EventoConectar e = new EventoConectar(getChat());
-			e.conectar();
-		}else {
-			boolean estado = false;
-			cargarListaConectados(paq.getListadoConectados());
-			getChat().getMenuConexion().dispose();
-			
-			while(!estado) {
-				estado = getChat().getEscuchaMensajes().actualizarListado() > 0;
-			}
-			getChat().getMenuGeneral().setVisible(true);
-		}
+		cargarListaConectados(paq.getListadoConectados());
+		getChat().getMenuConexion().dispose();	
+		getChat().getEscuchaMensajes().actualizarListado();
+		getChat().getMenuGeneral().setVisible(true);
+		
 	}
 	
 	private void cargarListaConectados(LinkedList<Conectado> listado) {

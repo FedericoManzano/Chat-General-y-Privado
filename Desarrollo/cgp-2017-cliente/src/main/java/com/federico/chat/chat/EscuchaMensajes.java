@@ -41,13 +41,13 @@ public class EscuchaMensajes extends Thread{
 		}
 	}
 	
-	public int actualizarListado() {
+	public void actualizarListado() {
 		LinkedList<Conversacion> listado = chat.dameListadoDeConversaciones();
 		chat.getMenuGeneral().vaciarListado();
 		for(Conversacion co : listado) {
 			chat.getMenuGeneral().actualizarListaConectados(co.getUsuarioExterno());
 		}
-		return chat.getMenuGeneral().dameCantidadElementos();
+		chat.getMenuGeneral().dameCantidadElementos();
 	}
 	
 }
