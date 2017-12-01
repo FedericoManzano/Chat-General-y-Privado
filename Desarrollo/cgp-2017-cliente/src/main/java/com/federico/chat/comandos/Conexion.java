@@ -3,7 +3,6 @@ package com.federico.chat.comandos;
 import java.util.LinkedList;
 
 import com.federico.chat.chat.Chat;
-import com.federico.chat.eventos.EventoConectar;
 import com.federico.chat.mensajeria.PaqueteConectados;
 import com.federico.chat.menus.MenuPrivado;
 import com.federico.chat.modelos.Conectado;

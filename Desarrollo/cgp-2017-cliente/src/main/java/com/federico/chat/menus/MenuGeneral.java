@@ -10,14 +10,14 @@ import java.awt.Color;
 import javax.swing.BoxLayout;
 import javax.swing.DefaultListModel;
 
-import java.awt.SystemColor;
+
 import javax.swing.JScrollPane;
 import javax.swing.JList;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
-import javax.swing.UIManager;
+
 
 public class MenuGeneral extends JFrame {
 

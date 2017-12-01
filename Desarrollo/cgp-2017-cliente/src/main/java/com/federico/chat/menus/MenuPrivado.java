@@ -1,6 +1,5 @@
 package com.federico.chat.menus;
 
-import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -14,9 +13,6 @@ import com.federico.chat.modelos.CuadroTexto;
 
 import java.awt.Color;
 import javax.swing.JLabel;
-import javax.swing.JTextArea;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.BoxLayout;
 import javax.swing.JScrollPane;
 import javax.swing.JButton;

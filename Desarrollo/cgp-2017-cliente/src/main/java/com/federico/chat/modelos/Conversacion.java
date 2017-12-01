@@ -2,14 +2,10 @@ package com.federico.chat.modelos;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-
 import com.federico.chat.chat.Chat;
 import com.federico.chat.eventos.EventoMensajePrivado;
 import com.federico.chat.mensajeria.PaqueteMensaje;
@@ -119,7 +115,6 @@ public class Conversacion extends MouseAdapter implements Observador<PaqueteMens
 	}
 
 	private Font dameFuente(PaqueteMensaje p) {
-		System.out.println(p.getNombreFuente() + " " + p.getTipoFuente()+" "+ p.getTamFuente() + " " + p.getMensaje());
 		return new Font(p.getNombreFuente(), p.getTipoFuente(), p.getTamFuente());
 	}
 	
