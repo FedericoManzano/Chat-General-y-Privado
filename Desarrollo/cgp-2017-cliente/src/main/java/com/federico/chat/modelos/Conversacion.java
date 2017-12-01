@@ -119,7 +119,7 @@ public class Conversacion extends MouseAdapter implements Observador<PaqueteMens
 	}
 
 	private Font dameFuente(PaqueteMensaje p) {
-		System.out.println(p.getNombreFuente() + " " + p.getTipoFuente()+" "+ p.getTamFuente());
+		System.out.println(p.getNombreFuente() + " " + p.getTipoFuente()+" "+ p.getTamFuente() + " " + p.getMensaje());
 		return new Font(p.getNombreFuente(), p.getTipoFuente(), p.getTamFuente());
 	}
 	

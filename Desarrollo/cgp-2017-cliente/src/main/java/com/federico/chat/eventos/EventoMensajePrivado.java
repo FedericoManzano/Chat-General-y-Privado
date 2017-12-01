@@ -17,6 +17,8 @@ public class EventoMensajePrivado implements ActionListener{
 
 	private Chat chat;
 	private Conversacion conversacion;
+	private Font fuenteUsuario = new Font("Arial",Font.BOLD, 15);
+	private Color colorUsuario = new Color(0,0,0);
 	public EventoMensajePrivado(Chat chat, Conversacion con) {
 		this.chat = chat;
 		this.conversacion = con;
@@ -24,8 +26,6 @@ public class EventoMensajePrivado implements ActionListener{
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		String emisor = chat.getUsuario().getNombreUsuario();
-		String receptor = conversacion.getUsuarioExterno();
 		String mensaje = conversacion.getMenuPrivado().getAreaMensaje().getText();
 		if(mensaje.equals("")) {
 			JOptionPane.showMessageDialog(conversacion.getMenuPrivado(), "Campo del mensaje esta vacio");
@@ -35,13 +35,14 @@ public class EventoMensajePrivado implements ActionListener{
 			JOptionPane.showMessageDialog(conversacion.getMenuPrivado(), "Usuario Desconectado");
 			return;
 		}
+		PaqueteMensaje paq = configurarDatosPrincipales();
 		conversacion.getMenuPrivado().getAreaMensaje().setText("");
-		conversacion.getMenuPrivado().getAreaConversacion().append(new Font("Arial",Font.BOLD, 15), new Color(0,0,0), conversacion.getUsuarioInterno() + ": ");
+		conversacion.getMenuPrivado().getAreaConversacion().append(fuenteUsuario, colorUsuario, conversacion.getUsuarioInterno() + ": ");
 		conversacion.getMenuPrivado().getAreaConversacion().append(
-				conversacion.getMenuAtributos().getFuenteSeleccionada(),
-				conversacion.getMenuAtributos().getColorSeleccionado(),mensaje + "\n");
-		PaqueteMensaje paq = new PaqueteMensaje(emisor, receptor, mensaje, Comando.MENSAJE_PRIVADO);
-		configurarFuente(paq);
+				dameFuenteSeleccionada(),dameColorSeleccionado(), paq.getMensaje() + "\n");
+		
+		
+		
 		String objetoEnviar = Comando.gson.toJson(paq);
 		try {
 			chat.getSalida().writeObject(objetoEnviar);
@@ -50,11 +51,25 @@ public class EventoMensajePrivado implements ActionListener{
 		}
 	}
 	
-	private void configurarFuente(PaqueteMensaje pa) {
+	private PaqueteMensaje configurarDatosPrincipales() {
+		String emisor = chat.getUsuario().getNombreUsuario();
+		String receptor = conversacion.getUsuarioExterno();
+		String mensaje = conversacion.getMenuPrivado().getAreaMensaje().getText();
+		PaqueteMensaje pa = new PaqueteMensaje(emisor, receptor, mensaje, Comando.MENSAJE_PRIVADO);
 		pa.setNombreFuente(conversacion.getMenuAtributos().getFuenteSeleccionada().getName());
 		pa.setTamFuente(conversacion.getMenuAtributos().getFuenteSeleccionada().getSize());
 		pa.setTipoFuente(conversacion.getMenuAtributos().getFuenteSeleccionada().getStyle());
 		pa.setRgb(conversacion.getMenuAtributos().getColorSeleccionado().getRGB());
+		return pa;
+	}
+	
+	
+	private Font dameFuenteSeleccionada() {
+		return conversacion.getMenuAtributos().getFuenteSeleccionada();
+	}
+	
+	private Color dameColorSeleccionado() {
+		return conversacion.getMenuAtributos().getColorSeleccionado();
 	}
 
 }
