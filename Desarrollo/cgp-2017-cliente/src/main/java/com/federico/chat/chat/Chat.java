@@ -1,5 +1,7 @@
 package com.federico.chat.chat;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
@@ -11,20 +13,19 @@ import javax.swing.UnsupportedLookAndFeelException;
 import com.federico.chat.eventos.EventoAbrirVentana;
 import com.federico.chat.eventos.EventoConectar;
 import com.federico.chat.eventos.EventoDesconexion;
-import com.federico.chat.eventos.EventoMensajePrivado;
 import com.federico.chat.eventos.EventoMensajePublico;
 import com.federico.chat.eventos.EventoRefrescarLista;
 import com.federico.chat.mensajeria.PaqueteMensaje;
 import com.federico.chat.menus.MenuConexion;
 import com.federico.chat.menus.MenuGeneral;
-import com.federico.chat.modelos.Conectado;
 import com.federico.chat.modelos.Conversacion;
 import com.federico.chat.modelos.Observable;
-import com.federico.chat.modelos.Observador;
 import com.federico.chat.modelos.Usuario;
 import com.google.gson.Gson;
 
 public class Chat implements Observable<Conversacion ,PaqueteMensaje>{
+	
+	
 	private ObjectInputStream entrada;
 	private ObjectOutputStream salida;
 	private Socket socket;
@@ -36,6 +37,8 @@ public class Chat implements Observable<Conversacion ,PaqueteMensaje>{
 	private Usuario usuario;
 	private Gson gson = new Gson();
 	private MenuGeneral menuGeneral;
+	private Font fuenteSeleccionada;
+	private Color colorSeleccionado;
 	
 	
 	public Chat() {
@@ -173,5 +176,21 @@ public class Chat implements Observable<Conversacion ,PaqueteMensaje>{
 	@Override
 	public void notificar(PaqueteMensaje p, Conversacion o) {
 		o.update(p);
+	}
+
+	public Font getFuenteSeleccionada() {
+		return fuenteSeleccionada;
+	}
+
+	public void setFuenteSeleccionada(Font fuenteSeleccionada) {
+		this.fuenteSeleccionada = fuenteSeleccionada;
+	}
+
+	public Color getColorSeleccionado() {
+		return colorSeleccionado;
+	}
+
+	public void setColorSeleccionado(Color colorSeleccionado) {
+		this.colorSeleccionado = colorSeleccionado;
 	}
 }

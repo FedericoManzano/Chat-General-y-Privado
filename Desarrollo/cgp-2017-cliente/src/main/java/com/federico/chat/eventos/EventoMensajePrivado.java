@@ -1,5 +1,7 @@
 package com.federico.chat.eventos;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -34,14 +36,25 @@ public class EventoMensajePrivado implements ActionListener{
 			return;
 		}
 		conversacion.getMenuPrivado().getAreaMensaje().setText("");
-		conversacion.getMenuPrivado().getAreaConversacion().append(emisor + ": " + mensaje + "\n");
+		conversacion.getMenuPrivado().getAreaConversacion().append(new Font("Arial",Font.BOLD, 15), new Color(0,0,0), conversacion.getUsuarioInterno() + ": ");
+		conversacion.getMenuPrivado().getAreaConversacion().append(
+				conversacion.getMenuAtributos().getFuenteSeleccionada(),
+				conversacion.getMenuAtributos().getColorSeleccionado(),mensaje + "\n");
 		PaqueteMensaje paq = new PaqueteMensaje(emisor, receptor, mensaje, Comando.MENSAJE_PRIVADO);
+		configurarFuente(paq);
 		String objetoEnviar = Comando.gson.toJson(paq);
 		try {
 			chat.getSalida().writeObject(objetoEnviar);
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
+	}
+	
+	private void configurarFuente(PaqueteMensaje pa) {
+		pa.setNombreFuente(conversacion.getMenuAtributos().getFuenteSeleccionada().getName());
+		pa.setTamFuente(conversacion.getMenuAtributos().getFuenteSeleccionada().getSize());
+		pa.setTipoFuente(conversacion.getMenuAtributos().getFuenteSeleccionada().getStyle());
+		pa.setRgb(conversacion.getMenuAtributos().getColorSeleccionado().getRGB());
 	}
 
 }

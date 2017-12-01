@@ -18,7 +18,6 @@ public class Conexion extends ComandoEscucha {
 		getChat().getMenuConexion().dispose();	
 		getChat().getEscuchaMensajes().actualizarListado();
 		getChat().getMenuGeneral().setVisible(true);
-		
 	}
 	
 	private void cargarListaConectados(LinkedList<Conectado> listado) {

@@ -9,6 +9,9 @@ import java.awt.SystemColor;
 import java.io.Serializable;
 
 import javax.swing.border.LineBorder;
+
+import com.federico.chat.modelos.CuadroTexto;
+
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
@@ -26,11 +29,11 @@ public class MenuPrivado extends JFrame implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JButton btnEnviar;
-	private JTextArea areaMensaje;
-	private JTextArea areaConversacion;
+	private CuadroTexto areaMensaje;
+	private CuadroTexto  areaConversacion;
 	private JLabel lblUsuario;
 	private JLabel lblConexion;
-	
+	private JLabel lblFuente;
 	public MenuPrivado() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 464, 421);
@@ -71,7 +74,7 @@ public class MenuPrivado extends JFrame implements Serializable{
 		JScrollPane scrollPane = new JScrollPane();
 		panel_2.add(scrollPane);
 		
-		areaConversacion = new JTextArea();
+		areaConversacion = new CuadroTexto();
 		areaConversacion.setEditable(false);
 		scrollPane.setViewportView(areaConversacion );
 		
@@ -96,7 +99,7 @@ public class MenuPrivado extends JFrame implements Serializable{
 		JScrollPane scrollPane_1 = new JScrollPane();
 		panel_4.add(scrollPane_1);
 		
-		areaMensaje = new JTextArea();
+		areaMensaje = new CuadroTexto();
 		scrollPane_1.setViewportView(areaMensaje );
 		
 		btnEnviar = new JButton("");
@@ -110,6 +113,11 @@ public class MenuPrivado extends JFrame implements Serializable{
 		lblMensajes.setForeground(Color.WHITE);
 		lblMensajes.setBounds(10, 0, 119, 25);
 		panel_3.add(lblMensajes);
+		
+		lblFuente = new JLabel("");
+		lblFuente.setIcon(new ImageIcon(MenuPrivado.class.getResource("/com/federico/chat/recursos/fonts.png")));
+		lblFuente.setBounds(303, 3, 22, 22);
+		panel_3.add(lblFuente);
 	}
 
 	
@@ -127,11 +135,11 @@ public class MenuPrivado extends JFrame implements Serializable{
 		return lblConexion.getText();
 	}
 	
-	public JTextArea getAreaMensaje() {
+	public CuadroTexto getAreaMensaje() {
 		return areaMensaje;
 	}
 
-	public JTextArea getAreaConversacion() {
+	public CuadroTexto getAreaConversacion() {
 		return areaConversacion;
 	}
 
@@ -141,5 +149,15 @@ public class MenuPrivado extends JFrame implements Serializable{
 	
 	public void setUsuario(String usuario) {
 		lblUsuario.setText(usuario);
+	}
+
+
+	public JLabel getLblFuente() {
+		return lblFuente;
+	}
+
+
+	public void setLblFuente(JLabel lblFuente) {
+		this.lblFuente = lblFuente;
 	}
 }

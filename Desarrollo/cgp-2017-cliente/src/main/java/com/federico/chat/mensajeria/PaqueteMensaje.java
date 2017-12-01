@@ -8,6 +8,13 @@ public class PaqueteMensaje extends Paquete implements Serializable{
 	private String usuarioEmisor;
 	private String usuarioReceptor;
 	private String mensaje;
+	private String nombreFuente;
+	private int tamFuente;
+	private int tipoFuente;
+	private int rgb;
+
+	
+	
 	
 	public PaqueteMensaje(String usuarioEmisor, String usuarioReceptor, String mensaje, int operacion) {
 		super(operacion);
@@ -26,5 +33,37 @@ public class PaqueteMensaje extends Paquete implements Serializable{
 
 	public String getMensaje() {
 		return mensaje;
+	}
+
+	public String getNombreFuente() {
+		return nombreFuente;
+	}
+
+	public void setNombreFuente(String nombreFuente) {
+		this.nombreFuente = nombreFuente;
+	}
+
+	public int getTamFuente() {
+		return tamFuente;
+	}
+
+	public void setTamFuente(int tamFuente) {
+		this.tamFuente = tamFuente;
+	}
+
+	public int getTipoFuente() {
+		return tipoFuente;
+	}
+
+	public void setTipoFuente(int tipoFuente) {
+		this.tipoFuente = tipoFuente;
+	}
+
+	public int getRgb() {
+		return rgb;
+	}
+
+	public void setRgb(int rgb) {
+		this.rgb = rgb;
 	}
 }

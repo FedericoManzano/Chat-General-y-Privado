@@ -41,7 +41,7 @@ public class EventoConectar extends KeyAdapter implements ActionListener{
 		String servidor = chat.getMenuConexion().dameIp();
 		int puerto = chat.getMenuConexion().damePuerto();
 		
-		if(nombreUsuario.equals("") || servidor.equals("") || puerto == 0) {
+		if(!validarCampos(nombreUsuario, servidor, puerto)) {
 			JOptionPane.showMessageDialog(
 					chat.getMenuConexion(), "Revise los datos ingresados");
 			return;
@@ -65,5 +65,8 @@ public class EventoConectar extends KeyAdapter implements ActionListener{
 			ex.printStackTrace(); 
 		}
 	}
-
+	
+	private boolean validarCampos(String usuario, String servidor, int puerto) {
+		return !usuario.equals("") && !servidor.equals("") &&  puerto > 0;
+	}
 }

@@ -1,20 +1,28 @@
 package com.federico.chat.modelos;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import com.federico.chat.chat.Chat;
 import com.federico.chat.eventos.EventoMensajePrivado;
 import com.federico.chat.mensajeria.PaqueteMensaje;
+import com.federico.chat.menus.MenuAtributos;
 import com.federico.chat.menus.MenuPrivado;
 
-public class Conversacion implements Observador<PaqueteMensaje>{
+public class Conversacion extends MouseAdapter implements Observador<PaqueteMensaje>{
 	
 	private Conectado conectado;
 	private MenuPrivado menuPrivado;
 	private String usuarioExterno;
 	private String usuarioInterno;
-
+	private MenuAtributos menuAtributos;
 	public Conversacion(Conectado conectado, MenuPrivado menuPrivado, String usuarioInterno, Chat chat) {
 		this.conectado = conectado;
 		this.menuPrivado = menuPrivado;
@@ -22,9 +30,20 @@ public class Conversacion implements Observador<PaqueteMensaje>{
 		this.usuarioInterno = usuarioInterno;
 		menuPrivado.setUsuario(this.usuarioExterno);
 		menuPrivado.getBtnEnviar().addActionListener(new EventoMensajePrivado(chat, this));
+		menuAtributos = new MenuAtributos();
+		menuPrivado.getLblFuente().addMouseListener(this);
+		menuPrivado.getAreaMensaje().addMouseListener(this);
 	}
 	
 	
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		if(e.getSource() == menuPrivado.getAreaMensaje()) {
+			menuPrivado.getAreaMensaje().setFont(menuAtributos.getFuenteSeleccionada());
+			menuPrivado.getAreaMensaje().setForeground(menuAtributos.getColorSeleccionado());
+		}else if(e.getSource() == menuPrivado.getLblFuente())
+			menuAtributos.setVisible(true);
+	}
 	
 	public Conectado getConectado() {
 		return conectado;
@@ -95,7 +114,20 @@ public class Conversacion implements Observador<PaqueteMensaje>{
 			menuPrivado.setExtendedState(JFrame.ICONIFIED);
 			menuPrivado.setVisible(true);
 		}
-		menuPrivado.getAreaConversacion().append(p.getUsuarioEmisor() + ": " + p.getMensaje() + "\n");
+		menuPrivado.getAreaConversacion().append(new Font("Arial",Font.BOLD, 15), new Color(0,0,0), p.getUsuarioEmisor() + ": ");
+		menuPrivado.getAreaConversacion().append(dameFuente(p),dameColor(p), p.getMensaje() + "\n");
 	}
 
+	private Font dameFuente(PaqueteMensaje p) {
+		System.out.println(p.getNombreFuente() + " " + p.getTipoFuente()+" "+ p.getTamFuente());
+		return new Font(p.getNombreFuente(), p.getTipoFuente(), p.getTamFuente());
+	}
+	
+	private Color dameColor(PaqueteMensaje p) {
+		return new Color(p.getRgb());
+	}
+	
+	public MenuAtributos getMenuAtributos() {
+		return menuAtributos;
+	}
 }

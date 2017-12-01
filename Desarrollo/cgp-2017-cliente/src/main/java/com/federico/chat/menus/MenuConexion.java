@@ -105,7 +105,7 @@ public class MenuConexion extends JFrame {
 	}
 	
 	public String dameusuario() {
-		return usuarioText.getText().length() > 2 && usuarioText.getText().length() <= 20 ? usuarioText.getText() : "";
+		return usuarioText.getText().length() > 2 && usuarioText.getText().length() <= 20 ? usuarioText.getText().trim() : "";
 	}
 	
 	public String dameIp() {

@@ -10,6 +10,7 @@ import com.federico.chat.mensajeria.PaqueteConexion;
 
 public class EventoDesconexion extends WindowAdapter{
 	private Chat chat;
+	
 	public EventoDesconexion(Chat chat) {
 		this.chat = chat;
 	}

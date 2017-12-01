@@ -10,5 +10,4 @@ public class MensajePublico extends ComandoEscucha{
 		getChat().getMenuGeneral().getAreaConversacion().append(paqueteMensaje.getUsuarioEmisor() + ": " + 
 				paqueteMensaje.getMensaje() + "\n");
 	}
-
 }
