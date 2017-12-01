@@ -14,9 +14,9 @@ public class Conexion extends ComandosServidor{
 
 	@Override
 	public synchronized void ejecutar() {
-
+		LinkedList<EscuchaCliente> listadoCopia = Servidor.dameListadoConectados();
 		PaqueteConexion pa = Comando.gson.fromJson(dameCadenaLeida(), PaqueteConexion.class);
-		estaRepetido(pa);
+		estaRepetido(pa, listadoCopia);
 		getEscuchaCliente().setNombreUsuario(pa.getNombreUsuario());
 		getEscuchaCliente().setIp(pa.getIp());
 		
@@ -25,13 +25,13 @@ public class Conexion extends ComandosServidor{
 		String paqueteEnviar = Comando.gson.toJson(pa);
 		
 		PaqueteConectados paqueteConectados = new PaqueteConectados();
-		paqueteConectados.setListadoConectados(generarListadoConectado());
+		paqueteConectados.setListadoConectados(generarListadoConectado(listadoCopia));
 		paqueteConectados.guardaOperacion(Comando.CONEXION);
 		String cadenaEnviar = gson.toJson(paqueteConectados);
 		
 		try 
 		{
-			for(EscuchaCliente es : Servidor.listadoConectados) {
+			for(EscuchaCliente es : listadoCopia) {
 				if(!es.getNombreUsuario().equals(pa.getNombreUsuario()))
 					es.getSalida().writeObject(paqueteEnviar);
 				else {
@@ -48,16 +48,16 @@ public class Conexion extends ComandosServidor{
 		}
 	}
 	
-	private LinkedList<Conectado> generarListadoConectado(){
+	private LinkedList<Conectado> generarListadoConectado(LinkedList<EscuchaCliente> listadoCopia){
 		LinkedList<Conectado> listadoAEnviar = new LinkedList<Conectado>();
-		for(EscuchaCliente cliente : Servidor.listadoConectados) {
+		for(EscuchaCliente cliente : listadoCopia) {
 			listadoAEnviar.add(new Conectado(new Usuario(cliente.getNombreUsuario(), cliente.getIp())));
 		}
 		return listadoAEnviar;
 	}
 	
-	private void estaRepetido(PaqueteConexion paqueteConexion) {
-		for(EscuchaCliente es : Servidor.listadoConectados) {
+	private void estaRepetido(PaqueteConexion paqueteConexion, LinkedList<EscuchaCliente> listadoCopia) {
+		for(EscuchaCliente es : listadoCopia) {
 			if(paqueteConexion.getNombreUsuario().equals(es.getNombreUsuario())) {
 				paqueteConexion.setNombreUsuario(paqueteConexion.getNombreUsuario() + "-" + Servidor.cantidadRepetidos);
 				Servidor.cantidadRepetidos ++;

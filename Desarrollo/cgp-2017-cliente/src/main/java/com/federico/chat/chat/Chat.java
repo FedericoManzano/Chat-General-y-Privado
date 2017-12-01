@@ -161,6 +161,10 @@ public class Chat implements Observable<Conversacion ,PaqueteMensaje>{
 	public MenuGeneral getMenuGeneral() {
 		return menuGeneral;
 	}
+	
+	public LinkedList<Conversacion> dameListadoDeConversaciones(){
+		return new LinkedList<>(listadoConectados);
+	}
 
 	@Override
 	public void notificar(PaqueteMensaje p, Conversacion o) {

@@ -1,5 +1,7 @@
 package com.federico.chat.comandos;
 
+import java.util.LinkedList;
+
 import com.federico.chat.chat.Chat;
 import com.federico.chat.mensajeria.PaqueteConexion;
 import com.federico.chat.menus.MenuPrivado;
@@ -14,20 +16,19 @@ public class ActualizarConectados extends ComandoEscucha {
 		PaqueteConexion paqueteConexion = Comando.gson.fromJson(dameCadenaLeida(), PaqueteConexion.class);
 		Conectado con = new Conectado(new Usuario(paqueteConexion.getNombreUsuario(), paqueteConexion.getIp()));
 		Conversacion conve = new Conversacion(con, new MenuPrivado(), getChat().getUsuario().getNombreUsuario(), getChat());
+		LinkedList<Conversacion> listadoCopia = getChat().dameListadoDeConversaciones();
+		boolean estado = false;
 		if(paqueteConexion.dameOperacion() == Comando.AGREGAR_USUARIO) {
 			Chat.listadoConectados.add(conve);
 		}else {
-			int indice = Chat.listadoConectados.indexOf(conve);
+			int indice = listadoCopia.indexOf(conve);
 			if(indice != -1) {
-				Chat.listadoConectados.get(indice).getMenuPrivado().cambiarEstadoConexion();
+				listadoCopia.get(indice).getMenuPrivado().cambiarEstadoConexion();
 			}
 			Chat.listadoConectados.remove(conve);
 		}
-		
-		getChat().getMenuGeneral().vaciarListado();
-		for(Conversacion co : Chat.listadoConectados) {
-			getChat().getMenuGeneral().actualizarListaConectados(co.getUsuarioExterno());
+		while(!estado) {
+			estado = getChat().getEscuchaMensajes().actualizarListado() > 0;
 		}
 	}
-
 }

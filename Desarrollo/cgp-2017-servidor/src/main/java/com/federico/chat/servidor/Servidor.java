@@ -33,7 +33,7 @@ public class Servidor extends Thread implements ActionListener{
 		menuServidor.getBtnConectar().addActionListener(this);
 	}
 	
-	public void run() {
+	public synchronized void run() {
 		try {
 			servidor = new ServerSocket(puerto);
 		} catch (IOException e) {
@@ -47,6 +47,7 @@ public class Servidor extends Thread implements ActionListener{
 				ObjectInputStream entrada = new ObjectInputStream(soc.getInputStream());
 				EscuchaCliente clienteConectados = new EscuchaCliente(soc, salida, entrada, "", "");
 				listadoConectados.add(clienteConectados);
+				notifyAll();
 				clienteConectados.start();
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -73,5 +74,9 @@ public class Servidor extends Thread implements ActionListener{
 		}catch(NumberFormatException ex) {
 			JOptionPane.showMessageDialog(menuServidor, "Puerto incorrecto");
 		}
+	}
+	
+	public static LinkedList<EscuchaCliente> dameListadoConectados(){
+		return new LinkedList<>(listadoConectados);
 	}
 }

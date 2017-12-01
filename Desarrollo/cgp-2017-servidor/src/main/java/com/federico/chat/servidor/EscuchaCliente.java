@@ -43,7 +43,11 @@ public class EscuchaCliente extends Thread{
 				comando = (ComandosServidor)paquete.devolverComando(paquete.dameOperacion());
 				comando.guardaCadenaLeida(cadenaLeida);
 				comando.setEscuchaCliente(this);
-				comando.ejecutar();
+				synchronized (Servidor.listadoConectados) {
+					comando.ejecutar();
+				}
+				
+				notifyAll();
 				cadenaLeida = (String) entrada.readObject();
 			}
 		} catch (ClassNotFoundException e) {
@@ -59,7 +63,8 @@ public class EscuchaCliente extends Thread{
 			
 			
 			PaqueteConexion pa = Comando.gson.fromJson(cadenaLeida, PaqueteConexion.class);
-			for(EscuchaCliente es : Servidor.listadoConectados) {
+			LinkedList<EscuchaCliente> listadoCopia = Servidor.dameListadoConectados();
+			for(EscuchaCliente es : listadoCopia) {
 				if(es.getNombreUsuario().equals(pa.getNombreUsuario())) {
 					Servidor.listadoConectados.remove(es);
 					Servidor.menuServidor.mensaje(pa.getNombreUsuario() + " Desconectado del servidor ...");

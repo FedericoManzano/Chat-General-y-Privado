@@ -36,7 +36,7 @@ public class EventoConectar extends KeyAdapter implements ActionListener{
 		}
 	}
 
-	private void conectar() {
+	public void conectar() {
 		String nombreUsuario = chat.getMenuConexion().dameusuario();
 		String servidor = chat.getMenuConexion().dameIp();
 		int puerto = chat.getMenuConexion().damePuerto();
