@@ -11,6 +11,7 @@ import javax.swing.JButton;
 
 import javax.swing.ImageIcon;
 import java.awt.SystemColor;
+import java.awt.Color;
 
 public class MenuConexion extends JFrame {
 
@@ -30,7 +31,7 @@ public class MenuConexion extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		contentPane.setBackground(SystemColor.inactiveCaptionText);
+		contentPane.setBackground(new Color(0, 102, 153));
 		setLocationRelativeTo(null);
 		setResizable(false);
 		setTitle("Conexion");
