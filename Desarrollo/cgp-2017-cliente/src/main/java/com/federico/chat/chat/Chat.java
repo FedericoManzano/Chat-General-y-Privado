@@ -11,6 +11,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 import com.federico.chat.eventos.EventoAbrirVentana;
 import com.federico.chat.eventos.EventoConectar;
 import com.federico.chat.eventos.EventoDesconexion;
+import com.federico.chat.eventos.EventoMensajePrivado;
 import com.federico.chat.eventos.EventoMensajePublico;
 import com.federico.chat.eventos.EventoRefrescarLista;
 import com.federico.chat.mensajeria.PaqueteMensaje;
@@ -48,6 +49,7 @@ public class Chat implements Observable<Conversacion ,PaqueteMensaje>{
 		menuGeneral.addWindowListener(new EventoDesconexion(this));
 		menuGeneral.getBtnPrivado().addActionListener(new EventoAbrirVentana(this));
 		menuGeneral.getBtnRefrescar().addActionListener(new EventoRefrescarLista(this));
+		menuGeneral.getAreaMensaje().addKeyListener(new EventoMensajePublico(this));
 		cargarValoresDefecto();
 	}
 

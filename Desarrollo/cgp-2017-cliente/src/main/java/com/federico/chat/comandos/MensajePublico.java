@@ -1,7 +1,5 @@
 package com.federico.chat.comandos;
 
-import javax.swing.JOptionPane;
-
 import com.federico.chat.mensajeria.PaqueteMensaje;
 
 public class MensajePublico extends ComandoEscucha{
