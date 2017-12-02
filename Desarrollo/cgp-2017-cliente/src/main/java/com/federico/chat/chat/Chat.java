@@ -16,6 +16,7 @@ import com.federico.chat.eventos.EventoDesconexion;
 import com.federico.chat.eventos.EventoMensajePublico;
 import com.federico.chat.eventos.EventoRefrescarLista;
 import com.federico.chat.mensajeria.PaqueteMensaje;
+import com.federico.chat.menus.MenuAtributos;
 import com.federico.chat.menus.MenuConexion;
 import com.federico.chat.menus.MenuGeneral;
 import com.federico.chat.modelos.Conversacion;
@@ -42,10 +43,12 @@ public class Chat extends Thread implements Observable<Conversacion ,PaqueteMens
 	
 	
 	public Chat() {
+		
 		menuConexion = new MenuConexion();
 		menuConexion.setVisible(true);
 		menuConexion.getBtnConectarse().addActionListener(new EventoConectar(this));
 		menuGeneral = new MenuGeneral();
+		cargarValoresDefecto();
 		menuGeneral.getBtnEnviar().addActionListener(new EventoMensajePublico(this));
 		menuConexion.getPuertoText().addKeyListener(new EventoConectar(this));
 		menuConexion.getUsuarioText().addKeyListener(new EventoConectar(this));
@@ -53,7 +56,9 @@ public class Chat extends Thread implements Observable<Conversacion ,PaqueteMens
 		menuGeneral.getBtnPrivado().addActionListener(new EventoAbrirVentana(this));
 		menuGeneral.getBtnRefrescar().addActionListener(new EventoRefrescarLista(this));
 		menuGeneral.getAreaMensaje().addKeyListener(new EventoMensajePublico(this));
-		cargarValoresDefecto();
+		fuenteSeleccionada = new Font("Arial", Font.PLAIN, 11);
+		colorSeleccionado = new Color(0, 0, 0);
+		
 	}
 
 	public void run() {
@@ -155,6 +160,10 @@ public class Chat extends Thread implements Observable<Conversacion ,PaqueteMens
 		this.usuario = usuario;
 	}
 
+	public void configurarFormatoMensajes(MenuAtributos atributos) {
+		setFuenteSeleccionada(atributos.getFuenteSeleccionada());
+		setColorSeleccionado(atributos.getColorSeleccionado());
+	}
 
 	public static void main(String [] args) {
 		try {

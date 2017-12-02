@@ -1,7 +1,6 @@
 package com.federico.chat.mensajeria;
 
 import java.io.Serializable;
-
 public class PaqueteMensaje extends Paquete implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
@@ -12,15 +11,26 @@ public class PaqueteMensaje extends Paquete implements Serializable{
 	private int tamFuente;
 	private int tipoFuente;
 	private int rgb;
-
 	
 	
-	
-	public PaqueteMensaje(String usuarioEmisor, String usuarioReceptor, String mensaje, int operacion) {
+	public PaqueteMensaje(String usuarioEmisor, String usuarioReceptor, String mensaje, int operacion){
 		super(operacion);
 		this.usuarioEmisor = usuarioEmisor;
 		this.usuarioReceptor = usuarioReceptor;
 		this.mensaje = mensaje;
+	}
+	
+	public PaqueteMensaje(
+			String usuarioEmisor, String usuarioReceptor, String mensaje, int operacion, String nombreFuente, 
+			int tamFuente,int tipoFuente, int rgb) {
+		super(operacion);
+		this.usuarioEmisor = usuarioEmisor;
+		this.usuarioReceptor = usuarioReceptor;
+		this.mensaje = mensaje;
+		this.nombreFuente = nombreFuente;
+		this.tamFuente = tamFuente;
+		this.rgb = rgb;
+		this.tipoFuente = tipoFuente;
 	}
 
 	public String getUsuarioEmisor() {

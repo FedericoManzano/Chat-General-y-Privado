@@ -9,6 +9,7 @@ import java.io.Serializable;
 
 import javax.swing.border.LineBorder;
 
+import com.federico.chat.chat.Chat;
 import com.federico.chat.modelos.CuadroTexto;
 
 import java.awt.Color;
@@ -155,5 +156,18 @@ public class MenuPrivado extends JFrame implements Serializable{
 
 	public void setLblFuente(JLabel lblFuente) {
 		this.lblFuente = lblFuente;
+	}
+	
+	public void configurarTipoTexto(Chat chat) {
+		getAreaMensaje().setFont(chat.getFuenteSeleccionada());
+		getAreaMensaje().setForeground(chat.getColorSeleccionado());
+	}
+	
+	public void añadirMensaje(Font fuente, Color color, String mensaje) {
+		getAreaConversacion().append(fuente, color, mensaje);
+	}
+	
+	public void limpiarAreaMensaje() {
+		getAreaMensaje().setText("");
 	}
 }

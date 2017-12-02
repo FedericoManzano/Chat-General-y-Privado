@@ -2,9 +2,15 @@ package com.federico.chat.modelos;
 
 import java.awt.Color;
 import java.awt.Font;
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
 import javax.swing.JFrame;
 import com.federico.chat.chat.Chat;
 import com.federico.chat.eventos.EventoMensajePrivado;
@@ -12,33 +18,59 @@ import com.federico.chat.mensajeria.PaqueteMensaje;
 import com.federico.chat.menus.MenuAtributos;
 import com.federico.chat.menus.MenuPrivado;
 
-public class Conversacion extends MouseAdapter implements Observador<PaqueteMensaje>{
+public class Conversacion extends KeyAdapter implements Observador<PaqueteMensaje>, ActionListener{
 	
 	private Conectado conectado;
 	private MenuPrivado menuPrivado;
 	private String usuarioExterno;
 	private String usuarioInterno;
 	private MenuAtributos menuAtributos;
+	private Chat chat;
+	
 	public Conversacion(Conectado conectado, MenuPrivado menuPrivado, String usuarioInterno, Chat chat) {
 		this.conectado = conectado;
 		this.menuPrivado = menuPrivado;
 		this.usuarioExterno = conectado.getUsuario().getNombreUsuario();
 		this.usuarioInterno = usuarioInterno;
+		this.chat = chat;
 		menuPrivado.setUsuario(this.usuarioExterno);
 		menuPrivado.getBtnEnviar().addActionListener(new EventoMensajePrivado(chat, this));
 		menuAtributos = new MenuAtributos();
-		menuPrivado.getLblFuente().addMouseListener(this);
-		menuPrivado.getAreaMensaje().addMouseListener(this);
+		menuPrivado.getAreaMensaje().setFont(chat.getFuenteSeleccionada());
+		menuPrivado.getAreaMensaje().setForeground(chat.getColorSeleccionado());
+		menuPrivado.getLblFuente().addMouseListener(new ManejadorMouse());
+		menuPrivado.getAreaMensaje().addKeyListener(this);
+		menuPrivado.addWindowListener(new ManejadorVentana());
+		menuAtributos.getBtnAplicar().addActionListener(this);
 	}
 	
 	
 	@Override
-	public void mouseClicked(MouseEvent e) {
+	public void keyTyped(KeyEvent e) {
 		if(e.getSource() == menuPrivado.getAreaMensaje()) {
-			menuPrivado.getAreaMensaje().setFont(menuAtributos.getFuenteSeleccionada());
-			menuPrivado.getAreaMensaje().setForeground(menuAtributos.getColorSeleccionado());
-		}else if(e.getSource() == menuPrivado.getLblFuente())
-			menuAtributos.setVisible(true);
+			menuPrivado.getAreaMensaje().setFont(chat.getFuenteSeleccionada());
+			menuPrivado.getAreaMensaje().setForeground(chat.getColorSeleccionado());
+			
+		}
+	}
+	
+	public class ManejadorMouse extends MouseAdapter {
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			if(menuPrivado.getLblFuente() == e.getSource()) {
+				menuAtributos.setVisible(true);
+			}
+		}
+	}
+	
+	public class ManejadorVentana extends WindowAdapter {
+		@Override
+		public void windowOpened(WindowEvent e) {
+			if(e.getSource() == menuPrivado) {
+				menuPrivado.getAreaMensaje().setFont(chat.getFuenteSeleccionada());
+				menuPrivado.getAreaMensaje().setForeground(chat.getColorSeleccionado());
+			}
+		}
 	}
 	
 	public Conectado getConectado() {
@@ -110,8 +142,8 @@ public class Conversacion extends MouseAdapter implements Observador<PaqueteMens
 			menuPrivado.setExtendedState(JFrame.ICONIFIED);
 			menuPrivado.setVisible(true);
 		}
-		menuPrivado.getAreaConversacion().append(new Font("Arial",Font.BOLD, 15), new Color(0,0,0), p.getUsuarioEmisor() + ": ");
-		menuPrivado.getAreaConversacion().append(dameFuente(p),dameColor(p), p.getMensaje() + "\n");
+		menuPrivado.añadirMensaje(new Font("Arial",Font.BOLD, 15), new Color(0,0,0), p.getUsuarioEmisor() + ": ");
+		menuPrivado.añadirMensaje(dameFuente(p), dameColor(p), p.getMensaje() + "\n");
 	}
 
 	private Font dameFuente(PaqueteMensaje p) {
@@ -124,5 +156,24 @@ public class Conversacion extends MouseAdapter implements Observador<PaqueteMens
 	
 	public MenuAtributos getMenuAtributos() {
 		return menuAtributos;
+	}
+
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		int tipoLetra = Font.PLAIN;
+		switch(menuAtributos.getTipoLetraCombo().getSelectedItem().toString()) {
+		case "Plain": tipoLetra = Font.PLAIN;
+			break;
+		case "Bold": tipoLetra = Font.BOLD;
+			break;
+		case "Italic": tipoLetra = Font.ITALIC;
+		}
+		menuAtributos.setFuenteSeleccionada(new Font(menuAtributos.getListadoFuentes().getSelectedValue(), tipoLetra, menuAtributos.getListadoTam().getSelectedValue()));
+		menuAtributos.setColorSeleccionado(menuAtributos.getColorChooser().getColor());
+		menuAtributos.dispose();
+		chat.configurarFormatoMensajes(menuAtributos);
+		menuPrivado.configurarTipoTexto(chat);
+		
 	}
 }

@@ -106,25 +106,6 @@ public class MenuAtributos extends JFrame {
 			}
 		});
 		
-		btnAplicar.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				int tipoLetra = Font.PLAIN;
-				switch(tipoLetraCombo.getSelectedItem().toString()) {
-				case "Plain": tipoLetra = Font.PLAIN;
-					break;
-				case "Bold": tipoLetra = Font.BOLD;
-					break;
-				case "Italic": tipoLetra = Font.ITALIC;
-				}
-				
-				fuenteSeleccionada = new Font(listadoFuentes.getSelectedValue(), tipoLetra, listadoTam.getSelectedValue());
-				colorSeleccionado = colorChooser.getColor();
-				dispose();
-			}
-		});
-		
 	}
 	
 	private void cargarTipoLetra() {
@@ -162,7 +143,7 @@ public class MenuAtributos extends JFrame {
 	}
 
 	public Font getFuenteSeleccionada() {
-		return fuenteSeleccionada;
+		return new Font(fuenteSeleccionada.getFontName(), fuenteSeleccionada.getStyle(), fuenteSeleccionada.getSize());
 	}
 
 	public void setFuenteSeleccionada(Font fuenteSeleccionada) {
@@ -170,7 +151,7 @@ public class MenuAtributos extends JFrame {
 	}
 
 	public Color getColorSeleccionado() {
-		return colorSeleccionado;
+		return new Color(colorSeleccionado.getRGB());
 	}
 
 	public void setColorSeleccionado(Color colorSeleccionado) {
@@ -188,6 +169,23 @@ public class MenuAtributos extends JFrame {
 	public JButton getBtnAplicar() {
 		return btnAplicar;
 	}
+
+	public JList<String> getListadoFuentes() {
+		return listadoFuentes;
+	}
+
+	public JList<Integer> getListadoTam() {
+		return listadoTam;
+	}
+
+	public JComboBox<String> getTipoLetraCombo() {
+		return tipoLetraCombo;
+	}
+
+	public JColorChooser getColorChooser() {
+		return colorChooser;
+	}
+	
 	
 	
 }
