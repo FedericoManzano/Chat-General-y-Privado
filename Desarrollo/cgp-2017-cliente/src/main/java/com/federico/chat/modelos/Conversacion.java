@@ -142,7 +142,7 @@ public class Conversacion extends KeyAdapter implements Observador<PaqueteMensaj
 			menuPrivado.setExtendedState(JFrame.ICONIFIED);
 			menuPrivado.setVisible(true);
 		}
-		menuPrivado.añadirMensaje(new Font("Arial",Font.BOLD, 15), new Color(0,0,0), p.getUsuarioEmisor() + ": ");
+		menuPrivado.añadirMensaje(new Font("Arial Black",Font.ITALIC, 20), new Color(0,0,0), p.getUsuarioEmisor() + ": ");
 		menuPrivado.añadirMensaje(dameFuente(p), dameColor(p), p.getMensaje() + "\n");
 	}
 

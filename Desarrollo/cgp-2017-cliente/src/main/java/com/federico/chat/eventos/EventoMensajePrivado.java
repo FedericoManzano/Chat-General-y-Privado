@@ -17,7 +17,7 @@ public class EventoMensajePrivado implements ActionListener{
 
 	private Chat chat;
 	private Conversacion conversacion;
-	private Font fuenteUsuario = new Font("Arial",Font.BOLD, 15);
+	private Font fuenteUsuario = new Font("Arial Black",Font.ITALIC, 20);
 	private Color colorUsuario = new Color(0,0,0);
 	
 	public EventoMensajePrivado(Chat chat, Conversacion con) {
