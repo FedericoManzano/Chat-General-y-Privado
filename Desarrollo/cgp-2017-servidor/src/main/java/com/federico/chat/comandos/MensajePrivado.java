@@ -18,7 +18,8 @@ public class MensajePrivado extends ComandosServidor{
 				String objetoEnvio = Comando.gson.toJson(paqueteMensaje);
 				try {
 					es.getSalida().writeObject(objetoEnvio);
-					Servidor.menuServidor.mensaje(paqueteMensaje.getUsuarioEmisor() + " Envio un mensaje privado a " + paqueteMensaje.getUsuarioReceptor());
+					Servidor.menuServidor.mensaje(paqueteMensaje.getUsuarioEmisor() + 
+							" Envio un mensaje privado a " + paqueteMensaje.getUsuarioReceptor());
 				} catch (IOException e) {
 					e.printStackTrace();
 				}

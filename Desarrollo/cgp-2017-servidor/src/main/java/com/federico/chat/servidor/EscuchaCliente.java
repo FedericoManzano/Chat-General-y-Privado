@@ -58,16 +58,15 @@ public class EscuchaCliente extends Thread{
 			entrada.close();
 			socket.close();
 			
-			
 			PaqueteConexion pa = Comando.gson.fromJson(cadenaLeida, PaqueteConexion.class);
 			LinkedList<EscuchaCliente> listadoCopia = Servidor.dameListadoConectados();
 			for(EscuchaCliente es : listadoCopia) {
 				if(es.getNombreUsuario().equals(pa.getNombreUsuario())) {
 					Servidor.listadoConectados.remove(es);
-					Servidor.menuServidor.mensaje(pa.getNombreUsuario() + " Desconectado del servidor ...");
+					Servidor.menuServidor.mensaje(pa.getNombreUsuario() + 
+							" Desconectado del servidor ...");
 				}
 			}
-			
 			pa.guardaOperacion(Comando.BORRAR_USUARIO);
 			String eliminado = Comando.gson.toJson(pa);
 			
@@ -78,55 +77,44 @@ public class EscuchaCliente extends Thread{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		
 	}
 	
 	public Socket getSocket() {
 		return socket;
 	}
 
-
 	public void setSocket(Socket socket) {
 		this.socket = socket;
 	}
-
 
 	public ObjectOutputStream getSalida() {
 		return salida;
 	}
 
-
 	public void setSalida(ObjectOutputStream salida) {
 		this.salida = salida;
 	}
-
 
 	public ObjectInputStream getEntrada() {
 		return entrada;
 	}
 
-
 	public void setEntrada(ObjectInputStream entrada) {
 		this.entrada = entrada;
 	}
-
 
 	public String getIp() {
 		return ip;
 	}
 
-
 	public void setIp(String ip) {
 		this.ip = ip;
 	}
 
-
 	public String getNombreUsuario() {
 		return nombreUsuario;
 	}
-
-
+	
 	public void setNombreUsuario(String nombreUsuario) {
 		this.nombreUsuario = nombreUsuario;
 	}

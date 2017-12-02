@@ -173,5 +173,7 @@ public class MenuGeneral extends JFrame {
 		return btnRefrescar;
 	}
 	
-	
+	public void configurarTitulo(String titulo) {
+		setTitle(titulo);
+	}
 }

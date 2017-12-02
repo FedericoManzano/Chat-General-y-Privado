@@ -26,7 +26,6 @@ public class EventoAbrirVentana implements ActionListener{
 				}else{
 					JOptionPane.showMessageDialog(con.getMenuPrivado(), "No puede enviarse mensajes a usted mismo");
 				}
-				
 			}
 		}
 	}
