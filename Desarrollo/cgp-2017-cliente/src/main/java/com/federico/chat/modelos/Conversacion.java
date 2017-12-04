@@ -2,6 +2,7 @@ package com.federico.chat.modelos;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
@@ -14,6 +15,8 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
+import javax.swing.SwingConstants;
+
 import com.federico.chat.chat.Chat;
 import com.federico.chat.eventos.EventoMensajePrivado;
 import com.federico.chat.mensajeria.PaqueteMensaje;
@@ -28,6 +31,8 @@ public class Conversacion extends KeyAdapter implements Observador<PaqueteMensaj
 	private String usuarioInterno;
 	private MenuAtributos menuAtributos;
 	private Chat chat;
+	private int cantidadCaracteres = 0;
+	
 	
 	public Conversacion(Conectado conectado, MenuPrivado menuPrivado, 
 			String usuarioInterno, Chat chat) {
@@ -53,6 +58,20 @@ public class Conversacion extends KeyAdapter implements Observador<PaqueteMensaj
 		if(e.getSource() == menuPrivado.getAreaMensaje()) {
 			menuPrivado.getAreaMensaje().setFont(chat.getFuenteSeleccionada());
 			menuPrivado.getAreaMensaje().setForeground(chat.getColorSeleccionado());
+			Rectangle rec = new Rectangle(
+					menuPrivado.getAreaMensaje().getWidth(), 
+					menuPrivado.getAreaMensaje().getHeight(), 
+					menuPrivado.getAreaMensaje().getX() + 50, 
+					menuPrivado.getAreaMensaje().getY());
+			
+			int val = menuPrivado.getAreaMensaje().getScrollableUnitIncrement(rec, SwingConstants.HORIZONTAL, 1);
+			
+
+			if(val < 5) {
+				menuPrivado.getAreaMensaje().append(chat.getFuenteSeleccionada(), 
+						chat.getColorSeleccionado(), "\n");
+				menuPrivado.getScrollPane_1().getHorizontalScrollBar().setValue(menuPrivado.getScrollPane_1().getHorizontalScrollBar().getMinimum());
+			}
 		}
 	}
 	
@@ -91,8 +110,6 @@ public class Conversacion extends KeyAdapter implements Observador<PaqueteMensaj
 	public MenuPrivado getMenuPrivado() {
 		return menuPrivado;
 	}
-
-
 
 	public void setMenuPrivado(MenuPrivado menuPrivado) {
 		this.menuPrivado = menuPrivado;
@@ -138,8 +155,10 @@ public class Conversacion extends KeyAdapter implements Observador<PaqueteMensaj
 			menuPrivado.setVisible(true);
 		}
 		menuPrivado.añadirMensaje(new Font("Arial Black",Font.ITALIC, 15), 
-				new Color(0,0,0), p.getUsuarioEmisor() + ": ");
+				new Color(0,0,0), p.getUsuarioEmisor() + ": \n");
 		menuPrivado.añadirMensaje(dameFuente(p), dameColor(p), p.getMensaje() + "\n");
+		menuPrivado.getScrollPane().getVerticalScrollBar().setValue(menuPrivado.getScrollPane().getVerticalScrollBar().getMaximum());
+
 	}
 
 	private Font dameFuente(PaqueteMensaje p) {

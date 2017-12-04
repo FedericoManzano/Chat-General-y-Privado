@@ -31,6 +31,9 @@ public class MenuPrivado extends JFrame implements Serializable{
 	private JLabel lblUsuario;
 	private JLabel lblConexion;
 	private JLabel lblFuente;
+	private JScrollPane scrollPane_1;
+	private JScrollPane scrollPane;
+	
 	public MenuPrivado() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 464, 421);
@@ -68,7 +71,7 @@ public class MenuPrivado extends JFrame implements Serializable{
 		panel_1.add(panel_2);
 		panel_2.setLayout(new BoxLayout(panel_2, BoxLayout.X_AXIS));
 		
-		JScrollPane scrollPane = new JScrollPane();
+		scrollPane = new JScrollPane();
 		panel_2.add(scrollPane);
 		
 		areaConversacion = new CuadroTexto();
@@ -92,12 +95,16 @@ public class MenuPrivado extends JFrame implements Serializable{
 		panel_3.add(panel_4);
 		panel_4.setLayout(new BoxLayout(panel_4, BoxLayout.X_AXIS));
 		
-		JScrollPane scrollPane_1 = new JScrollPane();
+		
+		scrollPane_1 = new JScrollPane();
+		areaMensaje = new CuadroTexto();
+		
 		panel_4.add(scrollPane_1);
 		
 		areaMensaje = new CuadroTexto();
+		areaMensaje.setBounds(panel_4.getBounds());
 		scrollPane_1.setViewportView(areaMensaje );
-		
+
 		btnEnviar = new JButton("");
 		btnEnviar.setIcon(new ImageIcon(MenuPrivado.class.getResource("/com/federico/chat/recursos/enviar.png")));
 		btnEnviar.setBounds(335, 23, 73, 68);
@@ -147,6 +154,12 @@ public class MenuPrivado extends JFrame implements Serializable{
 		lblUsuario.setText(usuario);
 	}
 
+	
+
+	public JScrollPane getScrollPane_1() {
+		return scrollPane_1;
+	}
+
 
 	public JLabel getLblFuente() {
 		return lblFuente;
@@ -169,4 +182,11 @@ public class MenuPrivado extends JFrame implements Serializable{
 	public void limpiarAreaMensaje() {
 		getAreaMensaje().setText("");
 	}
+
+
+	public JScrollPane getScrollPane() {
+		return scrollPane;
+	}
+	
+	
 }

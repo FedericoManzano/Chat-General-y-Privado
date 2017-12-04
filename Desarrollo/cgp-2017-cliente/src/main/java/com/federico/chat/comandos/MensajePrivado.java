@@ -10,13 +10,10 @@ public class MensajePrivado extends ComandoEscucha {
 	public void ejecutar() {
 		PaqueteMensaje paqueteMensaje = Comando.gson.fromJson(dameCadenaLeida(), PaqueteMensaje.class);
 		Conversacion conversacion = null;
-		for(Conversacion con : Chat.listadoConectados) {
-			if(con.getUsuarioExterno().equals(paqueteMensaje.getUsuarioEmisor())) {
+		for(Conversacion con : Chat.listadoConectados) 
+			if(con.getUsuarioExterno().equals(paqueteMensaje.getUsuarioEmisor())) 
 				conversacion = con;
-			}
-		}
-		if(conversacion != null) {
+		if(conversacion != null) 
 			getChat().notificar(paqueteMensaje, conversacion);
-		}
 	}
 }
