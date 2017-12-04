@@ -17,7 +17,7 @@ public class EventoMensajePrivado implements ActionListener{
 
 	private Chat chat;
 	private Conversacion conversacion;
-	private Font fuenteUsuario = new Font("Arial Black",Font.ITALIC, 20);
+	private Font fuenteUsuario = new Font("Arial Black",Font.ITALIC, 15);
 	private Color colorUsuario = new Color(0,0,0);
 	
 	public EventoMensajePrivado(Chat chat, Conversacion con) {
@@ -46,6 +46,7 @@ public class EventoMensajePrivado implements ActionListener{
 		String objetoEnviar = Comando.gson.toJson(paq);
 		try {
 			chat.getSalida().writeObject(objetoEnviar);
+			conversacion.getMenuPrivado().getAreaMensaje().requestFocus();
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}

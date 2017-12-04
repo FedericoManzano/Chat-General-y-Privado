@@ -53,6 +53,7 @@ public class Chat extends Thread implements Observable<Conversacion ,PaqueteMens
 		menuConexion.getPuertoText().addKeyListener(new EventoConectar(this));
 		menuConexion.getUsuarioText().addKeyListener(new EventoConectar(this));
 		menuGeneral.addWindowListener(new EventoDesconexion(this));
+		menuGeneral.getCerrarSesion().addActionListener(new EventoDesconexion(this));
 		menuGeneral.getBtnPrivado().addActionListener(new EventoAbrirVentana(this));
 		menuGeneral.getBtnRefrescar().addActionListener(new EventoRefrescarLista(this));
 		menuGeneral.getAreaMensaje().addKeyListener(new EventoMensajePublico(this));

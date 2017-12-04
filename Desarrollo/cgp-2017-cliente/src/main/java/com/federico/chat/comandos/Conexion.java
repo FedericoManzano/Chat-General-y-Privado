@@ -16,7 +16,8 @@ public class Conexion extends ComandoEscucha {
 		cargarListaConectados(paq.getListadoConectados());
 		getChat().getMenuConexion().dispose();	
 		getChat().getEscuchaMensajes().actualizarListado();
-		getChat().getMenuGeneral().configurarTitulo(getChat().getMenuGeneral().getTitle() + " - " + getChat().getUsuario().getNombreUsuario() + "  " + "Bienvenido");
+		getChat().getMenuGeneral().configurarTitulo(getChat().getMenuGeneral().getTitle() + 
+				" - " + getChat().getUsuario().getNombreUsuario() + "  " + "Bienvenido");
 		getChat().getMenuGeneral().setVisible(true);
 	}
 	

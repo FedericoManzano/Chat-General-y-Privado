@@ -44,9 +44,8 @@ public class EscuchaMensajes extends Thread{
 	public void actualizarListado() {
 		LinkedList<Conversacion> listado = chat.dameListadoDeConversaciones();
 		chat.getMenuGeneral().vaciarListado();
-		for(Conversacion co : listado) {
+		for(Conversacion co : listado)
 			chat.getMenuGeneral().actualizarListaConectados(co.getUsuarioExterno());
-		}
 		chat.getMenuGeneral().dameCantidadElementos();
 	}
 	

@@ -16,12 +16,12 @@ public abstract class Comando {
 			"ActualizarUsuario"
 	};
 	
-	public static final int CONEXION = 0;
-	public static final int MENSAJE_PUBLICO = 1;
-	public static final int AGREGAR_USUARIO= 2;
-	public static final int DESCONEXION = 3;
-	public static final int BORRAR_USUARIO = 4;
-	public static final int MENSAJE_PRIVADO = 5;
+	public static final int CONEXION = 			0;
+	public static final int MENSAJE_PUBLICO = 	1;
+	public static final int AGREGAR_USUARIO = 	2;
+	public static final int DESCONEXION = 		3;
+	public static final int BORRAR_USUARIO = 	4;
+	public static final int MENSAJE_PRIVADO = 	5;
 	public static final int ACTUALIZAR_USUARIO= 6;
 	
 	

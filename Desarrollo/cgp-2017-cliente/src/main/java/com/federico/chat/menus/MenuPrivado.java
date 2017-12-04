@@ -56,7 +56,7 @@ public class MenuPrivado extends JFrame implements Serializable{
 		panel_1.setLayout(null);
 		
 		lblUsuario = new JLabel("Usuario");
-		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblUsuario.setFont(new Font("Calibri", Font.BOLD, 18));
 		lblUsuario.setForeground(Color.WHITE);
 		lblUsuario.setIcon(new ImageIcon(MenuPrivado.class.getResource("/com/federico/chat/recursos/receptor.png")));
 		lblUsuario.setBounds(10, 11, 247, 32);
@@ -74,9 +74,8 @@ public class MenuPrivado extends JFrame implements Serializable{
 		areaConversacion = new CuadroTexto();
 		areaConversacion.setEditable(false);
 		scrollPane.setViewportView(areaConversacion );
-		
 		lblConexion = new JLabel("Online");
-		lblConexion.setFont(new Font("Traditional Arabic", Font.BOLD, 22));
+		lblConexion.setFont(new Font("Calibri", Font.BOLD, 22));
 		lblConexion.setForeground(Color.GREEN);
 		lblConexion.setIcon(new ImageIcon(MenuPrivado.class.getResource("/com/federico/chat/recursos/happy.png")));
 		lblConexion.setBounds(288, 11, 110, 26);

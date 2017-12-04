@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
@@ -27,7 +29,8 @@ public class Conversacion extends KeyAdapter implements Observador<PaqueteMensaj
 	private MenuAtributos menuAtributos;
 	private Chat chat;
 	
-	public Conversacion(Conectado conectado, MenuPrivado menuPrivado, String usuarioInterno, Chat chat) {
+	public Conversacion(Conectado conectado, MenuPrivado menuPrivado, 
+			String usuarioInterno, Chat chat) {
 		this.conectado = conectado;
 		this.menuPrivado = menuPrivado;
 		this.usuarioExterno = conectado.getUsuario().getNombreUsuario();
@@ -50,34 +53,34 @@ public class Conversacion extends KeyAdapter implements Observador<PaqueteMensaj
 		if(e.getSource() == menuPrivado.getAreaMensaje()) {
 			menuPrivado.getAreaMensaje().setFont(chat.getFuenteSeleccionada());
 			menuPrivado.getAreaMensaje().setForeground(chat.getColorSeleccionado());
-			
 		}
 	}
 	
 	public class ManejadorMouse extends MouseAdapter {
 		@Override
 		public void mouseClicked(MouseEvent e) {
-			if(menuPrivado.getLblFuente() == e.getSource()) {
-				menuAtributos.setVisible(true);
-			}
+			menuAtributos.setVisible(true);
 		}
 	}
 	
 	public class ManejadorVentana extends WindowAdapter {
 		@Override
 		public void windowOpened(WindowEvent e) {
-			if(e.getSource() == menuPrivado) {
-				menuPrivado.getAreaMensaje().setFont(chat.getFuenteSeleccionada());
-				menuPrivado.getAreaMensaje().setForeground(chat.getColorSeleccionado());
-			}
+			menuPrivado.getAreaMensaje().setFont(chat.getFuenteSeleccionada());
+			menuPrivado.getAreaMensaje().setForeground(chat.getColorSeleccionado());
+			menuPrivado.getAreaMensaje().requestFocus();
+		}
+		
+		@Override
+		public void windowClosed(WindowEvent e) {
+			menuPrivado.getAreaMensaje().requestFocus();
+			menuPrivado.dispose();
 		}
 	}
 	
 	public Conectado getConectado() {
 		return conectado;
 	}
-
-
 
 	public void setConectado(Conectado conectado) {
 		this.conectado = conectado;
@@ -95,25 +98,17 @@ public class Conversacion extends KeyAdapter implements Observador<PaqueteMensaj
 		this.menuPrivado = menuPrivado;
 	}
 
-
-
 	public String getUsuarioExterno() {
 		return usuarioExterno;
 	}
-
-
 
 	public void setUsuarioExterno(String usuarioExterno) {
 		this.usuarioExterno = usuarioExterno;
 	}
 
-
-
 	public String getUsuarioInterno() {
 		return usuarioInterno;
 	}
-
-
 
 	public void setUsuarioInterno(String usuarioInterno) {
 		this.usuarioInterno = usuarioInterno;
@@ -142,7 +137,8 @@ public class Conversacion extends KeyAdapter implements Observador<PaqueteMensaj
 			menuPrivado.setExtendedState(JFrame.ICONIFIED);
 			menuPrivado.setVisible(true);
 		}
-		menuPrivado.añadirMensaje(new Font("Arial Black",Font.ITALIC, 20), new Color(0,0,0), p.getUsuarioEmisor() + ": ");
+		menuPrivado.añadirMensaje(new Font("Arial Black",Font.ITALIC, 15), 
+				new Color(0,0,0), p.getUsuarioEmisor() + ": ");
 		menuPrivado.añadirMensaje(dameFuente(p), dameColor(p), p.getMensaje() + "\n");
 	}
 

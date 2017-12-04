@@ -30,13 +30,13 @@ public class MenuGeneral extends JFrame {
 	private JTextArea areaConversacion;
 	private JButton btnRefrescar;
 	private DefaultListModel<String> modelo = new DefaultListModel<>();
-	
+	private JButton cerrarSesion;
 
 	/**
 	 * Create the frame.
 	 */
 	public MenuGeneral() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//setDefaultCloseOperation(JFrame.MAXIMIZED_HORIZ);
 		setBounds(100, 100, 637, 393);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -65,9 +65,9 @@ public class MenuGeneral extends JFrame {
 		listadoConectados = new JList<String>();
 		scrollPane.setViewportView(listadoConectados);
 		
-		btnPrivado = new JButton("Privado");
+		btnPrivado = new JButton("");
 		btnPrivado.setIcon(new ImageIcon(MenuGeneral.class.getResource("/com/federico/chat/recursos/privado.png")));
-		btnPrivado.setBounds(20, 277, 137, 47);
+		btnPrivado.setBounds(20, 277, 66, 47);
 		panel.add(btnPrivado);
 		
 		JLabel lblConectados = new JLabel("Conectados");
@@ -78,8 +78,13 @@ public class MenuGeneral extends JFrame {
 		
 		btnRefrescar = new JButton("");
 		btnRefrescar.setIcon(new ImageIcon(MenuGeneral.class.getResource("/com/federico/chat/recursos/refresh.png")));
-		btnRefrescar.setBounds(167, 277, 59, 47);
+		btnRefrescar.setBounds(99, 277, 59, 47);
 		panel.add(btnRefrescar);
+		
+		cerrarSesion = new JButton("");
+		cerrarSesion.setIcon(new ImageIcon(MenuGeneral.class.getResource("/com/federico/chat/recursos/cerrarSesion.png")));
+		cerrarSesion.setBounds(168, 277, 59, 47);
+		panel.add(cerrarSesion);
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -176,4 +181,11 @@ public class MenuGeneral extends JFrame {
 	public void configurarTitulo(String titulo) {
 		setTitle(titulo);
 	}
+
+
+	public JButton getCerrarSesion() {
+		return cerrarSesion;
+	}
+	
+	
 }

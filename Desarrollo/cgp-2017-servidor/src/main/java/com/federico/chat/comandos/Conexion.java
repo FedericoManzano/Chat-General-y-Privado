@@ -59,7 +59,8 @@ public class Conexion extends ComandosServidor{
 	private void estaRepetido(PaqueteConexion paqueteConexion, LinkedList<EscuchaCliente> listadoCopia) {
 		for(EscuchaCliente es : listadoCopia) {
 			if(paqueteConexion.getNombreUsuario().equals(es.getNombreUsuario())) {
-				paqueteConexion.setNombreUsuario(paqueteConexion.getNombreUsuario() + "-" + Servidor.cantidadRepetidos);
+				paqueteConexion.setNombreUsuario(paqueteConexion.getNombreUsuario() + 
+						"-" + Servidor.cantidadRepetidos);
 				Servidor.cantidadRepetidos ++;
 			}
 		}
