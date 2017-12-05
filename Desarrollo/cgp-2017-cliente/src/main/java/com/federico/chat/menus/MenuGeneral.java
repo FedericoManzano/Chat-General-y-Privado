@@ -140,10 +140,10 @@ public class MenuGeneral extends JFrame implements Runnable{
 		panel_2.add(btnEnviar);
 		
 		lblReloj = new JLabel("");
-		lblReloj.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblReloj.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblReloj.setForeground(Color.WHITE);
 		lblReloj.setIcon(new ImageIcon(MenuGeneral.class.getResource("/com/federico/chat/recursos/reloj.png")));
-		lblReloj.setBounds(221, 5, 109, 41);
+		lblReloj.setBounds(183, 5, 147, 41);
 		panel_2.add(lblReloj);
 		Thread t = new Thread(this);
 		t.start();
@@ -215,7 +215,9 @@ public class MenuGeneral extends JFrame implements Runnable{
 			minutos = hora.get(Calendar.MINUTE);
 			segundos = hora.get(Calendar.SECOND);
 			
-			lblReloj.setText(horas + ": " + minutos + ": " + segundos);
+			lblReloj.setText((horas < 10 ? "0" + horas : horas) + 
+					" : " + (minutos < 10 ? "0" + minutos : minutos)  + 
+					" : " + (segundos < 10 ? "0" + segundos : segundos));
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {

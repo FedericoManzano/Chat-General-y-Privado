@@ -9682,3 +9682,313 @@ Stack Trace
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:05:27.678
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1002 2017-12-04 23:05:28.587
+!MESSAGE Unable to read repository at http://www.eclipsecolorthemes.org/.
+!STACK 0
+java.io.IOException: http://www.eclipsecolorthemes.org/ is not a valid repository location.
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:102)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:768)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.oomph.util.ReflectUtil.invokeMethod(ReflectUtil.java:117)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:409)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:201)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager$Metadata.loadRepository(CachingRepositoryManager.java:476)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:152)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:130)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:74)
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2017-12-04 23:05:34.333
+!MESSAGE No repository found at http://www.eclipse.org/downloads/download.php?file=/modeling/mdt/uml2/downloads/drops/5.3.0/R201706051616/mdt-uml2-Update-5.3.0.zip.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:05:51.122
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1002 2017-12-04 23:05:51.944
+!MESSAGE Unable to read repository at http://www.objectaid.net/update.
+!STACK 0
+java.io.IOException: http://www.objectaid.net/update is not a valid repository location.
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:102)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:768)
+	at sun.reflect.GeneratedMethodAccessor338.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.oomph.util.ReflectUtil.invokeMethod(ReflectUtil.java:117)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:409)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:201)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager$Metadata.loadRepository(CachingRepositoryManager.java:476)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:152)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:130)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:74)
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:05:56.302
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1002 2017-12-04 23:05:56.954
+!MESSAGE Unable to read repository at http://www.eclipsecolorthemes.org/?view=theme&id=1882.
+!STACK 0
+java.io.IOException: http://www.eclipsecolorthemes.org/?view=theme&id=1882 is not a valid repository location.
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:102)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:768)
+	at sun.reflect.GeneratedMethodAccessor338.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.oomph.util.ReflectUtil.invokeMethod(ReflectUtil.java:117)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:409)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:201)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager$Metadata.loadRepository(CachingRepositoryManager.java:476)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:152)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:130)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:74)
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:06:08.856
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:06:16.952
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:06:18.364
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:06:19.782
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:06:28.723
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:06:30.347
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:06:31.827
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:06:41.429
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:06:42.949
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:06:51.034
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-12-04 23:06:52.226
+!MESSAGE Connection to http://www.objectaid.net/update/content.jar failed on null. Retry attempt 0 started
+!STACK 0
+org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:888)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1084)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1075)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: org.apache.http.client.CircularRedirectException: Circular redirect to 'http://www.objectaid.net/update/content.jar'
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getLocationURI(DefaultRedirectStrategy.java:176)
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getRedirect(DefaultRedirectStrategy.java:220)
+	at org.apache.http.impl.client.DefaultRequestDirector.handleResponse(DefaultRequestDirector.java:1085)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:516)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884)
+	... 6 more
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:06:54.076
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:06:55.306
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:07:03.833
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:07:05.162
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:07:06.624
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:07:15.901
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:07:17.149
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:07:24.860
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:07:26.434
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:07:27.853
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:07:37.234
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:07:38.897
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:07:46.562
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:07:47.764
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:07:49.290
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:07:56.598
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:07:58.758
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml.xz
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:07:59.937
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:08:01.181
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:08:09.375
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:08:10.782
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:08:12.287
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:08:25.436
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:08:26.819
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:08:34.708
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-12-04 23:08:39.242
+!MESSAGE Connection to http://www.objectaid.net/update/content.jar failed on null. Retry attempt 0 started
+!STACK 0
+org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:888)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1084)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1075)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: org.apache.http.client.CircularRedirectException: Circular redirect to 'http://www.objectaid.net/mKcRN/update/content.jar'
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getLocationURI(DefaultRedirectStrategy.java:176)
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getRedirect(DefaultRedirectStrategy.java:220)
+	at org.apache.http.impl.client.DefaultRequestDirector.handleResponse(DefaultRequestDirector.java:1085)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:516)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884)
+	... 6 more
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:08:40.918
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml.xz
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:08:42.252
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/compositeContent.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:08:43.466
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:08:44.973
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:08:53.462
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml.xz
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:08:58.527
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:08:59.919
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:09:09.015
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-12-04 23:09:13.030
+!MESSAGE Connection to http://www.objectaid.net/update/content.jar failed on null. Retry attempt 0 started
+!STACK 0
+org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:888)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1084)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1075)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: org.apache.http.client.CircularRedirectException: Circular redirect to 'http://www.objectaid.net/LddZp/update/content.jar'
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getLocationURI(DefaultRedirectStrategy.java:176)
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getRedirect(DefaultRedirectStrategy.java:220)
+	at org.apache.http.impl.client.DefaultRequestDirector.handleResponse(DefaultRequestDirector.java:1085)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:516)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884)
+	... 6 more
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:09:14.935
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:09:16.401
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:09:24.913
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:09:26.427
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:09:27.863
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:09:35.535
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:09:37.051
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:09:38.447
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:09:46.954
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:09:48.406
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:09:49.661
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:09:59.174
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:10:00.378
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:10:08.508
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:10:10.339
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:10:11.670
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-12-04 23:10:21.215
+!MESSAGE Server returned lastModified <= 0 for http://www.eclipsecolorthemes.org/content.jar
