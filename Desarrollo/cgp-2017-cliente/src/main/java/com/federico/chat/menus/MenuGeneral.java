@@ -23,6 +23,7 @@ import javax.swing.JTextArea;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.Font;
+import java.awt.Toolkit;
 
 
 public class MenuGeneral extends JFrame implements Runnable{
@@ -42,6 +43,7 @@ public class MenuGeneral extends JFrame implements Runnable{
 	 * Create the frame.
 	 */
 	public MenuGeneral() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MenuGeneral.class.getResource("/com/federico/chat/recursos/conversacion.png")));
 		//setDefaultCloseOperation(JFrame.MAXIMIZED_HORIZ);
 		setBounds(100, 100, 637, 393);
 		contentPane = new JPanel();

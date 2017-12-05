@@ -19,6 +19,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import java.awt.Font;
+import java.awt.Toolkit;
 
 public class MenuPrivado extends JFrame implements Serializable{
 
@@ -35,6 +36,7 @@ public class MenuPrivado extends JFrame implements Serializable{
 	private JScrollPane scrollPane;
 	
 	public MenuPrivado() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MenuPrivado.class.getResource("/com/federico/chat/recursos/privado.png")));
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 464, 421);
 		contentPane = new JPanel();

@@ -10,6 +10,7 @@ import javax.swing.JTextArea;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.Toolkit;
 
 public class MenuServidor extends JFrame {
 
@@ -21,6 +22,7 @@ public class MenuServidor extends JFrame {
 	
 
 	public MenuServidor() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MenuServidor.class.getResource("/com/federico/chat/servidor/usuarioConectado.png")));
 		setTitle("Servidor");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 415, 342);

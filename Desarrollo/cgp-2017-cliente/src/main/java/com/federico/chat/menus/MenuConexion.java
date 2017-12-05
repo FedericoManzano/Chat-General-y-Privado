@@ -12,6 +12,7 @@ import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import java.awt.SystemColor;
 import java.awt.Color;
+import java.awt.Toolkit;
 
 public class MenuConexion extends JFrame {
 
@@ -25,6 +26,7 @@ public class MenuConexion extends JFrame {
 	private JButton btnConectarse;
 	
 	public MenuConexion() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MenuConexion.class.getResource("/com/federico/chat/recursos/conectarse.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 407, 250);
 		contentPane = new JPanel();
