@@ -31,7 +31,6 @@ public class Conversacion extends KeyAdapter implements Observador<PaqueteMensaj
 	private String usuarioInterno;
 	private MenuAtributos menuAtributos;
 	private Chat chat;
-	private int cantidadCaracteres = 0;
 	
 	
 	public Conversacion(Conectado conectado, MenuPrivado menuPrivado, 
@@ -157,7 +156,8 @@ public class Conversacion extends KeyAdapter implements Observador<PaqueteMensaj
 		menuPrivado.añadirMensaje(new Font("Arial Black",Font.ITALIC, 15), 
 				new Color(0,0,0), p.getUsuarioEmisor() + ": \n");
 		menuPrivado.añadirMensaje(dameFuente(p), dameColor(p), p.getMensaje() + "\n");
-		menuPrivado.getScrollPane().getVerticalScrollBar().setValue(menuPrivado.getScrollPane().getVerticalScrollBar().getMaximum());
+		menuPrivado.getScrollPane().getVerticalScrollBar().setValue(
+				menuPrivado.getScrollPane().getVerticalScrollBar().getMaximum());
 
 	}
 

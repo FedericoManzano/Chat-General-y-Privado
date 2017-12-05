@@ -7,6 +7,11 @@ import javax.swing.border.LineBorder;
 
 
 import java.awt.Color;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 import javax.swing.BoxLayout;
 import javax.swing.DefaultListModel;
 
@@ -17,9 +22,10 @@ import javax.swing.JButton;
 import javax.swing.JTextArea;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
+import java.awt.Font;
 
 
-public class MenuGeneral extends JFrame {
+public class MenuGeneral extends JFrame implements Runnable{
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -31,7 +37,7 @@ public class MenuGeneral extends JFrame {
 	private JButton btnRefrescar;
 	private DefaultListModel<String> modelo = new DefaultListModel<>();
 	private JButton cerrarSesion;
-
+	private JLabel lblReloj;
 	/**
 	 * Create the frame.
 	 */
@@ -132,6 +138,16 @@ public class MenuGeneral extends JFrame {
 		btnEnviar.setIcon(new ImageIcon(MenuGeneral.class.getResource("/com/federico/chat/recursos/enviar.png")));
 		btnEnviar.setBounds(254, 271, 76, 52);
 		panel_2.add(btnEnviar);
+		
+		lblReloj = new JLabel("");
+		lblReloj.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblReloj.setForeground(Color.WHITE);
+		lblReloj.setIcon(new ImageIcon(MenuGeneral.class.getResource("/com/federico/chat/recursos/reloj.png")));
+		lblReloj.setBounds(221, 5, 109, 41);
+		panel_2.add(lblReloj);
+		Thread t = new Thread(this);
+		t.start();
+		
 	}
 	
 	
@@ -186,6 +202,25 @@ public class MenuGeneral extends JFrame {
 	public JButton getCerrarSesion() {
 		return cerrarSesion;
 	}
-	
-	
+
+	@Override
+	public void run() {
+		
+		int horas = 0;
+		int minutos = 0;
+		int segundos = 0;
+		while(true) {
+			GregorianCalendar hora = new GregorianCalendar();
+			horas = hora.get(Calendar.HOUR_OF_DAY);
+			minutos = hora.get(Calendar.MINUTE);
+			segundos = hora.get(Calendar.SECOND);
+			
+			lblReloj.setText(horas + ": " + minutos + ": " + segundos);
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 }
