@@ -17,5 +17,4 @@ public class EventoRefrescarLista implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		chat.getEscuchaMensajes().actualizarListado();
 	}
-
 }

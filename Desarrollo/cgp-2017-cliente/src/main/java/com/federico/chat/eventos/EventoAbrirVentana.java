@@ -24,8 +24,8 @@ public class EventoAbrirVentana implements ActionListener{
 				if(!usuarioSeleccionado.equals(con.getUsuarioInterno())) {
 					con.getMenuPrivado().setVisible(true);
 				}else{
-					JOptionPane.showMessageDialog(con.getMenuPrivado(), 
-							"No puede enviarse mensajes a usted mismo");
+					JOptionPane.showMessageDialog(	con.getMenuPrivado(), 
+							"No puede enviarse mensajes a usted mismo"	);
 				}
 			}
 		}

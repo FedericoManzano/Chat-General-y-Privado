@@ -13,8 +13,12 @@ import javax.swing.ImageIcon;
 import java.awt.SystemColor;
 import java.awt.Color;
 import java.awt.Toolkit;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 
-public class MenuConexion extends JFrame {
+import javax.swing.SwingConstants;
+
+public class MenuConexion extends JFrame{
 
 
 	private static final long serialVersionUID = 1L;
@@ -24,6 +28,10 @@ public class MenuConexion extends JFrame {
 	private JTextField puertoText;
 	private JLabel estado;
 	private JButton btnConectarse;
+	private JLabel lblPuertoIncorrecto;
+	private JLabel lblErrorUsuario;
+	private JLabel lblErrorServidor;
+	
 	
 	public MenuConexion() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(MenuConexion.class.getResource("/com/federico/chat/recursos/conectarse.png")));
@@ -76,6 +84,84 @@ public class MenuConexion extends JFrame {
 		btnConectarse.setIcon(new ImageIcon(MenuConexion.class.getResource("/com/federico/chat/recursos/btnConectar.png")));
 		btnConectarse.setBounds(244, 145, 117, 41);
 		contentPane.add(btnConectarse);
+		
+		lblErrorUsuario = new JLabel("Error en el usuario ingresado");
+		lblErrorUsuario.setHorizontalAlignment(SwingConstants.CENTER);
+		lblErrorUsuario.setBackground(Color.BLACK);
+		lblErrorUsuario.setForeground(Color.WHITE);
+		lblErrorUsuario.setBounds(26, 70, 198, 14);
+		contentPane.add(lblErrorUsuario);
+		lblErrorUsuario.setOpaque(true);
+		lblErrorUsuario.setVisible(false);
+		
+		
+		lblErrorServidor = new JLabel("Error en el ip del servidor seleccionado");
+		lblErrorServidor.setHorizontalAlignment(SwingConstants.CENTER);
+		lblErrorServidor.setOpaque(true);
+		lblErrorServidor.setForeground(Color.WHITE);
+		lblErrorServidor.setBackground(Color.BLACK);
+		lblErrorServidor.setBounds(26, 125, 198, 14);
+		contentPane.add(lblErrorServidor);
+		lblErrorServidor.setVisible(false);
+		
+		
+		lblPuertoIncorrecto = new JLabel("Puerto incorrecto");
+		lblPuertoIncorrecto.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPuertoIncorrecto.setOpaque(true);
+		lblPuertoIncorrecto.setForeground(Color.WHITE);
+		lblPuertoIncorrecto.setBackground(Color.BLACK);
+		lblPuertoIncorrecto.setBounds(26, 182, 198, 14);
+		contentPane.add(lblPuertoIncorrecto);
+		lblPuertoIncorrecto.setVisible(false);
+		
+		usuarioText.addFocusListener(new FocusListener() {
+			
+			@Override
+			public void focusLost(FocusEvent e) {
+				if(dameusuario().equals("")) {
+					lblErrorUsuario.setVisible(true);
+				}
+				
+			}
+			
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblErrorUsuario.setVisible(false);
+			}
+		});
+		
+		
+		servidorText.addFocusListener(new FocusListener() {
+			
+			@Override
+			public void focusLost(FocusEvent e) {
+				if(dameIp().equals("")) {
+					lblErrorServidor.setVisible(true);
+				}
+				
+			}
+			
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblErrorServidor.setVisible(false);				
+			}
+		});
+		
+		puertoText.addFocusListener(new FocusListener() {
+			
+			@Override
+			public void focusLost(FocusEvent e) {
+				if(damePuerto() == 0) {
+					lblPuertoIncorrecto.setVisible(true);
+				}
+				
+			}
+			
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblPuertoIncorrecto.setVisible(false);				
+			}
+		});
 	}
 	
 	public void conectado() {
@@ -134,4 +220,6 @@ public class MenuConexion extends JFrame {
 		return puerto > 0 ? puerto : 0;
 	}
 	
+	
+
 }

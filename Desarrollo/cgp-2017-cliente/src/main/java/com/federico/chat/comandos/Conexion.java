@@ -17,14 +17,19 @@ public class Conexion extends ComandoEscucha {
 		getChat().getMenuConexion().dispose();	
 		getChat().getEscuchaMensajes().actualizarListado();
 		getChat().getMenuGeneral().configurarTitulo(getChat().getMenuGeneral().getTitle() + 
-				" - " + getChat().getUsuario().getNombreUsuario() + "  " + "Bienvenido");
+				" | " + getChat().getUsuario().getNombreUsuario() + "  " + "Bienvenido");
 		getChat().getMenuGeneral().setVisible(true);
 	}
 	
 	private void cargarListaConectados(LinkedList<Conectado> listado) {
 		for(Conectado con : listado) {
 			Chat.listadoConectados.add(
-					new Conversacion(con, new MenuPrivado(), getChat().getUsuario().getNombreUsuario(), getChat()));
+					new Conversacion(
+							con, 
+							new MenuPrivado(), 
+							getChat().getUsuario().getNombreUsuario(), 
+							getChat())
+					);
 		}
 	}
 	

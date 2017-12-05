@@ -67,6 +67,6 @@ public class EventoConectar extends KeyAdapter implements ActionListener{
 	}
 	
 	private boolean validarCampos(String usuario, String servidor, int puerto) {
-		return !usuario.equals("") && !servidor.equals("") &&  puerto > 0;
+		return !usuario.equals("")  && !servidor.equals("")  &&  puerto > 0;
 	}
 }

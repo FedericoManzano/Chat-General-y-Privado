@@ -39,12 +39,9 @@ public class MenuGeneral extends JFrame implements Runnable{
 	private DefaultListModel<String> modelo = new DefaultListModel<>();
 	private JButton cerrarSesion;
 	private JLabel lblReloj;
-	/**
-	 * Create the frame.
-	 */
+	
 	public MenuGeneral() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(MenuGeneral.class.getResource("/com/federico/chat/recursos/conversacion.png")));
-		//setDefaultCloseOperation(JFrame.MAXIMIZED_HORIZ);
 		setBounds(100, 100, 637, 393);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
