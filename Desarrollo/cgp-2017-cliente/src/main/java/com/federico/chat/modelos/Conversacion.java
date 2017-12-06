@@ -69,7 +69,8 @@ public class Conversacion extends KeyAdapter implements Observador<PaqueteMensaj
 			if(val < 5) {
 				menuPrivado.getAreaMensaje().append(chat.getFuenteSeleccionada(), 
 						chat.getColorSeleccionado(), "\n");
-				menuPrivado.getScrollPane_1().getHorizontalScrollBar().setValue(menuPrivado.getScrollPane_1().getHorizontalScrollBar().getMinimum());
+				menuPrivado.getScrollPane_1().getHorizontalScrollBar().setValue(
+						menuPrivado.getScrollPane_1().getHorizontalScrollBar().getMinimum());
 			}
 		}
 	}

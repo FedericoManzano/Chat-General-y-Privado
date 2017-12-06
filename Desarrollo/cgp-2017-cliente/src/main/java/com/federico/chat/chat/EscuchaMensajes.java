@@ -26,7 +26,6 @@ public class EscuchaMensajes extends Thread{
 		Paquete paquete;
 		String cadenaLeida;
 		while(true) {
-			
 			try {
 				cadenaLeida = (String) chat.getEntrada().readObject();
 				paquete = gson.fromJson(cadenaLeida, Paquete.class);

@@ -13,9 +13,12 @@ public class ActualizarConectados extends ComandoEscucha {
 
 	@Override
 	public void ejecutar() {
-		PaqueteConexion paqueteConexion = Comando.gson.fromJson(dameCadenaLeida(), PaqueteConexion.class);
-		Conectado con = new Conectado(new Usuario(paqueteConexion.getNombreUsuario(), paqueteConexion.getIp()));
-		Conversacion conve = new Conversacion(con, new MenuPrivado(), getChat().getUsuario().getNombreUsuario(), getChat());
+		PaqueteConexion paqueteConexion =
+				Comando.gson.fromJson(dameCadenaLeida(), PaqueteConexion.class);
+		Conectado con = new Conectado(
+				new Usuario(paqueteConexion.getNombreUsuario(), paqueteConexion.getIp()));
+		Conversacion conve = new Conversacion(
+				con, new MenuPrivado(), getChat().getUsuario().getNombreUsuario(), getChat());
 		LinkedList<Conversacion> listadoCopia = getChat().dameListadoDeConversaciones();
 
 		if(paqueteConexion.dameOperacion() == Comando.AGREGAR_USUARIO) {

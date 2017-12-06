@@ -62,6 +62,8 @@ public class EventoConectar extends KeyAdapter implements ActionListener{
 			chat.setEscuchaMensajes(new EscuchaMensajes(chat));
 			chat.iniciar();
 		} catch (IOException ex) {
+			JOptionPane.showMessageDialog(null, "El servidor no esta disponible en este momento",
+					"Aviso", JOptionPane.WARNING_MESSAGE);
 			ex.printStackTrace(); 
 		}
 	}
