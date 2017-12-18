@@ -8,7 +8,7 @@ public class PaqueteConexion extends Paquete implements Serializable, Cloneable{
 	private String ip;
 	
 	public PaqueteConexion() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	public PaqueteConexion(String nombreUsuario, String ip, final int operacion) {

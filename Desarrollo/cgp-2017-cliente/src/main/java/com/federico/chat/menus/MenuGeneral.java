@@ -7,8 +7,6 @@ import javax.swing.border.LineBorder;
 
 
 import java.awt.Color;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -214,9 +212,11 @@ public class MenuGeneral extends JFrame implements Runnable{
 			minutos = hora.get(Calendar.MINUTE);
 			segundos = hora.get(Calendar.SECOND);
 			
-			lblReloj.setText((horas < 10 ? "0" + horas : horas) + 
-					" : " + (minutos < 10 ? "0" + minutos : minutos)  + 
-					" : " + (segundos < 10 ? "0" + segundos : segundos));
+			lblReloj.setText(
+							(	horas	 	< 10 ? "0" + horas 		: 	horas		)  + 
+					" : " + (	minutos 	< 10 ? "0" + minutos 	: 	minutos		)  + 
+					" : " + (	segundos 	< 10 ? "0" + segundos 	: 	segundos	)
+			);
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {

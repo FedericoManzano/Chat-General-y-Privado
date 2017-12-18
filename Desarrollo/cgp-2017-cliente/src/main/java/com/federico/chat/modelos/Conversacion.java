@@ -63,7 +63,8 @@ public class Conversacion extends KeyAdapter implements Observador<PaqueteMensaj
 					menuPrivado.getAreaMensaje().getX() + 50, 
 					menuPrivado.getAreaMensaje().getY());
 			
-			int val = menuPrivado.getAreaMensaje().getScrollableUnitIncrement(rec, SwingConstants.HORIZONTAL, 1);
+			int val = menuPrivado.getAreaMensaje().getScrollableUnitIncrement(
+					rec, SwingConstants.HORIZONTAL, 1);
 			
 
 			if(val < 5) {

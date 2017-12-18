@@ -25,13 +25,11 @@ import com.federico.chat.modelos.Usuario;
 import com.google.gson.Gson;
 
 public class Chat extends Thread implements Observable<Conversacion ,PaqueteMensaje>{
-	
-	
 	private ObjectInputStream entrada;
 	private ObjectOutputStream salida;
 	private Socket socket;
 	private EscuchaMensajes escuchaMensajes;
-	public static LinkedList<Conversacion> listadoConectados = new LinkedList<>();
+	public static LinkedList <Conversacion> listadoConectados = new LinkedList<>();
 	private int puerto;
 	private String servidor;
 	private MenuConexion menuConexion;
@@ -41,9 +39,7 @@ public class Chat extends Thread implements Observable<Conversacion ,PaqueteMens
 	private Font fuenteSeleccionada;
 	private Color colorSeleccionado;
 	
-	
 	public Chat() {
-		
 		menuConexion = new MenuConexion();
 		menuConexion.setVisible(true);
 		menuConexion.getBtnConectarse().addActionListener(new EventoConectar(this));
@@ -59,7 +55,6 @@ public class Chat extends Thread implements Observable<Conversacion ,PaqueteMens
 		menuGeneral.getAreaMensaje().addKeyListener(new EventoMensajePublico(this));
 		fuenteSeleccionada = new Font("Arial", Font.PLAIN, 11);
 		colorSeleccionado = new Color(0, 0, 0);
-		
 	}
 
 	public void run() {

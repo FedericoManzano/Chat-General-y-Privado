@@ -46,7 +46,8 @@ public class EventoMensajePublico extends KeyAdapter implements ActionListener{
 			JOptionPane.showMessageDialog(chat.getMenuGeneral(), "Campo del mensaje esta vacio");
 			return;
 		}
-		PaqueteMensaje paqueteMensaje = new PaqueteMensaje(usuarioEmisor, usuarioReceptor, mensaje, Comando.MENSAJE_PUBLICO);
+		PaqueteMensaje paqueteMensaje = new PaqueteMensaje(
+				usuarioEmisor, usuarioReceptor, mensaje, Comando.MENSAJE_PUBLICO);
 		chat.getMenuGeneral().getAreaConversacion().append(usuarioEmisor + ": " + mensaje + "\n");
 		chat.getMenuGeneral().getAreaMensaje().setText("");
 		String objeto = chat.getGson().toJson(paqueteMensaje);

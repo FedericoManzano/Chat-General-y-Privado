@@ -42,7 +42,7 @@ public class EventoMensajePrivado implements ActionListener{
 				fuenteUsuario, colorUsuario, conversacion.getUsuarioInterno() + ": \n");
 		conversacion.getMenuPrivado().añadirMensaje(
 				chat.getFuenteSeleccionada(), chat.getColorSeleccionado(), paq.getMensaje() + "\n");
-		conversacion.getMenuPrivado().getScrollPane().getVerticalScrollBar().setValue(conversacion.getMenuPrivado().getScrollPane().getVerticalScrollBar().getMaximum());
+		
 		String objetoEnviar = Comando.gson.toJson(paq);
 		try {
 			chat.getSalida().writeObject(objetoEnviar);
@@ -50,6 +50,9 @@ public class EventoMensajePrivado implements ActionListener{
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
+		
+		conversacion.getMenuPrivado().getScrollPane().getVerticalScrollBar().setValue(
+				conversacion.getMenuPrivado().getScrollPane().getVerticalScrollBar().getMaximum() + 10);
 	}
 	
 	private PaqueteMensaje configurarDatosPrincipales() {

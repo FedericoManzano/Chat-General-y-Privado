@@ -14,5 +14,4 @@ public class GsonTest {
 		System.out.println(cad);
 		System.out.println(paq.dameOperacion());
 	}
-
 }
